@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CyberDemo</string>
+    <string name="logo">Logo</string>
+    <string name="cyberdemo">CyberDemo</string>
 </resources>
