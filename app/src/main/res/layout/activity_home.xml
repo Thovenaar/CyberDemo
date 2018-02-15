@@ -10,7 +10,7 @@
         android:id="@+id/Home_logo"
         android:layout_width="183dp"
         android:layout_height="57dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="100dp"
         android:contentDescription="@string/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.328"
@@ -20,9 +20,10 @@
 
     <TextView
         android:id="@+id/Home_logo_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginStart="100dp"
+        android:gravity="center"
         android:fontFamily="@font/bree_serif"
         android:text="@string/cyberdemo"
         android:textAllCaps="false"
@@ -32,27 +33,34 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="17dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/bree_serif"
-        android:text="Test je kennis op het gebied van internetveiligheid"
-        android:textSize="10sp"
+        android:gravity="center"
+        android:text="@string/testkennis"
+        android:textSize="12sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Home_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/Home_logo"
+        app:layout_constraintVertical_bias="0.017" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="116dp"
+        android:layout_marginTop="86dp"
+        android:gravity="center_vertical|center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <Button
             android:id="@+id/button1"
@@ -60,7 +68,8 @@
             android:layout_height="38dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/home_button_shape"
-            android:text="Test je kennis!"
+            android:text="@string/testjekennis"
+            android:textAllCaps="false"
             android:textColor="#E0E0E0"
             android:textStyle="bold" />
 
@@ -70,7 +79,8 @@
             android:layout_height="38dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/home_button_shape"
-            android:text="Highscores"
+            android:text="@string/highscores"
+            android:textAllCaps="false"
             android:textColor="#E0E0E0"
             android:textStyle="bold" />
 
@@ -80,7 +90,8 @@
             android:layout_height="38dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/home_button_shape"
-            android:text="Help"
+            android:text="@string/help"
+            android:textAllCaps="false"
             android:textColor="#E0E0E0"
             android:textStyle="bold" />
     </LinearLayout>
