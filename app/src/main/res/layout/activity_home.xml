@@ -4,29 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/test"
     tools:context="dehaagsehogeschool.cyberdemo.HomeActivity">
 
     <ImageView
         android:id="@+id/Home_logo"
-        android:layout_width="78dp"
-        android:layout_height="71dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="132dp"
+        android:layout_width="183dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="116dp"
         android:contentDescription="@string/logo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintHorizontal_bias="0.328"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/Home_logo_text"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="144dp"
         android:fontFamily="@font/bree_serif"
         android:text="@string/cyberdemo"
         android:textAllCaps="false"
@@ -35,8 +31,9 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/bree_serif"
         android:text="Test je kennis op het gebied van internetveiligheid"
@@ -48,13 +45,13 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="150dp"
-        android:gravity="center"
+        android:layout_marginBottom="28dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
@@ -73,8 +70,8 @@
             android:layout_height="38dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/home_button_shape"
-            android:textColor="#E0E0E0"
             android:text="Highscores"
+            android:textColor="#E0E0E0"
             android:textStyle="bold" />
 
         <Button
@@ -83,8 +80,8 @@
             android:layout_height="38dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/home_button_shape"
-            android:textColor="#E0E0E0"
             android:text="Help"
+            android:textColor="#E0E0E0"
             android:textStyle="bold" />
     </LinearLayout>
 
