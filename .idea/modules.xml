@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/CyberDemo.iml" filepath="$PROJECT_DIR$/.idea/CyberDemo.iml" />
-      <module fileurl="file://C:\Projects\_GIT\CyberDemo\CyberDemo\CyberDemo.iml" filepath="C:\Projects\_GIT\CyberDemo\CyberDemo\CyberDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CyberDemo.iml" filepath="$PROJECT_DIR$/CyberDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
