@@ -70,6 +70,7 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/home_button_shape"
             android:text="@string/testjekennis"
+            android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="#E0E0E0"
             android:textStyle="bold" />
