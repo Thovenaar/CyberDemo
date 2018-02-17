@@ -58,7 +58,8 @@
         android:textStyle="bold"
         android:typeface="normal"
         app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintStart_toEndOf="@+id/imageView2" />
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        android:onClick="startGameButton"/>
 
     <Button
         android:id="@+id/button2"
