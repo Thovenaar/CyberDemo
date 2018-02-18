@@ -38,7 +38,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/bree_serif"
         android:gravity="center"
-        android:text="@string/testkennis"
+        android:text="@string/slogan"
         android:textSize="12sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"

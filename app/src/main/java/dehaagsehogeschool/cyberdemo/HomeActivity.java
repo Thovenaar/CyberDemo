@@ -14,14 +14,20 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_idee2);
     }
 
-    public void startGameButton(View view) {
+    public void startQuiz(View view) {
 
-        Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
-        launchGame();
+        launchQuiz();
 
     }
 
-    public void launchGame() {
+    public void startHelp(View view){
+
+        Intent intent = new Intent(this, HelpActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void launchQuiz() {
 
         Intent intent = new Intent(this, QuizActivity.class);
         startActivity(intent);
