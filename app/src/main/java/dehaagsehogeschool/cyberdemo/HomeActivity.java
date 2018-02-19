@@ -20,7 +20,7 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    public void startHelp(View view){
+    public void startHelp(View view) {
 
         Intent intent = new Intent(this, HelpActivity.class);
         startActivity(intent);
