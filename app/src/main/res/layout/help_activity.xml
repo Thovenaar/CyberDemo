@@ -15,7 +15,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/bree_serif"
         android:gravity="center"
-        android:text="@string/cyberdemo"
+        android:text="@string/app_name"
         android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@+id/button7"
         app:layout_constraintStart_toStartOf="parent"

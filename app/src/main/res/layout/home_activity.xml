@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/home_background"
     tools:context="dehaagsehogeschool.cyberdemo.HomeActivity"
     tools:layout_editor_absoluteY="25dp">
 
     <ImageView
         android:id="@+id/Home_logo"
-        android:layout_width="183dp"
+        android:layout_width="wrap_content"
         android:layout_height="57dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="58dp"
-        android:layout_marginStart="58dp"
-        android:contentDescription="@string/logo"
+        android:layout_marginStart="60dp"
+        android:contentDescription="@string/app_logo"
         app:layout_constraintBottom_toTopOf="@+id/slogan"
         app:layout_constraintEnd_toEndOf="@+id/button1"
         app:layout_constraintStart_toStartOf="@+id/slogan"
@@ -24,41 +25,63 @@
         android:id="@+id/Home_logo_text"
         android:layout_width="wrap_content"
         android:layout_height="21dp"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="60dp"
         android:fontFamily="@font/bree_serif"
         android:gravity="center"
-        android:text="@string/cyberdemo"
+        android:text="@string/app_name"
         android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="@+id/Home_logo"
         app:layout_constraintTop_toTopOf="@+id/Home_logo" />
 
     <TextView
         android:id="@+id/slogan"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="17dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="60dp"
         android:fontFamily="@font/bree_serif"
         android:gravity="center"
         android:text="@string/slogan"
         android:textSize="12sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/quiz_button"
+        app:layout_constraintBottom_toTopOf="@+id/board_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/board_button"
+        android:layout_width="191dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/home_button_shape"
+        android:fontFamily="@font/bree_serif"
+        android:onClick="startQuiz"
+        android:text="@string/nieuwspel_button"
+        android:textAllCaps="false"
+        android:textColor="#E0E0E0"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintBottom_toTopOf="@+id/quiz_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Graduaded1" />
 
     <Button
         android:id="@+id/quiz_button"
         android:layout_width="191dp"
         android:layout_height="38dp"
         android:layout_marginBottom="16dp"
+        android:layout_marginEnd="60dp"
         android:background="@drawable/home_button_shape"
+        android:fontFamily="@font/bree_serif"
         android:onClick="startQuiz"
-        android:text="@string/speelQuiz"
+        android:text="@string/quiz_button"
         android:textAllCaps="false"
         android:textColor="#E0E0E0"
         android:textStyle="bold"
         android:typeface="normal"
         app:layout_constraintBottom_toTopOf="@+id/highscore_button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView2" />
 
     <Button
@@ -66,59 +89,80 @@
         android:layout_width="191dp"
         android:layout_height="38dp"
         android:layout_marginBottom="16dp"
+        android:layout_marginEnd="60dp"
         android:background="@drawable/home_button_shape"
-        android:text="@string/highscores"
+        android:fontFamily="@font/bree_serif"
+        android:text="@string/highscore_button"
         android:textAllCaps="false"
         android:textColor="#E0E0E0"
         android:textStyle="bold"
         android:typeface="normal"
         app:layout_constraintBottom_toTopOf="@+id/help_button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView3" />
 
     <Button
         android:id="@+id/help_button"
         android:layout_width="191dp"
         android:layout_height="38dp"
-        android:layout_marginBottom="124dp"
+        android:layout_marginBottom="110dp"
+        android:layout_marginEnd="60dp"
         android:background="@drawable/home_button_shape"
-        android:text="@string/help"
+        android:fontFamily="@font/bree_serif"
+        android:onClick="startHelp"
+        android:text="@string/help_button"
         android:textAllCaps="false"
         android:textColor="#E0E0E0"
         android:textStyle="bold"
         android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        android:onClick="startHelp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView4" />
+
+    <ImageView
+        android:id="@+id/Graduaded1"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="70dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slogan"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/graduate_icon" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="42dp"
         android:layout_marginBottom="12dp"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="70dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/slogan"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/graduate_icon" android:contentDescription="TODO"/>
+        app:srcCompat="@drawable/graduate_icon" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="42dp"
         android:layout_marginBottom="14dp"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/highscore_icon" />
+        app:srcCompat="@drawable/highscore_icon" android:contentDescription="TODO"/>
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="42dp"
-        android:layout_marginBottom="120dp"
-        android:layout_marginStart="44dp"
+        android:layout_marginBottom="105dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/help_icon" />
