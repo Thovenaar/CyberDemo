@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/home_background">
 
     <TextView
         android:id="@+id/home_logo_text"
@@ -104,12 +105,13 @@
             android:layout_height="38dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/home_button_shape"
+            android:fontFamily="@font/bree_serif"
+            android:onClick="choice1Click"
             android:text="wachtwoord"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:onClick="choice1Click"/>
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/choice2"
@@ -117,11 +119,12 @@
             android:layout_height="38dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/home_button_shape"
+            android:fontFamily="@font/bree_serif"
+            android:onClick="choice2Click"
             android:text="Wachtwoord123%"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:onClick="choice2Click"/>
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/choice3"
@@ -129,11 +132,12 @@
             android:layout_height="38dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/home_button_shape"
+            android:fontFamily="@font/bree_serif"
+            android:onClick="choice3Click"
             android:text="SlechtWachtwoord321%"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:onClick="choice3Click"/>
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/choice4"

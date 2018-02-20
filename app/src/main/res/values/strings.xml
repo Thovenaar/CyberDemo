@@ -5,5 +5,6 @@
     <string name="help_button">Help</string>
     <string name="slogan">Test je kennis op het gebied van internetveiligheid</string>
     <string name="quiz_button">Quiz spel</string>
-    <string name="nieuwspel_button">Nieuw spel</string>
+    <string name="DigiVeilig_text">Digiveilig spel</string>
+    <string name="digiveilig_button">Digiveilig spel</string>
 </resources>

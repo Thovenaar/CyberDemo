@@ -15,22 +15,19 @@ public class HomeActivity extends AppCompatActivity {
 
     public void startQuiz(View view) {
 
-        launchQuiz();
+        Intent intent = new Intent(this, QuizActivity.class);
+        startActivity(intent);
+    }
 
+    public void startDigiveilig(View view) {
+
+        Intent intent = new Intent(this, DigiVeiligActivity.class);
+        startActivity(intent);
     }
 
     public void startHelp(View view) {
 
         Intent intent = new Intent(this, HelpActivity.class);
         startActivity(intent);
-
     }
-
-    public void launchQuiz() {
-
-        Intent intent = new Intent(this, QuizActivity.class);
-        startActivity(intent);
-
-    }
-
 }
