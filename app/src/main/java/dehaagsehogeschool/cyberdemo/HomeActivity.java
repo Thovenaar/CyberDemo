@@ -32,7 +32,6 @@ public class HomeActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, HelpActivity.class);
         startActivity(intent);
-
-        //test
+        
     }
 }
