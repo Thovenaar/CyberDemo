@@ -13,39 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="57dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="58dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginEnd="80dp"
         android:contentDescription="@string/app_logo"
-        app:layout_constraintBottom_toTopOf="@+id/slogan"
+        app:layout_constraintBottom_toTopOf="@+id/imageView9"
         app:layout_constraintEnd_toEndOf="@+id/board_button"
-        app:layout_constraintStart_toStartOf="@+id/slogan"
         app:srcCompat="@drawable/logo" />
-
-    <TextView
-        android:id="@+id/Home_logo_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:fontFamily="@font/bree_serif"
-        android:gravity="center"
-        android:text="@string/app_name"
-        android:textAllCaps="false"
-        app:layout_constraintStart_toStartOf="@+id/Home_logo"
-        app:layout_constraintTop_toTopOf="@+id/Home_logo" />
-
-    <TextView
-        android:id="@+id/slogan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:fontFamily="@font/bree_serif"
-        android:gravity="center"
-        android:text="@string/slogan"
-        android:textSize="12sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/board_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 
     <Button
@@ -125,12 +97,9 @@
         android:layout_height="42dp"
         android:layout_marginBottom="12dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="70dp"
         android:contentDescription="TODO"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slogan"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/graduate_icon" />
 
     <ImageView
@@ -139,12 +108,9 @@
         android:layout_height="42dp"
         android:layout_marginBottom="12dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="70dp"
         android:contentDescription="TODO"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slogan"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/graduate_icon" />
 
     <ImageView
@@ -191,5 +157,27 @@
         app:layout_constraintStart_toStartOf="parent">
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="100dp"
+        android:layout_height="23dp"
+        android:layout_marginBottom="38dp"
+        android:layout_marginStart="52dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView9"
+        app:layout_constraintStart_toStartOf="@+id/Home_logo"
+        app:srcCompat="@drawable/home_logo_text" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="316dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/board_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/home_slogan_text" />
 
 </android.support.constraint.ConstraintLayout>

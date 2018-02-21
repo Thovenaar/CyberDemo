@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--Algemene kleuren-->
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#ffffff</color>
+
+
+    <!--home_activity-->
     <color name="home_background">#e4e10c</color>
 
+
+    <!--digi_veilig_activity-->
     <color name="digi_veilig_buttonPressed">#a3089d</color>
     <color name="digi_veilig_buttonNotPressed">#d237be</color>
 
