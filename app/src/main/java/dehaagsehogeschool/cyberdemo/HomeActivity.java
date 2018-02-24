@@ -14,8 +14,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.home_activity);
     }
 
-
-
     public void startQuiz(View view) {
 
         Intent intent = new Intent(this, QuizActivity.class);
@@ -32,6 +30,6 @@ public class HomeActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, HelpActivity.class);
         startActivity(intent);
-        
+
     }
 }
