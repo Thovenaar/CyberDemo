@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class QuizActivity extends AppCompatActivity {
 
-    private QuizQuestions quizQuestions = new QuizQuestions();
+    private QuizLibary quizLibary = new QuizLibary();
 
     private TextView quizScoreView;
     private TextView quizQuestionView;
@@ -103,13 +103,13 @@ public class QuizActivity extends AppCompatActivity {
 
     private void updateQuestion() {
 
-        quizQuestionView.setText(quizQuestions.getQuestion(quizQuestionNumber));
-        quizButtonChoice1.setText(quizQuestions.getChoice1(quizQuestionNumber));
-        quizButtonChoice2.setText(quizQuestions.getChoice2(quizQuestionNumber));
-        quizButtonChoice3.setText(quizQuestions.getChoice3(quizQuestionNumber));
-        quizButtonChoice4.setText(quizQuestions.getChoice4(quizQuestionNumber));
+        quizQuestionView.setText(quizLibary.getQuestion(quizQuestionNumber));
+        quizButtonChoice1.setText(quizLibary.getChoice1(quizQuestionNumber));
+        quizButtonChoice2.setText(quizLibary.getChoice2(quizQuestionNumber));
+        quizButtonChoice3.setText(quizLibary.getChoice3(quizQuestionNumber));
+        quizButtonChoice4.setText(quizLibary.getChoice4(quizQuestionNumber));
 
-        quizQuestionAnswer = quizQuestions.getAnswer(quizQuestionNumber);
+        quizQuestionAnswer = quizLibary.getAnswer(quizQuestionNumber);
         quizQuestionNumber++;
 
     }

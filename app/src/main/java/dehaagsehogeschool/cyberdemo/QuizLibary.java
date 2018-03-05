@@ -4,7 +4,7 @@ package dehaagsehogeschool.cyberdemo;
  * Created by Tony on 2/17/2018.
  */
 
-public class QuizQuestions {
+public class QuizLibary {
 
     //Alle vragen voor het Quiz spel worden hier gedefinieerd
     private String quizQuestions[] = {

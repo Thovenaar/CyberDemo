@@ -21,7 +21,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void startDigiveilig(View view) {
 
-        Intent intent = new Intent(this, DigiVeiligActivity.class);
+        Intent intent = new Intent(this, DigiVeiligSpelActivity.class);
         startActivity(intent);
     }
 

@@ -25,7 +25,7 @@
             android:name=".HelpActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DigiVeiligActivity"
+            android:name=".DigiVeiligSpelActivity"
             android:screenOrientation="portrait">
         </activity>
     </application>
