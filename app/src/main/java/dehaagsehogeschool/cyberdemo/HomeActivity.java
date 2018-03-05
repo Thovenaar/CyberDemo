@@ -10,7 +10,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_activity_old);
+        setContentView(R.layout.home_activity);
     }
 
     public void startQuiz(View view) {

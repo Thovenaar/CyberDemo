@@ -4,7 +4,7 @@
     <string name="highscore_button">Highscores</string>
     <string name="help_button">Help</string>
     <string name="slogan">Test je kennis op het gebied van internetveiligheid</string>
-    <string name="quiz_button">180 seconde quiz</string>
+    <string name="quiz_button">Quiz spel</string>
     <string name="DigiVeilig_text">Digiveilig spel</string>
     <string name="digiveilig_button">Digiveilig spel</string>
 </resources>

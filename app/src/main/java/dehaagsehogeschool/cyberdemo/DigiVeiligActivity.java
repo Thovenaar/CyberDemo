@@ -12,7 +12,7 @@ public class DigiVeiligActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.digi_veilig_activity_old);
+        setContentView(R.layout.digiveilig_spel_activity);
     }
 
 }
