@@ -63,6 +63,7 @@
         android:fontFamily="@font/bree_serif"
         android:paddingBottom="10dp"
         android:text="@string/quiz_button"
+        android:onClick="startQuiz"
         android:textAllCaps="false"
         android:textColor="#ffffff"
         android:textSize="30dp"

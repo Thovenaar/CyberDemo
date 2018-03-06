@@ -5,6 +5,16 @@
     <string name="help_button">Help</string>
     <string name="slogan">Test je kennis op het gebied van internetveiligheid</string>
     <string name="quiz_button">Quiz spel</string>
-    <string name="DigiVeilig_text">Digiveilig spel</string>
     <string name="digiveilig_button">Digiveilig spel</string>
+
+
+    <!--Quiz spel string values-->
+    <string name="quiz_spel_question">Hier komt een vraag</string>
+    <string name="quiz_spel_question_number">Vraag 1...</string>
+    <string name="quiz_spel_text_description">Quiz spel</string>
+    <string name="quiz_spel_block_description"></string>
+    <string name="quiz_spel_timer">0</string>
+    <string name="quiz_spel_announcement_text">Je hebt gekozen voor het 180 seconde quiz spel. Zodra je op start druk start het spel en moet je zoveel mogelijk antwoorden goed beantwoorden! Je hebt 180 seconde dus let op je tijd!</string>
+    <string name="quiz_spel_announcement_start_button">START!</string>
+
 </resources>

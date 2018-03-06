@@ -7,12 +7,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 /**
  * Created by Tony on 2/17/2018.
  */
 
-public class QuizActivity extends AppCompatActivity {
+public class QuizSpelActivity extends AppCompatActivity {
 
     private QuizLibary quizLibary = new QuizLibary();
 
@@ -25,20 +28,24 @@ public class QuizActivity extends AppCompatActivity {
 
     private String quizQuestionAnswer;
     private int quizQuestionNumber = 0;
+    private int score = 0;
+    private int time = 180;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.quiz_activity);
+        setContentView(R.layout.quiz_spel_activity);
 
-        quizQuestionView = (TextView) findViewById(R.id.question);
-        quizButtonChoice1 = (Button) findViewById(R.id.choice1);
-        quizButtonChoice2 = (Button) findViewById(R.id.choice2);
-        quizButtonChoice3 = (Button) findViewById(R.id.choice3);
-        quizButtonChoice4 = (Button) findViewById(R.id.choice4);
+        quizQuestionView = (TextView) findViewById(R.id.quiz_spel_question);
+        quizButtonChoice1 = (Button) findViewById(R.id.quiz_spel_choice1);
+        quizButtonChoice2 = (Button) findViewById(R.id.quiz_spel_choice2);
+        quizButtonChoice3 = (Button) findViewById(R.id.quiz_spel_choice3);
+        quizButtonChoice4 = (Button) findViewById(R.id.quiz_spel_choice4);
 
         updateQuestion();
+        startTimer();
+
     }
 
     public void quitGameClick(View view) {
@@ -112,5 +119,33 @@ public class QuizActivity extends AppCompatActivity {
         quizQuestionAnswer = quizLibary.getAnswer(quizQuestionNumber);
         quizQuestionNumber++;
 
+    }
+
+    public void startTimer() {
+        Timer t = new Timer();
+
+        TimerTask task = new TimerTask() {
+
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        TextView timer = (TextView) findViewById(R.id.quiz_spel_timer);
+                        timer.setText(time + "");
+                        if (time > 0) {
+                            time -= 1;
+                        }
+                        else {
+                            timer.setText("Spel klaar");
+                            //TODO
+                        }
+                    }
+                });
+            }
+        };
+
+        t.scheduleAtFixedRate(task, 0, 1000);
     }
 }

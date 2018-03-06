@@ -19,13 +19,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".QuizActivity"
+            android:name=".QuizSpelActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".HelpActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".DigiVeiligSpelActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".QuizSpelAnnouncement"
             android:screenOrientation="portrait">
         </activity>
     </application>
