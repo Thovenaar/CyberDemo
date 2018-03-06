@@ -31,41 +31,41 @@
 
     <ImageView
         android:id="@+id/quiz_spel_block"
-        android:layout_width="wrap_content"
-        android:layout_height="160dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="146dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/quiz_spel_block_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quiz_spel_text"
-        app:srcCompat="@drawable/quiz_spel_block" />
+        app:srcCompat="@drawable/quiz_spel_block_v4" />
 
     <TextView
         android:id="@+id/quiz_spel_question_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="21dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/bree_serif"
         android:text="@string/quiz_spel_question_number"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/quiz_spel_question"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/quiz_spel_block" />
 
     <TextView
         android:id="@+id/quiz_spel_question"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/bree_serif"
         android:text="@string/quiz_spel_question"
         android:textAlignment="center"
@@ -73,69 +73,80 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/quiz_spel_block"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quiz_spel_question_number" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_vertical|center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quiz_spel_block">
 
         <Button
             android:id="@+id/quiz_spel_choice1"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/quiz_choice_button"
+            android:layout_height="72dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_grey_v2"
             android:fontFamily="@font/bree_serif"
             android:onClick="choice1Click"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:paddingBottom="15dp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:typeface="normal" />
 
         <Button
             android:id="@+id/quiz_spel_choice2"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/quiz_choice_button"
+            android:layout_height="72dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_grey_v2"
             android:fontFamily="@font/bree_serif"
-            android:onClick="choice2Click"
-            android:textAppearance="@style/TextAppearance.AppCompat"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:paddingBottom="15dp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:typeface="normal"
+            android:onClick="choice2Click" />
 
         <Button
             android:id="@+id/quiz_spel_choice3"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/quiz_choice_button"
+            android:layout_height="72dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_grey_v2"
             android:fontFamily="@font/bree_serif"
-            android:onClick="choice3Click"
-            android:textAppearance="@style/TextAppearance.AppCompat"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:paddingBottom="15dp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:onClick="choice3Click" />
 
         <Button
             android:id="@+id/quiz_spel_choice4"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/quiz_choice_button"
-            android:onClick="choice4Click"
-            android:textAppearance="@style/TextAppearance.AppCompat"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:layout_height="72dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_grey_v2"
+            android:fontFamily="@font/bree_serif"
+            android:paddingBottom="15dp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:onClick="choice4Click" />
 
     </LinearLayout>
 

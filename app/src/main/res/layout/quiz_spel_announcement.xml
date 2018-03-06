@@ -7,13 +7,26 @@
     android:layout_height="match_parent"
     android:background="@drawable/quiz_spel_background">
 
+    <ImageView
+        android:id="@+id/quiz_spel_text2"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/quiz_spel_text_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/quiz_spel_text" />
+
     <TextView
         android:id="@+id/quiz_spel_announcement"
-        android:layout_width="289dp"
-        android:layout_height="308dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/bree_serif"
         android:text="@string/quiz_spel_announcement_text"
         android:textAlignment="center"
@@ -21,19 +34,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/quiz_spel_text2" />
 
     <Button
         android:id="@+id/quiz_spel_announcement_start_button"
-        android:layout_width="202dp"
-        android:layout_height="103dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_grey_v2"
+        android:fontFamily="@font/bree_serif"
         android:onClick="startQuizSpel"
-        android:background="@drawable/quiz_choice_button"
+        android:paddingBottom="15dp"
         android:text="@string/quiz_spel_announcement_start_button"
+        android:textSize="35dp"
+        android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quiz_spel_announcement" />
 </android.support.constraint.ConstraintLayout>

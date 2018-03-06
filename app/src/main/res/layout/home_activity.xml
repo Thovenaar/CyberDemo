@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,27 +9,27 @@
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginStart="52dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView8"
+        android:layout_height="111dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_v1" />
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="0dp"
-        android:layout_height="47dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView1"
         app:srcCompat="@drawable/home_slogan_text" />
 
     <Button
@@ -39,19 +38,19 @@
         android:layout_height="72dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/home_button_shape_blue"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_blue_v2"
         android:fontFamily="@font/bree_serif"
         android:onClick="startDigiveilig"
-        android:paddingBottom="10dp"
+        android:paddingBottom="15dp"
         android:text="@string/digiveilig_button"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="30dp"
+        android:textSize="35dp"
         android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/button13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
     <Button
         android:id="@+id/button13"
@@ -59,19 +58,19 @@
         android:layout_height="72dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/home_button_shape_yellow"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_yellow_v2"
         android:fontFamily="@font/bree_serif"
-        android:paddingBottom="10dp"
-        android:text="@string/quiz_button"
         android:onClick="startQuiz"
+        android:paddingBottom="15dp"
+        android:text="@string/quiz_button"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="30dp"
+        android:textSize="35dp"
         android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/button14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
         android:id="@+id/button14"
@@ -79,35 +78,36 @@
         android:layout_height="72dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/home_button_shape_red"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_red_v2"
         android:fontFamily="@font/bree_serif"
-        android:paddingBottom="10dp"
+        android:paddingBottom="15dp"
         android:text="@string/highscore_button"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="30dp"
+        android:textSize="35dp"
         android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/button15"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button13" />
 
     <Button
         android:id="@+id/button15"
         android:layout_width="match_parent"
         android:layout_height="72dp"
-        android:layout_marginBottom="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/home_button_shape_green"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_green_v2"
         android:fontFamily="@font/bree_serif"
-        android:paddingBottom="10dp"
+        android:paddingBottom="15dp"
         android:text="@string/help_button"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="30dp"
+        android:textSize="35dp"
         android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button14" />
 
 </android.support.constraint.ConstraintLayout>
