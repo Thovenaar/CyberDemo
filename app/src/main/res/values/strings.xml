@@ -26,7 +26,8 @@
     <string name="quiz_spel_announcement_start_button">START!</string>
 
     <!--Quiz spel result string values-->
-    <string name="quiz_spel_result_gameover">Je 180 seconde zijn om!</string>
+    <string name="quiz_spel_result_gameover">Je 180 seconden zijn om!</string>
+    <string name="quiz_spel_result_button">Ga terug</string>
 
     <!--Highscores string values-->
     <string name="highscores_text"></string>

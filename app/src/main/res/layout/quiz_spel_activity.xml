@@ -9,25 +9,25 @@
     <Button
         android:id="@+id/quiz_spel_stop_button"
         android:layout_width="65dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/quiz_spel_button_shape_grey"
-        android:text="@string/quiz_spel_stop_button"
+        android:background="@drawable/button_grey_round"
         android:onClick="quitGameClick"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/quiz_spel_stop_button"
+        app:layout_constraintBottom_toTopOf="@+id/quiz_spel_block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/quiz_spel_text"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/quiz_spel_text"
-        android:layout_width="249dp"
-        android:layout_height="53dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="250dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:contentDescription="@string/quiz_spel_text_description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/quiz_spel_stop_button"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/quiz_spel_text" />
 
@@ -35,14 +35,13 @@
         android:id="@+id/quiz_spel_block"
         android:layout_width="match_parent"
         android:layout_height="146dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:contentDescription="@string/quiz_spel_block_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quiz_spel_text"
-        app:srcCompat="@drawable/quiz_spel_block_v4" />
+        app:srcCompat="@drawable/quiz_spel_block_v5" />
 
     <TextView
         android:id="@+id/quiz_spel_timer"
@@ -94,6 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_vertical|center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"

@@ -144,29 +144,35 @@ public class QuizSpelActivity extends AppCompatActivity {
 
         }
     }
-    public void startTimer() {
+    public void startTimer()
+    {
         Timer t = new Timer();
 
-        TimerTask task = new TimerTask() {
+        TimerTask task =
+        new TimerTask() {
 
-            @Override
-            public void run() {
-                runOnUiThread(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        TextView timer = (TextView) findViewById(R.id.quiz_spel_timer);
-                        timer.setText("Tijd over:" + time + "");
-                        if (time > 0) {
-                            time -= 1;
-                        } else {
+        @Override
+        public void run() {
+            runOnUiThread(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    TextView timer = (TextView) findViewById(R.id.quiz_spel_timer);
+                    timer.setText("Tijd over:" + time + "");
+                    if (time > 0)
+                    {
+                        time -= 1;
+                    }
+                    else
+                    {
                         cancel();
                         finish();
                         showScore();
-                        }
                     }
-                });
-            }
+                }
+            });
+        }
         };
 
         Log.i(TAG, "test");

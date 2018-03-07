@@ -1,10 +1,12 @@
 package dehaagsehogeschool.cyberdemo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 public class QuizSpelResultActivity extends AppCompatActivity {
@@ -62,6 +64,13 @@ public class QuizSpelResultActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.i(TAG, "I am destroyed!");
+    }
+
+    public void backToMainScreen(View view) {
+
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }
