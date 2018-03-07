@@ -7,12 +7,12 @@ package dehaagsehogeschool.cyberdemo;
 public class QuizLibary {
 
     //Alle vragen voor het Quiz spel worden hier gedefinieerd
-    private String quizQuestions[] = {
+    public String quizQuestions[] = {
             "Welke van de onderstaande wachtwoorden zijn veilig om te gebruiken?",
 
-            "Vraag 2...",
+            "Voorbeeld vraag 2.",
 
-            "Vraag 3...",
+            "Voorbeeld vraag 3",
 
             "Vraag 4...",
 
@@ -23,6 +23,8 @@ public class QuizLibary {
             "Vraag 7...",
 
             "Vraag 8...",
+
+            "Vraag 8..."
     };
 
     //Alle antwoord mogelijkheden worden hier gedefinieerd
@@ -32,15 +34,39 @@ public class QuizLibary {
             {"Antwoord 1", "Antwoord 2", "Antwoord 3", "Antwoord 4"},
 
             {"Antwoord 1", "Antwoord 2", "Antwoord 3", "Antwoord 4"},
+
+            {"123456", "jan1992", "Ihdsk77Se@", "Antwoord 4"},
+
+            {"Antwoord 1", "Antwoord 5", "Antwoord 3", "Antwoord 4"},
+
+            {"Antwoord 1", "Antwoord 6", "Antwoord 3", "Antwoord 4"},
+
+            {"123456", "jan1992", "Antwoord 7", "ditraadjenooit"},
+
+            {"Antwoord 1", "Antwoord 2", "Antwoord 8", "Antwoord 4"},
+
+            {"Antwoord 1", "Antwoord 2", "Antwoord 9", "Antwoord 4"},
     };
 
     //Alle antwoorden worden hier gedefinieerd
     private String quizAnswers[] = {
             "Ihdsk77Se@",
 
-            "antwoord 1",
+            "Antwoord 2",
 
-            "antwoord 2"
+            "Antwoord 3",
+
+            "Antwoord 4",
+
+            "Antwoord 5",
+
+            "Antwoord 6",
+
+            "Antwoord 7",
+
+            "Antwoord 8",
+
+            "Antwoord 9"
 
     };
 

@@ -6,14 +6,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
 
-
-    <!--home_activity-->
-    <color name="home_background">#e4e10c</color>
-
-
-    <!--digi_veilig_activity-->
-    <color name="digi_veilig_buttonPressed">#a3089d</color>
-    <color name="digi_veilig_buttonNotPressed">#d237be</color>
 
 </resources>

@@ -1,10 +1,44 @@
 <resources>
-    <string name="app_name">CyberDemo</string>
-    <string name="app_logo">Logo</string>
-    <string name="highscore_button">Highscores</string>
-    <string name="help_button">Help</string>
-    <string name="slogan">Test je kennis op het gebied van internetveiligheid</string>
-    <string name="quiz_button">Quiz spel</string>
-    <string name="DigiVeilig_text">Digiveilig spel</string>
-    <string name="digiveilig_button">Digiveilig spel</string>
+
+    <!--Home string values-->
+    <string name="home_highscore_button">Highscores</string>
+    <string name="home_help_button">Help</string>
+    <string name="home_quiz_spel_button">Quiz spel</string>
+    <string name="home_digiveilig_spel_button">Digiveilig spel</string>
+    <string name="home_slogan_text">Gebruik internet op een veilige manier</string>
+    <string name="home_logo">CyberDemo logo</string>
+
+    <!--digiveilig spel string values-->
+    <string name="digiveilig_spel_text"></string>
+
+
+    <!--Quiz spel string values-->
+    <string name="quiz_spel_question">Hier komt een vraag</string>
+    <string name="quiz_spel_question_number">Vraag 1...</string>
+    <string name="quiz_spel_text_description">Quiz spel</string>
+    <string name="quiz_spel_block_description"></string>
+    <string name="quiz_spel_timer">0</string>
+    <string name="quiz_spel_timer_text">Tijd over:</string>
+    <string name="quiz_spel_stop_button">Stop</string>
+
+    <!--Quiz spel announcement string values-->
+    <string name="quiz_spel_announcement_text">Je hebt gekozen voor het 180 seconde quiz spel. Zodra je op start druk start het spel en moet je zoveel mogelijk antwoorden goed beantwoorden! Je hebt 180 seconde dus let op je tijd!</string>
+    <string name="quiz_spel_announcement_start_button">START!</string>
+
+    <!--Quiz spel result string values-->
+    <string name="quiz_spel_result_gameover">Je 180 seconden zijn om!</string>
+    <string name="quiz_spel_result_button">Ga terug</string>
+
+    <!--Highscores string values-->
+    <string name="highscores_text"></string>
+    <string name="highscores_block"></string>
+    <string name="highscores_player_name">Spelersnaam</string>
+
+    <!--Help string values-->
+    <string name="help_text"></string>
+    <string name="help_block"></string>
+
+    <!--Score result string values-->
+    <string name="score_result_value">0</string>
+
 </resources>
