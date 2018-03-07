@@ -7,12 +7,13 @@
     android:background="@drawable/home_background">
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/home_logo"
         android:layout_width="match_parent"
         android:layout_height="111dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/home_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,94 +21,95 @@
         app:srcCompat="@drawable/logo_v1" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/home_slogan_text"
         android:layout_width="match_parent"
         android:layout_height="29dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
+        android:contentDescription="@string/home_slogan_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView1"
+        app:layout_constraintTop_toBottomOf="@+id/home_logo"
         app:srcCompat="@drawable/home_slogan_text" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/home_digi_veilig_spel_button"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/button_blue_v2"
+        android:background="@drawable/home_button_shape_blue"
         android:fontFamily="@font/bree_serif"
         android:onClick="startDigiveilig"
         android:paddingBottom="15dp"
-        android:text="@string/digiveilig_button"
+        android:text="@string/home_digiveilig_spel_button"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintTop_toBottomOf="@+id/home_slogan_text" />
 
     <Button
-        android:id="@+id/button13"
+        android:id="@+id/home_quiz_spel_button"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/button_yellow_v2"
+        android:background="@drawable/home_button_shape_yellow"
         android:fontFamily="@font/bree_serif"
         android:onClick="startQuiz"
         android:paddingBottom="15dp"
-        android:text="@string/quiz_button"
+        android:text="@string/home_quiz_spel_button"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/home_digi_veilig_spel_button" />
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/home_highscores_button"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/button_red_v2"
+        android:background="@drawable/home_button_shape_red"
         android:fontFamily="@font/bree_serif"
         android:paddingBottom="15dp"
-        android:text="@string/highscore_button"
+        android:text="@string/home_highscore_button"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button13" />
+        app:layout_constraintTop_toBottomOf="@+id/home_quiz_spel_button" />
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/home_help_button"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/button_green_v2"
+        android:background="@drawable/home_button_shape_green"
         android:fontFamily="@font/bree_serif"
         android:paddingBottom="15dp"
-        android:text="@string/help_button"
+        android:text="@string/home_help_button"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button14" />
+        app:layout_constraintTop_toBottomOf="@+id/home_highscores_button" />
 
 </android.support.constraint.ConstraintLayout>

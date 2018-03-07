@@ -28,7 +28,7 @@ public class QuizSpelActivity extends AppCompatActivity {
 
     private String quizQuestionAnswer;
     private int quizQuestionNumber = 0;
-    private int score = 0;
+    public int score = 0;
     private int time = 180;
 
 
@@ -57,6 +57,7 @@ public class QuizSpelActivity extends AppCompatActivity {
         if (quizButtonChoice1.getText() == quizQuestionAnswer) {
 
             updateQuestion();
+            score++;
             Toast.makeText(this, "good", Toast.LENGTH_SHORT).show();
 
         } else {
@@ -71,6 +72,7 @@ public class QuizSpelActivity extends AppCompatActivity {
         if (quizButtonChoice2.getText() == quizQuestionAnswer) {
 
             updateQuestion();
+            score++;
             Toast.makeText(this, "good", Toast.LENGTH_SHORT).show();
 
         } else {
@@ -85,6 +87,7 @@ public class QuizSpelActivity extends AppCompatActivity {
         if (quizButtonChoice3.getText() == quizQuestionAnswer) {
 
             updateQuestion();
+            score++;
             Toast.makeText(this, "good", Toast.LENGTH_SHORT).show();
 
         } else {
@@ -99,6 +102,7 @@ public class QuizSpelActivity extends AppCompatActivity {
         if (quizButtonChoice4.getText() == quizQuestionAnswer) {
 
             updateQuestion();
+            score++;
             Toast.makeText(this, "good", Toast.LENGTH_SHORT).show();
 
         } else {
@@ -133,12 +137,12 @@ public class QuizSpelActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         TextView timer = (TextView) findViewById(R.id.quiz_spel_timer);
-                        timer.setText(time + "");
+                        timer.setText("Tijd over:" + time + "");
                         if (time > 0) {
                             time -= 1;
                         }
                         else {
-                            timer.setText("Spel klaar");
+                            timer.setText("Tijd om!");
                             //TODO
                         }
                     }
@@ -148,4 +152,10 @@ public class QuizSpelActivity extends AppCompatActivity {
 
         t.scheduleAtFixedRate(task, 0, 1000);
     }
+
+    public void showScore(){
+
+
+    }
+
 }

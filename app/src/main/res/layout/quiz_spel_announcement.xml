@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/quiz_spel_text2"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -43,7 +43,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/button_grey_v2"
+        android:background="@drawable/quiz_spel_grey_button_up"
         android:fontFamily="@font/bree_serif"
         android:onClick="startQuizSpel"
         android:paddingBottom="15dp"
