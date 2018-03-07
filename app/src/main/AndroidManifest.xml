@@ -5,7 +5,6 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -19,19 +18,24 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".DigiVeiligSpelActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".QuizSpelActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HighscoreActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".HelpActivity"
             android:screenOrientation="portrait" />
+
         <activity
-            android:name=".DigiVeiligSpelActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:name=".QuizSpelAnnouncementActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".QuizSpelAnnouncement"
-            android:screenOrientation="portrait">
-        </activity>
+            android:name=".QuizSpelResultActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

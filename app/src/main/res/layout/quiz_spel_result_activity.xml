@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quiz_spel_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="dehaagsehogeschool.cyberdemo.QuizSpelResultActivity">
+
+    <TextView
+        android:id="@+id/quiz_spel_result_gameover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bree_serif"
+        android:layout_marginBottom="0dp"
+        android:text="@string/quiz_spel_result_gameover"
+        android:textAlignment="center"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/score_result_current_score"
+        android:layout_width="360dp"
+        android:layout_height="156dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginStart="100dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="@string/score_result_value"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="274dp" />
+
+    <TextView
+        android:id="@+id/score_result_higscore"
+        android:layout_width="360dp"
+        android:layout_height="181dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginStart="100dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="@string/score_result_value"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="371dp" />
+
+</LinearLayout>

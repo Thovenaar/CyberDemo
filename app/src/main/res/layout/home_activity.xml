@@ -85,6 +85,7 @@
         android:fontFamily="@font/bree_serif"
         android:paddingBottom="15dp"
         android:text="@string/home_highscore_button"
+        android:onClick="startHighscore"
         android:textAllCaps="false"
         android:textColor="#ffffff"
         android:textSize="35sp"

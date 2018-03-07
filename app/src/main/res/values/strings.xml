@@ -19,10 +19,14 @@
     <string name="quiz_spel_block_description"></string>
     <string name="quiz_spel_timer">0</string>
     <string name="quiz_spel_timer_text">Tijd over:</string>
+    <string name="quiz_spel_stop_button">Stop</string>
 
     <!--Quiz spel announcement string values-->
     <string name="quiz_spel_announcement_text">Je hebt gekozen voor het 180 seconde quiz spel. Zodra je op start druk start het spel en moet je zoveel mogelijk antwoorden goed beantwoorden! Je hebt 180 seconde dus let op je tijd!</string>
     <string name="quiz_spel_announcement_start_button">START!</string>
+
+    <!--Quiz spel result string values-->
+    <string name="quiz_spel_result_gameover">Je 180 seconde zijn om!</string>
 
     <!--Highscores string values-->
     <string name="highscores_text"></string>
@@ -32,5 +36,8 @@
     <!--Help string values-->
     <string name="help_text"></string>
     <string name="help_block"></string>
+
+    <!--Score result string values-->
+    <string name="score_result_value">0</string>
 
 </resources>
