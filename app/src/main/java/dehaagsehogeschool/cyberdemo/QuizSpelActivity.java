@@ -37,6 +37,7 @@ public class QuizSpelActivity extends AppCompatActivity {
     private int questionAnswerNumber = 0;
     public int score = 0;
     private int time = 10;
+    private boolean quizButtonClicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +78,7 @@ public class QuizSpelActivity extends AppCompatActivity {
     }
 
     public void quitGameClick(View view) {
+        quizButtonClicked = true;
         Intent showScore = new Intent(getApplicationContext(), QuizSpelResultActivity.class);
         showScore.putExtra("SCORE", score);
         startActivity(showScore);
@@ -144,42 +146,53 @@ public class QuizSpelActivity extends AppCompatActivity {
 
         }
     }
+
     public void startTimer()
+
     {
         Timer t = new Timer();
 
         TimerTask task =
-        new TimerTask() {
+                new TimerTask() {
 
-        @Override
-        public void run() {
-            runOnUiThread(new Runnable()
-            {
-                @Override
-                public void run()
-                {
-                    TextView timer = (TextView) findViewById(R.id.quiz_spel_timer);
-                    timer.setText("Tijd over:" + time + "");
-                    if (time > 0)
-                    {
-                        time -= 1;
+                    @Override
+                    public void run() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                TextView timer = (TextView) findViewById(R.id.quiz_spel_timer);
+                                timer.setText("Tijd over:" + time + "");
+                                if (time > 0) {
+                                    if (quizLibary.quizQuestions.length > questionAnswerNumber-1) {
+                                        time -= 1;
+                                        Log.i(TAG, "questionAnswerNumber");
+                                        Log.i(TAG, Integer.toString(questionAnswerNumber));
+                                        Log.i(TAG, Integer.toString(quizLibary.quizQuestions.length));
+                                    } else {
+                                        cancel();
+                                        finish();
+                                        showScore();
+                                    }
+                                } else {
+                                    cancel();
+                                    finish();
+                                    showScore();
+                                }
+                                if (quizButtonClicked) {
+                                    cancel();
+                                    finish();
+                                    showScore();
+                                }
+                            }
+                        });
                     }
-                    else
-                    {
-                        cancel();
-                        finish();
-                        showScore();
-                    }
-                }
-            });
-        }
-        };
+                };
 
         Log.i(TAG, "test");
         t.scheduleAtFixedRate(task, 0, 1000);
     }
 
-    public void showScore(){
+    public void showScore() {
         Intent showScore = new Intent(getApplicationContext(), QuizSpelResultActivity.class);
         showScore.putExtra("SCORE", score);
         startActivity(showScore);
