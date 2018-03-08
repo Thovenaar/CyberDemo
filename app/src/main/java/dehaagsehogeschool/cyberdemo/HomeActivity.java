@@ -16,7 +16,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
         Log.i(TAG, "I am created!");
-    }
+    } 
 
     @Override
     protected void onPause() {
