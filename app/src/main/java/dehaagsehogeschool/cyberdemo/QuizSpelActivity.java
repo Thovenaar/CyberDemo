@@ -93,8 +93,7 @@ public class QuizSpelActivity extends AppCompatActivity {
     }
 
     private void updateQuestion() {
-
-
+        
         //Zodra er geen vragen meer over zijn, laat dan de score zien.
         if (questionAnswerNumber < quizLibary.quizQuestions.length) {
 
@@ -145,7 +144,6 @@ public class QuizSpelActivity extends AppCompatActivity {
         timer.scheduleAtFixedRate(task, 0, 1000);
     }
 
-    //Zodra het spel handmatig wordt gestopt
     public void stopSpel(View view) {
         timer.cancel();
         showScore();
@@ -161,10 +159,6 @@ public class QuizSpelActivity extends AppCompatActivity {
             updateQuestion();
             score++;
 
-//        }else{
-//
-//            updateQuestion();
-//
         }
     }
 
@@ -175,10 +169,6 @@ public class QuizSpelActivity extends AppCompatActivity {
             updateQuestion();
             score++;
 
-//        }else{
-//
-//            updateQuestion();
-//
         }
     }
 
@@ -189,10 +179,6 @@ public class QuizSpelActivity extends AppCompatActivity {
             updateQuestion();
             score++;
 
-//        }else{
-//
-//            updateQuestion();
-//
         }
     }
 
@@ -203,10 +189,6 @@ public class QuizSpelActivity extends AppCompatActivity {
             updateQuestion();
             score++;
 
-//        }else{
-//
-//            updateQuestion();
-//
         }
     }
 }
