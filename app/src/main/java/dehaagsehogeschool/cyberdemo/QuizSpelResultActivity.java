@@ -28,14 +28,14 @@ public class QuizSpelResultActivity extends AppCompatActivity {
         highscoreLabel = (TextView) findViewById(R.id.score_result_higscore);
 
         int score = getIntent().getIntExtra("SCORE", 0);
-        newScoreLabel.setText("Behaalde score : " + score);
+        newScoreLabel.setText("Behaalde score: " + score);
 
         SharedPreferences settings = getSharedPreferences("Game_Data", Context.MODE_PRIVATE);
         int highscore = settings.getInt("High_Score", 0);
 
         if (score > highscore){
 
-            highscoreLabel.setText("Nieuwe highscore! : " + score);
+            highscoreLabel.setText("Nieuwe highscore!: " + score);
             SharedPreferences.Editor editor = settings.edit();
             editor.putInt("High_Score", score);
             editor.commit();

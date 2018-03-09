@@ -13,7 +13,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button_grey_round"
-        android:onClick="quitGameClick"
+        android:onClick="stopSpel"
         android:text="@string/quiz_spel_stop_button"
         app:layout_constraintBottom_toTopOf="@+id/quiz_spel_block"
         app:layout_constraintEnd_toEndOf="parent"

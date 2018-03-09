@@ -24,20 +24,20 @@ public class QuizSpelActivity extends AppCompatActivity {
     private QuizLibary quizLibary = new QuizLibary();
 
     private TextView quizScoreView;
-    private TextView quizQuestionView;
-    private TextView quizQuestionNumber;
-    private Button quizButtonChoice1;
-    private Button quizButtonChoice2;
-    private Button quizButtonChoice3;
-    private Button quizButtonChoice4;
-    private Button quizStopButton;
+    private TextView question;
+    private TextView questionNumberView;
+    private Button buttonChoice1;
+    private Button buttonChoice2;
+    private Button buttonChoice3;
+    private Button buttonChoice4;
+    private Button stopButton;
 
-    private String quizQuestionAnswer;
+    private String questionAnswer;
     private int questionNumber = 1;
     private int questionAnswerNumber = 0;
     public int score = 0;
     private int time = 10;
-    private boolean quizButtonClicked = false;
+    Timer timer = new Timer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,17 +46,16 @@ public class QuizSpelActivity extends AppCompatActivity {
 
         Log.i(TAG, "I am created!");
 
-        quizQuestionView = (TextView) findViewById(R.id.quiz_spel_question);
-        quizQuestionNumber = (TextView) findViewById(R.id.quiz_spel_question_number);
-        quizButtonChoice1 = (Button) findViewById(R.id.quiz_spel_choice1);
-        quizButtonChoice2 = (Button) findViewById(R.id.quiz_spel_choice2);
-        quizButtonChoice3 = (Button) findViewById(R.id.quiz_spel_choice3);
-        quizButtonChoice4 = (Button) findViewById(R.id.quiz_spel_choice4);
-        quizStopButton = (Button) findViewById(R.id.quiz_spel_stop_button);
+        question = (TextView) findViewById(R.id.quiz_spel_question);
+        questionNumberView = (TextView) findViewById(R.id.quiz_spel_question_number);
+        buttonChoice1 = (Button) findViewById(R.id.quiz_spel_choice1);
+        buttonChoice2 = (Button) findViewById(R.id.quiz_spel_choice2);
+        buttonChoice3 = (Button) findViewById(R.id.quiz_spel_choice3);
+        buttonChoice4 = (Button) findViewById(R.id.quiz_spel_choice4);
+        stopButton = (Button) findViewById(R.id.quiz_spel_stop_button);
 
         updateQuestion();
         startTimer();
-
     }
 
     @Override
@@ -77,80 +76,46 @@ public class QuizSpelActivity extends AppCompatActivity {
         Log.i(TAG, "I am destroyed!");
     }
 
-    public void quitGameClick(View view) {
-        quizButtonClicked = true;
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+        timer.cancel();
+    }
+
+    public void showScore() {
+
         Intent showScore = new Intent(getApplicationContext(), QuizSpelResultActivity.class);
         showScore.putExtra("SCORE", score);
         startActivity(showScore);
         finish();
-    }
 
-    public void choice1Click(View view) {
-
-        if (quizButtonChoice1.getText() == quizQuestionAnswer) {
-
-            updateQuestion();
-            score++;
-        }
-    }
-
-    public void choice2Click(View view) {
-
-        if (quizButtonChoice2.getText() == quizQuestionAnswer) {
-
-            updateQuestion();
-            score++;
-
-        }
-    }
-
-    public void choice3Click(View view) {
-
-        if (quizButtonChoice3.getText() == quizQuestionAnswer) {
-
-            updateQuestion();
-            score++;
-
-        }
-    }
-
-    public void choice4Click(View view) {
-
-        if (quizButtonChoice4.getText() == quizQuestionAnswer) {
-
-            updateQuestion();
-            score++;
-
-        }
     }
 
     private void updateQuestion() {
 
+
+        //Zodra er geen vragen meer over zijn, laat dan de score zien.
         if (questionAnswerNumber < quizLibary.quizQuestions.length) {
 
-            quizQuestionView.setText(quizLibary.getQuestion(questionAnswerNumber));
-            quizButtonChoice1.setText(quizLibary.getChoice1(questionAnswerNumber));
-            quizButtonChoice2.setText(quizLibary.getChoice2(questionAnswerNumber));
-            quizButtonChoice3.setText(quizLibary.getChoice3(questionAnswerNumber));
-            quizButtonChoice4.setText(quizLibary.getChoice4(questionAnswerNumber));
+            question.setText(quizLibary.getQuestion(questionAnswerNumber));
+            buttonChoice1.setText(quizLibary.getChoice1(questionAnswerNumber));
+            buttonChoice2.setText(quizLibary.getChoice2(questionAnswerNumber));
+            buttonChoice3.setText(quizLibary.getChoice3(questionAnswerNumber));
+            buttonChoice4.setText(quizLibary.getChoice4(questionAnswerNumber));
 
-            quizQuestionAnswer = quizLibary.getAnswer(questionAnswerNumber);
-            quizQuestionNumber.setText("Vraag" + questionNumber);
+            questionAnswer = quizLibary.getAnswer(questionAnswerNumber);
+            questionNumberView.setText("Vraag" + questionAnswerNumber);
             questionNumber++;
             questionAnswerNumber++;
 
         } else {
-
-            //If elde tijdelijk gedaan omdat anders de applicatie crasht op nullpointer.
-            finish();
-
+            score++;
+            showScore();
         }
     }
 
-    public void startTimer()
-
-    {
-        Timer t = new Timer();
+    public void startTimer() {
 
         TimerTask task =
                 new TimerTask() {
@@ -163,39 +128,86 @@ public class QuizSpelActivity extends AppCompatActivity {
                                 TextView timer = (TextView) findViewById(R.id.quiz_spel_timer);
                                 timer.setText("Tijd over:" + time + "");
                                 if (time > 0) {
-                                    if (quizLibary.quizQuestions.length > questionAnswerNumber-1) {
+                                    if (quizLibary.quizQuestions.length > score) {
                                         time -= 1;
-                                        Log.i(TAG, "questionAnswerNumber");
-                                        Log.i(TAG, Integer.toString(questionAnswerNumber));
-                                        Log.i(TAG, Integer.toString(quizLibary.quizQuestions.length));
                                     } else {
                                         cancel();
-                                        finish();
-                                        showScore();
                                     }
                                 } else {
-                                    cancel();
-                                    finish();
                                     showScore();
-                                }
-                                if (quizButtonClicked) {
                                     cancel();
-                                    finish();
-                                    showScore();
                                 }
                             }
                         });
                     }
                 };
 
-        Log.i(TAG, "test");
-        t.scheduleAtFixedRate(task, 0, 1000);
+        timer.scheduleAtFixedRate(task, 0, 1000);
     }
 
-    public void showScore() {
+    //Zodra het spel handmatig wordt gestopt
+    public void stopSpel(View view) {
+        timer.cancel();
+        showScore();
         Intent showScore = new Intent(getApplicationContext(), QuizSpelResultActivity.class);
         showScore.putExtra("SCORE", score);
         startActivity(showScore);
+    }
+
+    public void choice1Click(View view) {
+
+        if (buttonChoice1.getText() == questionAnswer) {
+
+            updateQuestion();
+            score++;
+
+//        }else{
+//
+//            updateQuestion();
+//
+        }
+    }
+
+    public void choice2Click(View view) {
+
+        if (buttonChoice2.getText() == questionAnswer) {
+
+            updateQuestion();
+            score++;
+
+//        }else{
+//
+//            updateQuestion();
+//
+        }
+    }
+
+    public void choice3Click(View view) {
+
+        if (buttonChoice3.getText() == questionAnswer) {
+
+            updateQuestion();
+            score++;
+
+//        }else{
+//
+//            updateQuestion();
+//
+        }
+    }
+
+    public void choice4Click(View view) {
+
+        if (buttonChoice4.getText() == questionAnswer) {
+
+            updateQuestion();
+            score++;
+
+//        }else{
+//
+//            updateQuestion();
+//
+        }
     }
 }
 
