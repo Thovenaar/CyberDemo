@@ -42,7 +42,7 @@ public class QuizSpelResultActivity extends AppCompatActivity {
 
         }else{
 
-            highscoreLabel.setText("Highscore : " + "" + highscore);
+            highscoreLabel.setText("Highscore: " + "" + highscore);
 
         }
 
