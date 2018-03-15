@@ -1,22 +1,46 @@
 package dehaagsehogeschool.cyberdemo;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
 
     public final static String TAG = HomeActivity.class.getSimpleName();
 
+    TextView starScore, toetsResultaat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
+
         Log.i(TAG, "I am created!");
-    } 
+
+        starScore = (TextView) findViewById(R.id.home_star_score);
+        toetsResultaat = (TextView) findViewById(R.id.home_toets_result_score);
+    }
+
+    @Override
+    protected void onStart() {
+        SharedPreferences gameData = getSharedPreferences("Game_Data", Context.MODE_PRIVATE);
+        int starScoreGameData = gameData.getInt("starScore", 0);
+        int toetsScoreGameData = gameData.getInt("toetsScore1", 0);
+
+        toetsResultaat.setText("Cijfer:"+" "+toetsScoreGameData);
+        starScore.setText(starScoreGameData+" "+"Sterren");
+
+//        SharedPreferences.Editor editor = gameData.edit();
+//        editor.clear();
+//        editor.commit();
+
+        super.onStart();
+    }
 
     @Override
     protected void onPause() {
@@ -36,24 +60,19 @@ public class HomeActivity extends AppCompatActivity {
         Log.i(TAG, "I am destroyed!");
     }
 
-    @Override
-    public void onLocalVoiceInteractionStopped() {
-        super.onLocalVoiceInteractionStopped();
-    }
+    public void startDigiveiligToets(View view) {
 
-    public void startQuiz(View view) {
-
-        Intent intent = new Intent(this, QuizSpelAnnouncementActivity.class);
+        Intent intent = new Intent(this, DigiveiligToetsAnnouncementActivity.class);
         startActivity(intent);
     }
 
-    public void startDigiveilig(View view) {
+    public void startDigiveiligSpel(View view) {
 
         Intent intent = new Intent(this, DigiVeiligSpelActivity.class);
         startActivity(intent);
     }
 
-    public void startHighscore(View view){
+    public void startHighscore(View view) {
 
         Intent intent = new Intent(this, HighscoreActivity.class);
         startActivity(intent);

@@ -21,7 +21,7 @@
             android:name=".DigiVeiligSpelActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".QuizSpelActivity"
+            android:name=".DigiveiligToetsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".HighscoreActivity"
@@ -29,13 +29,13 @@
         <activity
             android:name=".HelpActivity"
             android:screenOrientation="portrait" />
-
         <activity
-            android:name=".QuizSpelAnnouncementActivity"
+            android:name=".DigiveiligToetsAnnouncementActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".QuizSpelResultActivity"
+            android:name=".DigiveiligToetsResultActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".games.MemoryActivity"></activity>
     </application>
 
 </manifest>

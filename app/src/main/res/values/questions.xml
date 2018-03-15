@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="questions">
+       <item>test vraag</item>
+       <item>test vraag</item>
+	   <item>test vraag</item>
+	   <item>test vraag</item>
+    </string-array>
+	
+	<string-array name="choices">
+        <item>test vraag1,test vraag2,test vraag2,test vraag2</item>
+        <item>test vraag12,test vraag3,test vraag4,test vraag25</item>
+        <item>test vraag13,test vraag2,test vraag2,test vraag2</item>
+        <item>test vraag14,test vraag2,test vraag3,test vraag2</item>
+    </string-array>
+	 
+	 <string-array name="answers">
+         <item>test vraag1</item>
+         <item>test vraag3</item>
+         <item>test vraag2</item>
+         <item>test vraag3</item>
+    </string-array>
+</resources>

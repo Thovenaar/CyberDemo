@@ -10,13 +10,13 @@ import android.view.View;
  * Created by Tony on 3/6/2018.
  */
 
-public class QuizSpelAnnouncementActivity extends AppCompatActivity {
+public class DigiveiligToetsAnnouncementActivity extends AppCompatActivity {
 
-    public final static String TAG = QuizSpelAnnouncementActivity.class.getSimpleName();
+    public final static String TAG = DigiveiligToetsAnnouncementActivity.class.getSimpleName();
 
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.quiz_spel_announcement_activity);
+            setContentView(R.layout.digiveilig_toets_announcement_activity);
             Log.i(TAG, "I am created!");
         }
 
@@ -40,7 +40,7 @@ public class QuizSpelAnnouncementActivity extends AppCompatActivity {
 
         public void startQuizSpel(View view){
 
-            Intent intent = new Intent(this, QuizSpelActivity.class);
+            Intent intent = new Intent(this, DigiveiligToetsActivity.class);
             startActivity(intent);
             finish();
         }
