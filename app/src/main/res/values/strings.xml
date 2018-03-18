@@ -23,7 +23,7 @@
     <string name="quiz_spel_stop_button">Stop</string>
 
     <!--Quiz spel announcement string values-->
-    <string name="quiz_spel_announcement_text">Je hebt gekozen voor de digiveilig toets. Zodra je op start drukt, start de toets! Je hebt 180 seconden de tijd dus let op je tijd!</string>
+    <string name="quiz_spel_announcement_text">Je hebt gekozen voor de digiveilig toets. Zodra je op start drukt, begint de toets! Je hebt 180 seconden, dus let op je tijd!</string>
     <string name="quiz_spel_announcement_start_button">START!</string>
 
     <!--Quiz spel result string values-->

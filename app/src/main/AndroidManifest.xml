@@ -18,13 +18,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DigiVeiligSpelActivity"
+            android:name=".DigiveiligSpelActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".DigiveiligToetsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HighscoreActivity"
+            android:name=".DigiveiligSpelToetsResultatenActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".HelpActivity"

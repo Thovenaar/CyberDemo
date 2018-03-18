@@ -81,7 +81,7 @@ public class DigiveiligToetsResultActivity extends AppCompatActivity {
     }
 
     public void ToResultsScreen(View view) {
-        Intent intent = new Intent(this, HighscoreActivity.class);
+        Intent intent = new Intent(this, DigiveiligSpelToetsResultatenActivity.class);
         startActivity(intent);
         finish();
     }

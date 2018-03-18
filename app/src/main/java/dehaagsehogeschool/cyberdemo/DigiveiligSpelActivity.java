@@ -1,8 +1,5 @@
 package dehaagsehogeschool.cyberdemo;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -14,9 +11,9 @@ import android.widget.TextView;
  * Created by Tony on 2/20/2018.
  */
 
-public class DigiVeiligSpelActivity extends AppCompatActivity {
+public class DigiveiligSpelActivity extends AppCompatActivity {
 
-    public final static String TAG = DigiVeiligSpelActivity.class.getSimpleName();
+    public final static String TAG = DigiveiligSpelActivity.class.getSimpleName();
 
     Button level_1, level_2, level_3, level_4,
             level_5, level_6, level_7, level_8,

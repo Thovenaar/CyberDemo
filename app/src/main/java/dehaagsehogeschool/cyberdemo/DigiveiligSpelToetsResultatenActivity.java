@@ -12,9 +12,9 @@ import android.widget.TextView;
  * Created by Tony on 3/7/2018.
  */
 
-public class HighscoreActivity extends AppCompatActivity {
+public class DigiveiligSpelToetsResultatenActivity extends AppCompatActivity {
 
-    public final static String TAG = HighscoreActivity.class.getSimpleName();
+    public final static String TAG = DigiveiligSpelToetsResultatenActivity.class.getSimpleName();
 
     TextView highscore1, highscore2, highscore3, highscore4, highscore5;
 

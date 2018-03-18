@@ -68,13 +68,13 @@ public class HomeActivity extends AppCompatActivity {
 
     public void startDigiveiligSpel(View view) {
 
-        Intent intent = new Intent(this, DigiVeiligSpelActivity.class);
+        Intent intent = new Intent(this, DigiveiligSpelActivity.class);
         startActivity(intent);
     }
 
     public void startHighscore(View view) {
 
-        Intent intent = new Intent(this, HighscoreActivity.class);
+        Intent intent = new Intent(this, DigiveiligSpelToetsResultatenActivity.class);
         startActivity(intent);
     }
 
