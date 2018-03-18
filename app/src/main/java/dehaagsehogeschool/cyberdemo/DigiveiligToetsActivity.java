@@ -1,5 +1,6 @@
 package dehaagsehogeschool.cyberdemo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -23,56 +25,145 @@ public class DigiveiligToetsActivity extends AppCompatActivity {
 
     public final static String TAG = DigiveiligToetsActivity.class.getSimpleName();
 
-    private TextView quizScoreView;
-    private TextView question;
+    private TextView textViewQuestion;
     private TextView questionNumberView;
     private Button buttonChoice1;
     private Button buttonChoice2;
     private Button buttonChoice3;
     private Button buttonChoice4;
-    private Button stopButton;
 
-
-    private String questionAnswer;
-    private int questionNumber = 1;
+    private Question selectedQuestion;
     private int questionAnswerNumber = 0;
-    private int test = 0;
     public int score = 0;
-    private int time = 10;
+
+    // SETTINGS
+    private boolean randomize = true;
+    private int time = 100;
+
     Timer timer = new Timer();
-    String[] questions;
-    String[] choices;
-    String[] answers;
-    List<String> questionList;
-    List<String> choicesList;
-    List<String> answersList;
-    List<String> newChoicesList = new ArrayList<>();
+    List<Question> questions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.digiveilig_toets_activity);
 
+        initializeObjects();
+        initializeQuestions();
+
         Log.i(TAG, "I am created!");
-
-        question = (TextView) findViewById(R.id.quiz_spel_question);
-        questionNumberView = (TextView) findViewById(R.id.quiz_spel_question_number);
-        buttonChoice1 = (Button) findViewById(R.id.quiz_spel_choice1);
-        buttonChoice2 = (Button) findViewById(R.id.quiz_spel_choice2);
-        buttonChoice3 = (Button) findViewById(R.id.quiz_spel_choice3);
-        buttonChoice4 = (Button) findViewById(R.id.quiz_spel_choice4);
-        stopButton = (Button) findViewById(R.id.quiz_spel_stop_button);
-
-        questions = getResources().getStringArray(R.array.questions);
-        choices = getResources().getStringArray(R.array.choices);
-        answers = getResources().getStringArray(R.array.answers);
-
-        questionList = Arrays.asList(questions);
-        choicesList = Arrays.asList(choices);
-        answersList = Arrays.asList(answers);
 
         updateQuestion();
         startTimer();
+    }
+
+    private void initializeObjects() {
+        textViewQuestion = findViewById(R.id.quiz_spel_question);
+        questionNumberView = findViewById(R.id.quiz_spel_question_number);
+        buttonChoice1 = findViewById(R.id.quiz_spel_choice1);
+        buttonChoice2 = findViewById(R.id.quiz_spel_choice2);
+        buttonChoice3 = findViewById(R.id.quiz_spel_choice3);
+        buttonChoice4 = findViewById(R.id.quiz_spel_choice4);
+    }
+
+    private void initializeQuestions() {
+        QuestionProvider provider = new QuestionProvider("questions_new.xml", getApplicationContext());
+        questions = provider.getQuestions();
+
+        if (randomize) Collections.shuffle(questions);
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        finish();
+        timer.cancel();
+    }
+
+    public void showScore() {
+        timer.cancel();
+
+        Intent showScore = new Intent(getApplicationContext(), DigiveiligToetsResultActivity.class);
+        showScore.putExtra("SCORE", score);
+        showScore.putExtra("QUESTIONS", questions.size());
+        startActivity(showScore);
+
+        finish();
+    }
+
+    private void updateQuestion() {
+        if (questionAnswerNumber >= questions.size()) {
+            showScore();
+            return;
+        }
+
+        selectedQuestion = questions.get(questionAnswerNumber);
+        textViewQuestion.setText(selectedQuestion.question);
+
+        if (randomize) Collections.shuffle(selectedQuestion.answers);
+
+        buttonChoice1.setText(selectedQuestion.answers.get(0));
+        buttonChoice2.setText(selectedQuestion.answers.get(1));
+        buttonChoice3.setText(selectedQuestion.answers.get(2));
+        buttonChoice4.setText(selectedQuestion.answers.get(3));
+
+        questionNumberView.setText("Vraag " + (questionAnswerNumber + 1));
+        questionAnswerNumber++;
+    }
+
+    private void checkAnswer(String answer) {
+        if (answer.equals(selectedQuestion.rightAnswer)) score++;
+
+        updateQuestion();
+    }
+
+    public void stopSpel(View view) {
+        showScore();
+    }
+
+    public void startTimer() {
+        TimerTask task =
+                new TimerTask() {
+
+                    @Override
+                    public void run() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                TextView timer = (TextView) findViewById(R.id.quiz_spel_timer);
+                                timer.setText("Tijd over:" + time + "");
+                                if (time > 0) {
+                                    if (questions.size() > score) {
+                                        time -= 1;
+                                    } else {
+                                        cancel();
+                                    }
+                                } else {
+                                    showScore();
+                                    cancel();
+                                }
+                            }
+                        });
+                    }
+                };
+
+        timer.scheduleAtFixedRate(task, 0, 1000);
+    }
+
+    public void choice1Click(View view) {
+        checkAnswer(buttonChoice1.getText().toString());
+    }
+
+    public void choice2Click(View view) {
+        checkAnswer(buttonChoice2.getText().toString());
+    }
+
+    public void choice3Click(View view) {
+        checkAnswer(buttonChoice3.getText().toString());
+    }
+
+    public void choice4Click(View view) {
+        checkAnswer(buttonChoice4.getText().toString());
     }
 
     @Override
@@ -91,129 +182,6 @@ public class DigiveiligToetsActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.i(TAG, "I am destroyed!");
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        finish();
-        timer.cancel();
-    }
-
-    public void showScore() {
-
-        Intent showScore = new Intent(getApplicationContext(), DigiveiligToetsResultActivity.class);
-        showScore.putExtra("SCORE", score);
-        startActivity(showScore);
-        finish();
-
-    }
-
-    private void updateQuestion() {
-        if (questionAnswerNumber < questions.length) {
-            String answer = choicesList.get(questionAnswerNumber);
-
-            for (int i = 0; i < 4; i++) {
-                newChoicesList.add(answer.split(",")[i]);
-            }
-
-            question.setText(questionList.get(questionAnswerNumber));
-
-            buttonChoice1.setText(newChoicesList.get(0));
-            buttonChoice2.setText(newChoicesList.get(1));
-            buttonChoice3.setText(newChoicesList.get(2));
-            buttonChoice4.setText(newChoicesList.get(3));
-
-            questionAnswer = answersList.get(questionAnswerNumber);
-            questionNumberView.setText("Vraag" + questionAnswerNumber);
-            questionNumber++;
-            questionAnswerNumber++;
-            newChoicesList.clear();
-        } else {
-            showScore();
-        }
-    }
-
-    public void startTimer() {
-        TimerTask task =
-                new TimerTask() {
-
-                    @Override
-                    public void run() {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                TextView timer = (TextView) findViewById(R.id.quiz_spel_timer);
-                                timer.setText("Tijd over:" + time + "");
-                                if (time > 0) {
-                                    if (questions.length > test) {
-                                        time -= 1;
-                                    } else {
-                                        cancel();
-                                    }
-                                } else {
-                                    showScore();
-                                    cancel();
-                                }
-                            }
-                        });
-                    }
-                };
-
-        timer.scheduleAtFixedRate(task, 0, 1000);
-    }
-
-    public void stopSpel(View view) {
-        timer.cancel();
-        showScore();
-        Intent showScore = new Intent(getApplicationContext(), DigiveiligToetsResultActivity.class);
-        showScore.putExtra("SCORE", score);
-        startActivity(showScore);
-    }
-
-
-    public void choice1Click(View view) {
-        if (buttonChoice1.getText().equals(questionAnswer)) {
-            updateQuestion();
-            score++;
-            test++;
-        }else{
-            updateQuestion();
-            test++;
-        }
-    }
-
-    public void choice2Click(View view) {
-        if (buttonChoice2.getText().equals(questionAnswer)) {
-            updateQuestion();
-            score++;
-            test++;
-        }else{
-            updateQuestion();
-            test++;
-        }
-    }
-
-    public void choice3Click(View view) {
-        if (buttonChoice3.getText().equals(questionAnswer)) {
-            updateQuestion();
-            score++;
-            test++;
-        }else{
-            updateQuestion();
-            test++;
-        }
-    }
-
-    public void choice4Click(View view) {
-        if (buttonChoice4.getText().equals(questionAnswer)) {
-            updateQuestion();
-            score++;
-            test++;
-        }else{
-            updateQuestion();
-            test++;
-        }
     }
 }
 

@@ -22,14 +22,14 @@
 
     <ImageView
         android:id="@+id/quiz_spel_text"
-        android:layout_width="250dp"
-        android:layout_height="69dp"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/quiz_spel_text_description"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/quiz_spel_text" />
+        app:srcCompat="@drawable/digiveilig_toets" />
 
     <ImageView
         android:id="@+id/quiz_spel_block"

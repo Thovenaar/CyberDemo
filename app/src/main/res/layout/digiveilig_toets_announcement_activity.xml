@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/quiz_spel_text" />
+        app:srcCompat="@drawable/digiveilig_toets" />
 
     <TextView
         android:id="@+id/quiz_spel_announcement"
