@@ -23,7 +23,7 @@ public class DigiveiligSpelToetsResultatenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initializeObject();
+        initializeObjects();
 
         //Ophalen huidige highscores toetsresultaat
         ResultManager resultManager = new ResultManager("Game_Data", getApplicationContext());
@@ -37,7 +37,7 @@ public class DigiveiligSpelToetsResultatenActivity extends AppCompatActivity {
         highscore5.setText(resultManager.getResultText(results, 4));
     }
 
-    private void initializeObject() {
+    private void initializeObjects() {
         setContentView(R.layout.highscores_activity);
         Log.i(TAG, "I am created!");
 

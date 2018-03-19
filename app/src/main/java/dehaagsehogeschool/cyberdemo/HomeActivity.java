@@ -9,7 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import dehaagsehogeschool.cyberdemo.managers.ResultManager;
+import java.util.ArrayList;
+
+import dehaagsehogeschool.cyberdemo.games.ResultProvider;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -34,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
         int starScoreGameData = gameData.getInt("starScore", 0);
         int toetsScoreGameData = gameData.getInt("toetsScore1", 0);
 
-        ResultManager resultManager = new ResultManager("Game_Data", getApplicationContext());
+        ResultProvider resultProvider = new ResultProvider("Game_Data", getApplicationContext());
 
 
         toetsResultaat.setText("Cijfer: " + resultManager.getHighestResult());
