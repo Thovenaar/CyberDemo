@@ -29,7 +29,7 @@ public class DigiveiligSpelToetsResultatenActivity extends AppCompatActivity {
 
         //Ophalen huidige highscores toetsresultaat
         ResultProvider resultProvider = new ResultProvider("Game_Data", getApplicationContext());
-        ArrayList<Double> results = resultProvider.getResults(true);
+        ArrayList<Double> results = resultProvider.getResults();
 
         //Vullen van de highscors in de labels
         highscore1.setText(resultProvider.getResultText(results, 0));

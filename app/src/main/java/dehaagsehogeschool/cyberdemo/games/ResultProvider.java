@@ -2,13 +2,16 @@ package dehaagsehogeschool.cyberdemo.games;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.text.TextUtils;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.StringJoiner;
 
 /**
  * Created by Thomas on 19-Mar-18.
@@ -19,18 +22,23 @@ public class ResultProvider {
     private SharedPreferences _sharedPreferences;
     private SharedPreferences.Editor _sharedPreferencesEditor;
 
-    private static final String SOURCE_KEY = "results";
+    private static final String SOURCE_KEY = "all_results";
     private static final String NO_RESULT = "0";
     private static final int MAX_RESULTS = 10;
+    private static final boolean ORDER_BY_DESC = true;
 
     public ResultProvider(String source, Context context) {
         _sharedPreferences = context.getSharedPreferences(source, Context.MODE_PRIVATE);
         _sharedPreferencesEditor = _sharedPreferences.edit();
     }
 
-    public ArrayList<Double> getResults(boolean orderByDesc) {
+    public ArrayList<Double> getResults() {
         ArrayList<Double> value = new ArrayList<Double>();
-        Set<String> results = _sharedPreferences.getStringSet(SOURCE_KEY, null);
+        String source = _sharedPreferences.getString(SOURCE_KEY, null);
+
+        if (source == null || source == "") return value;
+
+        List<String> results =  Arrays.asList(_sharedPreferences.getString(SOURCE_KEY, null).split(","));
 
         if (results == null) return value;
 
@@ -42,7 +50,7 @@ public class ResultProvider {
             }
         }
 
-        if (orderByDesc) {
+        if (ORDER_BY_DESC) {
             Collections.sort(value);
             Collections.reverse(value);
         }
@@ -51,22 +59,25 @@ public class ResultProvider {
     }
 
     public void setResults(List<Double> results) {
-        Set<String> value = new HashSet<String>();
+        String value;
 
         if (results.size() > MAX_RESULTS) {
             results = results.subList(0, MAX_RESULTS);
         }
 
-        for (Double result : results) {
-            value.add(result.toString());
+        if (ORDER_BY_DESC) {
+            Collections.sort(results);
+            Collections.reverse(results);
         }
 
-        _sharedPreferencesEditor.putStringSet(SOURCE_KEY, value);
+        value = TextUtils.join(",", results);
+
+        _sharedPreferencesEditor.putString(SOURCE_KEY, value);
         _sharedPreferencesEditor.commit();
     }
 
     public void addResult(Double result) {
-        List<Double> results = this.getResults(false);
+        List<Double> results = this.getResults();
         results.add(result);
 
         this.setResults(results);
