@@ -11,18 +11,18 @@
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/button_grey_round"
         android:onClick="stopSpel"
         android:text="@string/quiz_spel_stop_button"
         app:layout_constraintBottom_toTopOf="@+id/quiz_spel_block"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/quiz_spel_text"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/quiz_spel_text"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="80dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"

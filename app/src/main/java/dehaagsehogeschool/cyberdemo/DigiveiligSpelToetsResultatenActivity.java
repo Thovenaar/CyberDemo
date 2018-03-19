@@ -8,6 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import dehaagsehogeschool.cyberdemo.games.ResultProvider;
+
 /**
  * Created by Tony on 3/7/2018.
  */
@@ -21,29 +25,29 @@ public class DigiveiligSpelToetsResultatenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initializeObject();
+
+        //Ophalen huidige highscores toetsresultaat
+        ResultProvider resultProvider = new ResultProvider("Game_Data", getApplicationContext());
+        ArrayList<Double> results = resultProvider.getResults(true);
+
+        //Vullen van de highscors in de labels
+        highscore1.setText(resultProvider.getResultText(results, 0));
+        highscore2.setText(resultProvider.getResultText(results, 1));
+        highscore3.setText(resultProvider.getResultText(results, 2));
+        highscore4.setText(resultProvider.getResultText(results, 3));
+        highscore5.setText(resultProvider.getResultText(results, 4));
+    }
+
+    private void initializeObject() {
         setContentView(R.layout.highscores_activity);
         Log.i(TAG, "I am created!");
 
-        highscore1 = (TextView) findViewById(R.id.highscore_name1);
-        highscore2 = (TextView) findViewById(R.id.highscore_name2);
-        highscore3 = (TextView) findViewById(R.id.highscore_name3);
-        highscore4 = (TextView) findViewById(R.id.highscore_name4);
-        highscore5 = (TextView) findViewById(R.id.highscore_name5);
-
-        //Ophalen huidige highscores toetsresultaat
-        SharedPreferences gameData = getSharedPreferences("Game_Data", Context.MODE_PRIVATE);
-        int gameDatahighscore1 = gameData.getInt("toetsScore1", 0);
-        int gameDatahighscore2 = gameData.getInt("toetsScore2", 0);
-        int gameDatahighscore3 = gameData.getInt("toetsScore3", 0);
-        int gameDatahighscore4 = gameData.getInt("toetsScore4", 0);
-        int gameDatahighscore5 = gameData.getInt("toetsScore5", 0);
-
-        //Vullen van de highscors in de labels
-        highscore1.setText("Cijfer:"+""+gameDatahighscore1);
-        highscore2.setText("Cijfer:"+""+gameDatahighscore2);
-        highscore3.setText("Cijfer:"+""+gameDatahighscore3);
-        highscore4.setText("Cijfer:"+""+gameDatahighscore4);
-        highscore5.setText("Cijfer:"+""+gameDatahighscore5);
+        highscore1 = findViewById(R.id.highscore_name1);
+        highscore2 = findViewById(R.id.highscore_name2);
+        highscore3 = findViewById(R.id.highscore_name3);
+        highscore4 = findViewById(R.id.highscore_name4);
+        highscore5 = findViewById(R.id.highscore_name5);
     }
 
     @Override
