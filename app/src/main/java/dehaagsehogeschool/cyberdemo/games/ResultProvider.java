@@ -96,4 +96,8 @@ public class ResultProvider {
         return value;
     }
 
+    public String getHighestResult() {
+        return getResultText(getResults(), 0);
+    }
+
 }

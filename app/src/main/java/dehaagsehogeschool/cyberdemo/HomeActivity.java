@@ -9,6 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import dehaagsehogeschool.cyberdemo.games.ResultProvider;
+
 public class HomeActivity extends AppCompatActivity {
 
     public final static String TAG = HomeActivity.class.getSimpleName();
@@ -32,7 +36,10 @@ public class HomeActivity extends AppCompatActivity {
         int starScoreGameData = gameData.getInt("starScore", 0);
         int toetsScoreGameData = gameData.getInt("toetsScore1", 0);
 
-        toetsResultaat.setText("Cijfer:"+" "+toetsScoreGameData);
+        ResultProvider resultProvider = new ResultProvider("Game_Data", getApplicationContext());
+
+
+        toetsResultaat.setText("Cijfer: " + resultProvider.getHighestResult());
         starScore.setText(starScoreGameData+" "+"Sterren");
 
 //        SharedPreferences.Editor editor = gameData.edit();
