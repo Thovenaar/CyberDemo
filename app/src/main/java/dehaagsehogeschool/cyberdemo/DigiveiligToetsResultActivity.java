@@ -1,6 +1,5 @@
 package dehaagsehogeschool.cyberdemo;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -10,9 +9,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 
-import dehaagsehogeschool.cyberdemo.games.ResultProvider;
+import dehaagsehogeschool.cyberdemo.managers.ResultManager;
 
 public class DigiveiligToetsResultActivity extends AppCompatActivity {
 
@@ -35,8 +33,8 @@ public class DigiveiligToetsResultActivity extends AppCompatActivity {
         newScoreLabel.setText("Behaalde score: " + decimalFormat.format(result));
 
         // Add result to results
-        ResultProvider resultProvider = new ResultProvider("Game_Data", getApplicationContext());
-        resultProvider.addResult(result);
+        ResultManager resultManager = new ResultManager("Game_Data", getApplicationContext());
+        resultManager.addResult(result);
     }
 
     private void initializeObject() {
