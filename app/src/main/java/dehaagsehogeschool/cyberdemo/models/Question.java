@@ -1,4 +1,4 @@
-package dehaagsehogeschool.cyberdemo;
+package dehaagsehogeschool.cyberdemo.models;
 
 import java.util.List;
 

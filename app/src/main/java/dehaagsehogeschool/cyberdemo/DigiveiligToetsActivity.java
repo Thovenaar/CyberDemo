@@ -1,6 +1,5 @@
 package dehaagsehogeschool.cyberdemo;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,12 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import dehaagsehogeschool.cyberdemo.managers.QuestionManager;
+import dehaagsehogeschool.cyberdemo.models.Question;
 
 
 /**
@@ -67,7 +67,7 @@ public class DigiveiligToetsActivity extends AppCompatActivity {
     }
 
     private void initializeQuestions() {
-        QuestionProvider provider = new QuestionProvider("questions_new.xml", getApplicationContext());
+        QuestionManager provider = new QuestionManager("questions_new.xml", getApplicationContext());
         questions = provider.getQuestions();
 
         if (randomize) Collections.shuffle(questions);

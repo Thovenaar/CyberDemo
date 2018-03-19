@@ -1,7 +1,5 @@
 package dehaagsehogeschool.cyberdemo;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +8,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import dehaagsehogeschool.cyberdemo.games.ResultProvider;
+import dehaagsehogeschool.cyberdemo.managers.ResultManager;
 
 /**
  * Created by Tony on 3/7/2018.
@@ -28,15 +26,15 @@ public class DigiveiligSpelToetsResultatenActivity extends AppCompatActivity {
         initializeObject();
 
         //Ophalen huidige highscores toetsresultaat
-        ResultProvider resultProvider = new ResultProvider("Game_Data", getApplicationContext());
-        ArrayList<Double> results = resultProvider.getResults();
+        ResultManager resultManager = new ResultManager("Game_Data", getApplicationContext());
+        ArrayList<Double> results = resultManager.getResults();
 
         //Vullen van de highscors in de labels
-        highscore1.setText(resultProvider.getResultText(results, 0));
-        highscore2.setText(resultProvider.getResultText(results, 1));
-        highscore3.setText(resultProvider.getResultText(results, 2));
-        highscore4.setText(resultProvider.getResultText(results, 3));
-        highscore5.setText(resultProvider.getResultText(results, 4));
+        highscore1.setText(resultManager.getResultText(results, 0));
+        highscore2.setText(resultManager.getResultText(results, 1));
+        highscore3.setText(resultManager.getResultText(results, 2));
+        highscore4.setText(resultManager.getResultText(results, 3));
+        highscore5.setText(resultManager.getResultText(results, 4));
     }
 
     private void initializeObject() {

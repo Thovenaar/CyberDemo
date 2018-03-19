@@ -1,4 +1,4 @@
-package dehaagsehogeschool.cyberdemo.games;
+package dehaagsehogeschool.cyberdemo.managers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -17,7 +17,7 @@ import java.util.StringJoiner;
  * Created by Thomas on 19-Mar-18.
  */
 
-public class ResultProvider {
+public class ResultManager {
 
     private SharedPreferences _sharedPreferences;
     private SharedPreferences.Editor _sharedPreferencesEditor;
@@ -27,7 +27,7 @@ public class ResultProvider {
     private static final int MAX_RESULTS = 10;
     private static final boolean ORDER_BY_DESC = true;
 
-    public ResultProvider(String source, Context context) {
+    public ResultManager(String source, Context context) {
         _sharedPreferences = context.getSharedPreferences(source, Context.MODE_PRIVATE);
         _sharedPreferencesEditor = _sharedPreferences.edit();
     }

@@ -1,26 +1,26 @@
-package dehaagsehogeschool.cyberdemo;
+package dehaagsehogeschool.cyberdemo.managers;
 
 import android.content.Context;
 
 import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import dehaagsehogeschool.cyberdemo.models.Question;
 
 /**
  * Created by Thomas on 17-Mar-18.
  */
 
-public class QuestionProvider {
+public class QuestionManager {
 
     private String _source;
     private Context _context;
 
-    public QuestionProvider(String source, Context context) {
+    public QuestionManager(String source, Context context) {
         _source = source;
         _context = context;
     }
