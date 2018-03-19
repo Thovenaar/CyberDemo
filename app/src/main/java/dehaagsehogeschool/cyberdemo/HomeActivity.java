@@ -26,8 +26,8 @@ public class HomeActivity extends AppCompatActivity {
 
         Log.i(TAG, "I am created!");
 
-        starScore = (TextView) findViewById(R.id.home_star_score);
-        toetsResultaat = (TextView) findViewById(R.id.home_toets_result_score);
+        starScore = findViewById(R.id.home_star_score);
+        toetsResultaat = findViewById(R.id.home_toets_result_score);
     }
 
     @Override
@@ -38,13 +38,8 @@ public class HomeActivity extends AppCompatActivity {
 
         ResultProvider resultProvider = new ResultProvider("Game_Data", getApplicationContext());
 
-
         toetsResultaat.setText("Cijfer: " + resultProvider.getHighestResult());
         starScore.setText(starScoreGameData+" "+"Sterren");
-
-//        SharedPreferences.Editor editor = gameData.edit();
-//        editor.clear();
-//        editor.commit();
 
         super.onStart();
     }

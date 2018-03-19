@@ -1,6 +1,5 @@
 package dehaagsehogeschool.cyberdemo;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Timer;
@@ -67,7 +64,7 @@ public class DigiveiligToetsActivity extends AppCompatActivity {
     }
 
     private void initializeQuestions() {
-        QuestionProvider provider = new QuestionProvider("questions_new.xml", getApplicationContext());
+        QuestionProvider provider = new QuestionProvider("questions.xml", getApplicationContext());
         questions = provider.getQuestions();
 
         if (randomize) Collections.shuffle(questions);
@@ -130,7 +127,7 @@ public class DigiveiligToetsActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                TextView timer = (TextView) findViewById(R.id.quiz_spel_timer);
+                                TextView timer = findViewById(R.id.quiz_spel_timer);
                                 timer.setText("Tijd over:" + time + "");
                                 if (time > 0) {
                                     if (questions.size() > score) {

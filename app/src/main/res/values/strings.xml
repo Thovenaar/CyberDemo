@@ -9,15 +9,18 @@
     <string name="home_logo">CyberDemo logo</string>
     <string name="home_toets_resultaat">Cijfer: 7,8</string>
     <string name="home_sterren">26 Sterren</string>
+    <string name="home_cijfer">Toetscijfer</string>
 
     <!--digiveilig spel string values-->
-    <string name="digiveilig_spel_text"></string>
+    <string name="digiveilig_spel_text">Digiveilig spel</string>
+    <string name="digiveilig_spel_star">Ster</string>
+    <string name="Digiveilig_spel_level_number">1</string>
 
     <!--Quiz spel string values-->
     <string name="quiz_spel_question">Hier komt een vraag</string>
-    <string name="quiz_spel_question_number">Vraag 1...</string>
+    <string name="quiz_spel_question_number">Vraag 1</string>
     <string name="quiz_spel_text_description">Quiz spel</string>
-    <string name="quiz_spel_block_description"></string>
+    <string name="quiz_spel_block_description">quiz spel block</string>
     <string name="quiz_spel_timer">0</string>
     <string name="quiz_spel_timer_text">Tijd over:</string>
     <string name="quiz_spel_stop_button">Stop</string>
@@ -32,15 +35,20 @@
     <string name="quiz_spel_result_button">Ga terug</string>
 
     <!--Highscores string values-->
-    <string name="highscores_text"></string>
-    <string name="highscores_block"></string>
+    <string name="highscores_text">Toetsresultaten</string>
+    <string name="highscores_block">Toetsresultaten</string>
     <string name="highscores_score">Cijfer: 7,8</string>
 
     <!--Help string values-->
-    <string name="help_text"></string>
-    <string name="help_block"></string>
+    <string name="help_text">Help</string>
+    <string name="help_block">Help block</string>
 
     <!--Score result string values-->
     <string name="score_result_value">0</string>
+    <string name="highscores_number_1">1</string>
+    <string name="highscores_number_2">2</string>
+    <string name="highscores_number_3">3</string>
+    <string name="highscores_number_4">4</string>
+    <string name="highscores_number_5">5</string>
 
 </resources>

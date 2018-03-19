@@ -30,24 +30,32 @@ public class DigiveiligSpelActivity extends AppCompatActivity {
 
         Log.i(TAG, "I am here!");
 
-        starScore = (TextView) findViewById(R.id.digiveilig_spel_star_score);
-        level_1 = (Button) findViewById(R.id.level_button_1);
-        level_2 = (Button) findViewById(R.id.level_button_2);
-        level_3 = (Button) findViewById(R.id.level_button_3);
-        level_4 = (Button) findViewById(R.id.level_button_4);
-        level_5 = (Button) findViewById(R.id.level_button_5);
-        level_6 = (Button) findViewById(R.id.level_button_6);
-        level_7 = (Button) findViewById(R.id.level_button_7);
-        level_8 = (Button) findViewById(R.id.level_button_8);
-        level_9 = (Button) findViewById(R.id.level_button_9);
-        level_10 = (Button) findViewById(R.id.level_button_10);
-        level_11 = (Button) findViewById(R.id.level_button_11);
-        level_12 = (Button) findViewById(R.id.level_button_12);
-        level_13 = (Button) findViewById(R.id.level_button_13);
-        level_14 = (Button) findViewById(R.id.level_button_14);
-        level_15 = (Button) findViewById(R.id.level_button_15);
-        level_16 = (Button) findViewById(R.id.level_button_16);
+      initializeObjects();
+
     }
+
+    private void initializeObjects(){
+
+        starScore = findViewById(R.id.digiveilig_spel_star_score);
+        level_1 =  findViewById(R.id.level_button_1);
+        level_2 =  findViewById(R.id.level_button_2);
+        level_3 =  findViewById(R.id.level_button_3);
+        level_4 =  findViewById(R.id.level_button_4);
+        level_5 =  findViewById(R.id.level_button_5);
+        level_6 =  findViewById(R.id.level_button_6);
+        level_7 =  findViewById(R.id.level_button_7);
+        level_8 =  findViewById(R.id.level_button_8);
+        level_9 =  findViewById(R.id.level_button_9);
+        level_10 = findViewById(R.id.level_button_10);
+        level_11 = findViewById(R.id.level_button_11);
+        level_12 = findViewById(R.id.level_button_12);
+        level_13 = findViewById(R.id.level_button_13);
+        level_14 = findViewById(R.id.level_button_14);
+        level_15 = findViewById(R.id.level_button_15);
+        level_16 = findViewById(R.id.level_button_16);
+
+    }
+
 
     @Override
     protected void onPause() {
