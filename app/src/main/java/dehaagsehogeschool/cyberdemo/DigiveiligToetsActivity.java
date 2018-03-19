@@ -16,6 +16,9 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import dehaagsehogeschool.cyberdemo.managers.QuestionManager;
+import dehaagsehogeschool.cyberdemo.models.Question;
+
 
 /**
  * Created by Tony on 2/17/2018.
@@ -67,8 +70,8 @@ public class DigiveiligToetsActivity extends AppCompatActivity {
     }
 
     private void initializeQuestions() {
-        QuestionManager provider = new QuestionManager("questions_new.xml", getApplicationContext());
-        questions = provider.getQuestions();
+        QuestionManager questionManager = new QuestionManager("questions.xml", getApplicationContext());
+        questions = questionManager.getQuestions();
 
         if (randomize) Collections.shuffle(questions);
     }
