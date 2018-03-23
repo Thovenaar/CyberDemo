@@ -70,7 +70,7 @@ public class DigiveiligToetsActivity extends AppCompatActivity {
     }
 
     private void initializeQuestions() {
-        QuestionManager questionManager = new QuestionManager("questions.xml", getApplicationContext());
+        QuestionManager questionManager = new QuestionManager(GameSettings.QUESTIONS_LOCATION, getApplicationContext());
         questions = questionManager.getQuestions();
 
         if (randomize) Collections.shuffle(questions);
@@ -87,8 +87,8 @@ public class DigiveiligToetsActivity extends AppCompatActivity {
         timer.cancel();
 
         Intent showScore = new Intent(getApplicationContext(), DigiveiligToetsResultActivity.class);
-        showScore.putExtra("SCORE", score);
-        showScore.putExtra("QUESTIONS", questions.size());
+        showScore.putExtra(GameSettings.RESULT_SCORE, score);
+        showScore.putExtra(GameSettings.QUESTIONS_AMOUNT, questions.size());
         startActivity(showScore);
 
         finish();

@@ -33,7 +33,7 @@ public class DigiveiligToetsResultActivity extends AppCompatActivity {
         newScoreLabel.setText("Behaalde score: " + decimalFormat.format(result));
 
         // Add result to results
-        ResultManager resultManager = new ResultManager("Game_Data", getApplicationContext());
+        ResultManager resultManager = new ResultManager(GameSettings.LOCATION_SHARED_PREFERENCES, getApplicationContext());
         resultManager.addResult(result);
     }
 
@@ -45,8 +45,8 @@ public class DigiveiligToetsResultActivity extends AppCompatActivity {
     }
 
     private Double calculateResult() {
-        int questions = getIntent().getIntExtra("QUESTIONS", 0);
-        int score = getIntent().getIntExtra("SCORE", 0);
+        int questions = getIntent().getIntExtra(GameSettings.QUESTIONS_AMOUNT, 0);
+        int score = getIntent().getIntExtra(GameSettings.RESULT_SCORE, 0);
 
         double result = (double) score / (double) questions * 10.0;
         if (result < 1) result = 1;

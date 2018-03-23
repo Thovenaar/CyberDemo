@@ -26,7 +26,7 @@ public class DigiveiligSpelToetsResultatenActivity extends AppCompatActivity {
         initializeObjects();
 
         //Ophalen huidige highscores toetsresultaat
-        ResultManager resultManager = new ResultManager("Game_Data", getApplicationContext());
+        ResultManager resultManager = new ResultManager(GameSettings.LOCATION_SHARED_PREFERENCES, getApplicationContext());
         ArrayList<Double> results = resultManager.getResults();
 
         //Vullen van de highscors in de labels

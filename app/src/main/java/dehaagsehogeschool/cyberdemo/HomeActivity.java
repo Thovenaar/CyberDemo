@@ -9,6 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.List;
+
+import dehaagsehogeschool.cyberdemo.managers.DataManager;
 import dehaagsehogeschool.cyberdemo.managers.ResultManager;
 
 public class HomeActivity extends AppCompatActivity {
@@ -19,6 +22,8 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        initializeData();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
 
@@ -28,23 +33,22 @@ public class HomeActivity extends AppCompatActivity {
         toetsResultaat = (TextView) findViewById(R.id.home_toets_result_score);
     }
 
+    private void initializeData() {
+        DataManager dataManager = new DataManager(getApplicationContext());
+        dataManager.initializeData();
+    }
+
     @Override
     protected void onStart() {
-        SharedPreferences gameData = getSharedPreferences("Game_Data", Context.MODE_PRIVATE);
+        super.onStart();
+
+        SharedPreferences gameData = getSharedPreferences(GameSettings.LOCATION_SHARED_PREFERENCES, Context.MODE_PRIVATE);
         int starScoreGameData = gameData.getInt("starScore", 0);
-        int toetsScoreGameData = gameData.getInt("toetsScore1", 0);
 
-        ResultManager resultManager = new ResultManager("Game_Data", getApplicationContext());
-
+        ResultManager resultManager = new ResultManager(GameSettings.LOCATION_SHARED_PREFERENCES, getApplicationContext());
 
         toetsResultaat.setText("Cijfer: " + resultManager.getHighestResult());
-        starScore.setText(starScoreGameData+" "+"Sterren");
-
-//        SharedPreferences.Editor editor = gameData.edit();
-//        editor.clear();
-//        editor.commit();
-
-        super.onStart();
+        starScore.setText(starScoreGameData + " Sterren");
     }
 
     @Override

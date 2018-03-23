@@ -1,5 +1,6 @@
 package dehaagsehogeschool.cyberdemo;
 
+import android.arch.persistence.room.Room;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -7,11 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.List;
+
+import dehaagsehogeschool.cyberdemo.models.Level;
+
 /**
  * Created by Tony on 2/20/2018.
  */
 
-public class DigiveiligSpelActivity extends AppCompatActivity {
+public class DigiveiligSpelActivity extends AppCompatActivity implements LevelResponse {
 
     public final static String TAG = DigiveiligSpelActivity.class.getSimpleName();
 
@@ -23,12 +28,28 @@ public class DigiveiligSpelActivity extends AppCompatActivity {
     TextView starScore;
     int starScoreInt = 0;
 
+    private List<Level> _levels;
+
+    @Override
+    public void processFinish(List<Level> output) {
+        _levels = output;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        new LevelFetcher(this, getApplicationContext()).execute();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.digiveilig_spel_activity);
 
         Log.i(TAG, "I am here!");
+
+        /*
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, GameSettings.DATABASE_NAME).build();
+
+        db.levelDao().insertAll(new Level());
+        */
 
       initializeObjects();
 
