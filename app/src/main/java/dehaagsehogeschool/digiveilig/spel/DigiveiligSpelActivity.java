@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import dehaagsehogeschool.digiveilig.LevelFetcher;
 import dehaagsehogeschool.digiveilig.R;
+import dehaagsehogeschool.digiveilig.enums.Game;
 import dehaagsehogeschool.digiveilig.games.MemoryActivity;
 import java.util.List;
 
@@ -24,13 +25,7 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
 
     public final static String TAG = DigiveiligSpelActivity.class.getSimpleName();
 
-    Button level_1, level_2, level_3, level_4,
-            level_5, level_6, level_7, level_8,
-            level_9, level_10, level_11, level_12,
-            level_13, level_14, level_15, level_16;
-
     TextView starScore;
-    int starScoreInt = 0;
 
     private List<Level> _levels;
 
@@ -38,11 +33,11 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
     public void processFinish(List<Level> output) {
         _levels = output;
 
-        //starScore.setText(getStars());
+        starScore.setText(getStars().toString() + " sterren");
         setLevelsUnlocked();
     }
 
-    private int getStars() {
+    private Integer getStars() {
         int sum = 0;
 
         for (Level level : _levels) {
@@ -56,8 +51,23 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
         for (Level level : _levels) {
             if (level.unlocked) {
                 int id = getResources().getIdentifier("level_button_" + level.id, "id", getPackageName());
-                Button levelButton = (Button) findViewById(id);
-                //levelButton.setBackground(getDrawable(R.drawable.digiveilig_spel_level_button));
+                Button levelButton = findViewById(id);
+                levelButton.setText(level.id.toString());
+
+                switch (level.stars) {
+                    case 0:
+                        levelButton.setBackground(getDrawable(R.drawable.digiveilig_spel_0_star));
+                        break;
+                    case 1:
+                        levelButton.setBackground(getDrawable(R.drawable.digiveilig_spel_1_star));
+                        break;
+                    case 2:
+                        levelButton.setBackground(getDrawable(R.drawable.digiveilig_spel_2_star));
+                        break;
+                    case 3:
+                        levelButton.setBackground(getDrawable(R.drawable.digiveilig_spel_3_star));
+                        break;
+                }
             }
         }
     }
@@ -82,25 +92,7 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
     }
 
     private void initializeObjects() {
-
         starScore = findViewById(R.id.digiveilig_spel_star_score);
-        level_1 = findViewById(R.id.level_button_1);
-        level_2 = findViewById(R.id.level_button_2);
-        level_3 = findViewById(R.id.level_button_3);
-        level_4 = findViewById(R.id.level_button_4);
-        level_5 = findViewById(R.id.level_button_5);
-        level_6 = findViewById(R.id.level_button_6);
-        level_7 = findViewById(R.id.level_button_7);
-        level_8 = findViewById(R.id.level_button_8);
-        level_9 = findViewById(R.id.level_button_9);
-        level_10 = findViewById(R.id.level_button_10);
-        level_11 = findViewById(R.id.level_button_11);
-        level_12 = findViewById(R.id.level_button_12);
-        level_13 = findViewById(R.id.level_button_13);
-        level_14 = findViewById(R.id.level_button_14);
-        level_15 = findViewById(R.id.level_button_15);
-        level_16 = findViewById(R.id.level_button_16);
-
     }
 
 
@@ -122,16 +114,19 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
         Log.i(TAG, "I am destroyed!");
     }
 
-    private void setStarScore() {
-        starScore.setText(starScoreInt);
-    }
+    public void startLevel(View view) {
+        Intent intent = null;
 
+        Level selectedLevel = _levels.get(Integer.parseInt(view.getTag().toString()));
+        switch (Game.valueOf(selectedLevel.game)) {
+            case MEMORY:
+                intent = new Intent(this, MemoryActivity.class);
+                break;
+            case QUIZ:
+                // TODO
+                break;
+        }
 
-    public void startFirstLevel(View view) {
-
-        Intent intent = new Intent(this, MemoryActivity.class);
         startActivity(intent);
-
     }
-
 }

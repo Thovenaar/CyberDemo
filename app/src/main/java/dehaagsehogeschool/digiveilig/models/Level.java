@@ -13,23 +13,24 @@ public class Level {
 
     public Level() {}
 
-    public Level(int id, boolean unlocked, String game) {
+    public Level(int id, boolean unlocked, String game, Integer stars) {
         this.id = id;
         this.unlocked = unlocked;
         this.game = game.toString();
+        this.stars = stars;
     }
 
     @PrimaryKey(autoGenerate = true)
-    public int id;
+    public Integer id;
 
     @ColumnInfo(name = "stars")
-    public int stars;
+    public Integer stars;
 
     @ColumnInfo(name = "unlocked")
     public boolean unlocked;
 
     @ColumnInfo(name = "finish_time")
-    public int finishTime;
+    public Integer finishTime;
 
     @ColumnInfo(name = "game_type")
     public String game;

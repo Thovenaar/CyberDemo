@@ -12,7 +12,7 @@ import dehaagsehogeschool.digiveilig.models.Level;
  * Created by Thomas on 19-Mar-18.
  */
 
-@Database(entities = {Level.class}, version = 2)
+@Database(entities = {Level.class}, version = 3)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract LevelDao levelDao();
 
