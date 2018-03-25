@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/help_background"
-    tools:context="dehaagsehogeschool.cyberdemo.games.MemoryActivity">
+    tools:context="dehaagsehogeschool.digiveilig.games.MemoryActivity">
 
     <ImageView
         android:id="@+id/memory_text"

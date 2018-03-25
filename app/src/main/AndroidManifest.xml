@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dehaagsehogeschool.cyberdemo">
+    package="dehaagsehogeschool.digiveilig">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HomeActivity"
+            android:name="dehaagsehogeschool.digiveilig.HomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,24 +18,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DigiveiligSpelActivity"
+            android:name="dehaagsehogeschool.digiveilig.spel.DigiveiligSpelActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DigiveiligToetsActivity"
+            android:name="dehaagsehogeschool.digiveilig.toets.DigiveiligToetsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DigiveiligSpelToetsResultatenActivity"
+            android:name="dehaagsehogeschool.digiveilig.toets.DigiveiligToetsResultsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HelpActivity"
+            android:name="dehaagsehogeschool.digiveilig.HelpActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DigiveiligToetsAnnouncementActivity"
+            android:name="dehaagsehogeschool.digiveilig.toets.DigiveiligToetsAnnouncementActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DigiveiligToetsResultActivity"
+            android:name="dehaagsehogeschool.digiveilig.toets.DigiveiligToetsEndActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".games.MemoryActivity"></activity>
+        <activity android:name="dehaagsehogeschool.digiveilig.games.MemoryActivity"></activity>
     </application>
 
 </manifest>

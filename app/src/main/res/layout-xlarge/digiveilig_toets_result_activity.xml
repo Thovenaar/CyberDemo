@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/quiz_spel_background">
+    android:background="@drawable/digiveilig_toets_background">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -57,7 +57,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:background="@drawable/quiz_spel_button_shape_grey"
+        android:background="@drawable/digiveilig_toets_button_shape_grey"
         android:onClick="ToResultsScreen"
         android:paddingBottom="10dp"
         android:text="@string/quiz_spel_result_highscores"
@@ -76,7 +76,7 @@
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:background="@drawable/quiz_spel_button_shape_grey"
+        android:background="@drawable/digiveilig_toets_button_shape_grey"
         android:onClick="backToMainScreen"
         android:paddingBottom="10dp"
         android:text="@string/quiz_spel_result_button"

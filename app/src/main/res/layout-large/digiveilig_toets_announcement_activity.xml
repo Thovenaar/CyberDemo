@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/quiz_spel_background">
+    android:background="@drawable/digiveilig_toets_background">
 
     <ImageView
         android:id="@+id/quiz_spel_text2"
@@ -43,7 +43,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:background="@drawable/quiz_spel_grey_button_up"
+        android:background="@drawable/digiveilig_toets_grey_button_up"
         android:fontFamily="@font/bree_serif"
         android:onClick="startQuizSpel"
         android:paddingBottom="10dp"
