@@ -51,4 +51,11 @@
     <string name="highscores_number_4">4</string>
     <string name="highscores_number_5">5</string>
 
+    <string name="timer">180</string>
+    <string name="timer_description">Timer</string>
+
+    <!--Memory game-->
+    <string name="memory_stop_button">STOP</string>
+    <string name="memory_text">Memory</string>
+    <string name="memory_level_text">Level ?</string>
 </resources>

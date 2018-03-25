@@ -40,7 +40,7 @@
             android:layout_weight="1"
             android:background="@drawable/cirkel_purple_0_star"
             android:fontFamily="@font/bree_serif"
-            android:onClick="startLevel1"
+            android:onClick="startFirstLevel"
             android:text="@string/Digiveilig_spel_level_number"
             android:textColor="@color/white"
             android:textSize="24sp"

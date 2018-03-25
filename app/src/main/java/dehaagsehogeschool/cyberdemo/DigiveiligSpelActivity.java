@@ -1,5 +1,6 @@
 package dehaagsehogeschool.cyberdemo;
 
+import android.content.Intent;
 import android.arch.persistence.room.Room;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,10 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+import dehaagsehogeschool.cyberdemo.games.MemoryActivity;
 import java.util.List;
 import java.util.stream.IntStream;
-
 import dehaagsehogeschool.cyberdemo.models.Level;
 
 /**
@@ -76,21 +76,20 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
         */
 
       initializeObjects();
-
     }
 
-    private void initializeObjects(){
+    private void initializeObjects() {
 
         starScore = findViewById(R.id.digiveilig_spel_star_score);
-        level_1 =  findViewById(R.id.level_button_1);
-        level_2 =  findViewById(R.id.level_button_2);
-        level_3 =  findViewById(R.id.level_button_3);
-        level_4 =  findViewById(R.id.level_button_4);
-        level_5 =  findViewById(R.id.level_button_5);
-        level_6 =  findViewById(R.id.level_button_6);
-        level_7 =  findViewById(R.id.level_button_7);
-        level_8 =  findViewById(R.id.level_button_8);
-        level_9 =  findViewById(R.id.level_button_9);
+        level_1 = findViewById(R.id.level_button_1);
+        level_2 = findViewById(R.id.level_button_2);
+        level_3 = findViewById(R.id.level_button_3);
+        level_4 = findViewById(R.id.level_button_4);
+        level_5 = findViewById(R.id.level_button_5);
+        level_6 = findViewById(R.id.level_button_6);
+        level_7 = findViewById(R.id.level_button_7);
+        level_8 = findViewById(R.id.level_button_8);
+        level_9 = findViewById(R.id.level_button_9);
         level_10 = findViewById(R.id.level_button_10);
         level_11 = findViewById(R.id.level_button_11);
         level_12 = findViewById(R.id.level_button_12);
@@ -125,7 +124,10 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
     }
 
 
-    public void startLevel1(View view){
+    public void startFirstLevel(View view) {
+
+        Intent intent = new Intent(this, MemoryActivity.class);
+        startActivity(intent);
 
     }
 
