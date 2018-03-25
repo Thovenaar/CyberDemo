@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 import dehaagsehogeschool.cyberdemo.models.Level;
 
@@ -33,6 +34,29 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
     @Override
     public void processFinish(List<Level> output) {
         _levels = output;
+
+        //starScore.setText(getStars());
+        setLevelsUnlocked();
+    }
+
+    private int getStars() {
+        int sum = 0;
+
+        for (Level level : _levels) {
+            sum += level.stars;
+        }
+
+        return sum;
+    }
+
+    private void setLevelsUnlocked() {
+        for (Level level : _levels) {
+            if (level.unlocked) {
+                int id = getResources().getIdentifier("level_button_" + level.id, "id", getPackageName());
+                Button levelButton = (Button) findViewById(id);
+                //levelButton.setBackground(getDrawable(R.drawable.digiveilig_spel_level_button));
+            }
+        }
     }
 
     @Override
