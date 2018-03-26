@@ -14,6 +14,7 @@ import dehaagsehogeschool.digiveilig.enums.Game;
 import dehaagsehogeschool.digiveilig.games.MemoryActivity;
 import java.util.List;
 
+import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
 import dehaagsehogeschool.digiveilig.interfaces.LevelResponse;
 import dehaagsehogeschool.digiveilig.models.Level;
 
@@ -21,7 +22,7 @@ import dehaagsehogeschool.digiveilig.models.Level;
  * Created by Tony on 2/20/2018.
  */
 
-public class DigiveiligSpelActivity extends AppCompatActivity implements LevelResponse {
+public class DigiveiligSpelActivity extends AppCompatActivity implements LevelResponse,ActivityInterface {
 
     public final static String TAG = DigiveiligSpelActivity.class.getSimpleName();
 
@@ -91,7 +92,8 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
       initializeObjects();
     }
 
-    private void initializeObjects() {
+    @Override
+    public void initializeObjects() {
         starScore = findViewById(R.id.digiveilig_spel_star_score);
     }
 

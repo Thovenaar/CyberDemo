@@ -10,13 +10,14 @@ import java.util.ArrayList;
 
 import dehaagsehogeschool.digiveilig.GameSettings;
 import dehaagsehogeschool.digiveilig.R;
+import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
 import dehaagsehogeschool.digiveilig.managers.ResultManager;
 
 /**
  * Created by Tony on 3/7/2018.
  */
 
-public class DigiveiligToetsResultsActivity extends AppCompatActivity {
+public class DigiveiligToetsResultsActivity extends AppCompatActivity implements ActivityInterface {
 
     public final static String TAG = DigiveiligToetsResultsActivity.class.getSimpleName();
 
@@ -39,7 +40,8 @@ public class DigiveiligToetsResultsActivity extends AppCompatActivity {
         highscore5.setText(resultManager.getResultText(results, 4));
     }
 
-    private void initializeObjects() {
+    @Override
+    public void initializeObjects() {
         setContentView(R.layout.highscores_activity);
         Log.i(TAG, "I am created!");
 

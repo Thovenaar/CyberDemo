@@ -9,13 +9,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
 import dehaagsehogeschool.digiveilig.managers.DataManager;
 import dehaagsehogeschool.digiveilig.managers.ResultManager;
 import dehaagsehogeschool.digiveilig.spel.DigiveiligSpelActivity;
 import dehaagsehogeschool.digiveilig.toets.DigiveiligToetsResultsActivity;
 import dehaagsehogeschool.digiveilig.toets.DigiveiligToetsAnnouncementActivity;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements ActivityInterface {
 
     public final static String TAG = HomeActivity.class.getSimpleName();
 
@@ -23,15 +24,15 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        initializeData();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
 
+        initializeData();
+        initializeObjects();
+
         Log.i(TAG, "I am created!");
 
-        starScore = (TextView) findViewById(R.id.home_star_score);
-        toetsResultaat = (TextView) findViewById(R.id.home_toets_result_score);
     }
 
     private void initializeData() {
@@ -50,6 +51,14 @@ public class HomeActivity extends AppCompatActivity {
 
         toetsResultaat.setText("Cijfer: " + resultManager.getHighestResult());
         starScore.setText(starScoreGameData + " Sterren");
+    }
+
+    @Override
+    public void initializeObjects() {
+
+        starScore = (TextView) findViewById(R.id.home_star_score);
+        toetsResultaat = (TextView) findViewById(R.id.home_toets_result_score);
+
     }
 
     @Override

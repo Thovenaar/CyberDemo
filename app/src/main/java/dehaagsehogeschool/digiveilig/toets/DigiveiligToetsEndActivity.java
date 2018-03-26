@@ -13,9 +13,10 @@ import java.text.DecimalFormat;
 import dehaagsehogeschool.digiveilig.GameSettings;
 import dehaagsehogeschool.digiveilig.HomeActivity;
 import dehaagsehogeschool.digiveilig.R;
+import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
 import dehaagsehogeschool.digiveilig.managers.ResultManager;
 
-public class DigiveiligToetsEndActivity extends AppCompatActivity {
+public class DigiveiligToetsEndActivity extends AppCompatActivity implements ActivityInterface {
 
     public final static String TAG = DigiveiligToetsEndActivity.class.getSimpleName();
     private TextView newScoreLabel;
@@ -26,7 +27,7 @@ public class DigiveiligToetsEndActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         // Initialize
         super.onCreate(savedInstanceState);
-        initializeObject();
+        initializeObjects();
 
         // Get the result
         Double result = calculateResult();
@@ -40,7 +41,8 @@ public class DigiveiligToetsEndActivity extends AppCompatActivity {
         resultManager.addResult(result);
     }
 
-    private void initializeObject() {
+    @Override
+    public void initializeObjects() {
         Log.i(TAG, "I am created!");
 
         setContentView(R.layout.digiveilig_toets_result_activity);

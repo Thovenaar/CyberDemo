@@ -12,9 +12,9 @@ import android.widget.TextView;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
+import dehaagsehogeschool.digiveilig.managers.GameManager;
+import dehaagsehogeschool.digiveilig.models.GameManagerSettings;
 import dehaagsehogeschool.digiveilig.spel.DigiveiligSpelActivity;
 import dehaagsehogeschool.digiveilig.R;
 import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
@@ -24,10 +24,10 @@ public class MemoryActivity extends AppCompatActivity implements ActivityInterfa
     public final static String TAG = MemoryActivity.class.getSimpleName();
 
     //Card buttons
-    ImageView card_1, card_2, card_3, card_4, card_5, card_6, card_7, card_8,
+    private ImageView card_1, card_2, card_3, card_4, card_5, card_6, card_7, card_8,
             card_9, card_10, card_11, card_12, card_13, card_14, card_15, card_16;
 
-    TextView level;
+    private TextView level, gameTimer;
 
     //Memory card images
     private int cardImage101, cardImage102, cardImage103, cardImage104, cardImage105, cardImage106, cardImage107, cardImage108,
@@ -39,12 +39,9 @@ public class MemoryActivity extends AppCompatActivity implements ActivityInterfa
     private int firstCard, secondCard;
     private int clickedFirst, clickedSecond;
     private int cardNumber = 1;
-    private int gameTime = 180;
     private Random random = new Random();
     private int randomInt = random.nextInt(3) + 1;
-    private int turn = 1;
-    private Timer timer = new Timer();
-    private boolean gameEnded = false;
+    private GameManager gameManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,14 +51,27 @@ public class MemoryActivity extends AppCompatActivity implements ActivityInterfa
         initializeObjects();
         initializeCardsImages(randomInt);
         shuffleCards(cardsArray);
-        startTimer();
+        initializeGameManager();
+
+    }
+
+    private void initializeGameManager(){
+        GameManagerSettings settings = new GameManagerSettings();
+        settings.gameTime = 100;
+        settings.context = this;
+        settings.gameTimer = gameTimer;
+        settings.secondsForZeroStars = 10;
+        settings.secondsForOneStar = 30;
+        settings.secondsForTwoStars = 50;
+        settings.secondsForThreeStars = 70;
+
+        gameManager = new GameManager(settings);
     }
 
     @Override
     public void initializeObjects() {
-
         level = findViewById(R.id.memory_level_text);
-
+        gameTimer = findViewById(R.id.inGameTimer);
         card_1 = findViewById(R.id.button1);
         card_1.setTag("0");
         card_2 = findViewById(R.id.button2);
@@ -94,7 +104,6 @@ public class MemoryActivity extends AppCompatActivity implements ActivityInterfa
         card_15.setTag("14");
         card_16 = findViewById(R.id.button16);
         card_16.setTag("15");
-
     }
 
     public void buttonClick(View view) {
@@ -173,16 +182,6 @@ public class MemoryActivity extends AppCompatActivity implements ActivityInterfa
 
     }
 
-    private void checkGameLevel(int gameLevel) {
-
-        //TODO
-
-        if (gameLevel < 4) gameTime -= 50;
-        else if (gameLevel < 7) gameTime -= 80;
-        else if (gameLevel < 10) gameTime -= 100;
-
-    }
-
     private void shuffleCards(Integer[] cards) {
 
         if (cards != null) {
@@ -190,7 +189,6 @@ public class MemoryActivity extends AppCompatActivity implements ActivityInterfa
         }
     }
 
-    //Get new memory cards
     private void initializeCardsImages(int randomCardGame) {
 
         switch (randomCardGame) {
@@ -456,57 +454,15 @@ public class MemoryActivity extends AppCompatActivity implements ActivityInterfa
                 card_15.getVisibility() == View.INVISIBLE &&
                 card_16.getVisibility() == View.INVISIBLE
                 ) {
-
-            gameEnded = true;
-
-            //TODO
-
+            gameManager.gameEnded = true;
         }
-    }
-
-    private void returnToDigiveiligspel() {
-
-        Intent intent = new Intent(getApplicationContext(), DigiveiligSpelActivity.class);
-        startActivity(intent);
-        finish();
-
-    }
-
-    public void startTimer() {
-        TimerTask task =
-                new TimerTask() {
-
-                    @Override
-                    public void run() {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                TextView gameTimer = (TextView) findViewById(R.id.memory_timer);
-                                gameTimer.setText(Integer.toString(gameTime));
-                                if (gameTime > 0) {
-                                    if (!gameEnded) {
-                                        gameTime -= 1;
-                                    } else {
-                                        cancel();
-                                        returnToDigiveiligspel();
-                                    }
-                                } else {
-                                    gameEnded = true;
-                                    cancel();
-                                    returnToDigiveiligspel();
-                                }
-                            }
-                        });
-                    }
-                };
-
-        timer.scheduleAtFixedRate(task, 0, 1000);
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         super.finish();
+        gameManager.stopTimer();
     }
 
     public void stopMemory(View view) {

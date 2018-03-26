@@ -15,6 +15,7 @@ import java.util.TimerTask;
 
 import dehaagsehogeschool.digiveilig.GameSettings;
 import dehaagsehogeschool.digiveilig.R;
+import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
 import dehaagsehogeschool.digiveilig.managers.QuestionManager;
 import dehaagsehogeschool.digiveilig.models.Question;
 
@@ -23,7 +24,7 @@ import dehaagsehogeschool.digiveilig.models.Question;
  * Created by Tony on 2/17/2018.
  */
 
-public class DigiveiligToetsActivity extends AppCompatActivity {
+public class DigiveiligToetsActivity extends AppCompatActivity implements ActivityInterface {
 
     public final static String TAG = DigiveiligToetsActivity.class.getSimpleName();
 
@@ -59,7 +60,8 @@ public class DigiveiligToetsActivity extends AppCompatActivity {
         startTimer();
     }
 
-    private void initializeObjects() {
+    @Override
+    public void initializeObjects() {
         textViewQuestion = findViewById(R.id.quiz_spel_question);
         questionNumberView = findViewById(R.id.quiz_spel_question_number);
         buttonChoice1 = findViewById(R.id.quiz_spel_choice1);

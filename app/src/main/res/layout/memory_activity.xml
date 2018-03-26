@@ -43,7 +43,7 @@
         app:srcCompat="@drawable/timer_icon" />
 
     <TextView
-        android:id="@+id/memory_timer"
+        android:id="@+id/inGameTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
