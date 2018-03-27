@@ -18,10 +18,12 @@ public class GameManager {
     private GameManagerSettings settings;
     public boolean gameEnded = false;
     private Timer _timer = new Timer();
+    private int _timeLeft;
 
 
     public GameManager(GameManagerSettings settings) {
         this.settings = settings;
+        this._timeLeft = settings.gameTime;
         startGameTimer();
     }
 
@@ -34,10 +36,10 @@ public class GameManager {
                         .runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                settings.gameTimer.setText(Integer.toString(settings.gameTime));
-                                if (settings.gameTime > 0) {
+                                settings.gameTimer.setText(Integer.toString(_timeLeft));
+                                if (_timeLeft > 0) {
                                     if (!gameEnded) {
-                                        settings.gameTime -= 1;
+                                        _timeLeft -= 1;
                                     } else {
                                         cancel();
                                         stopTimer();
@@ -59,13 +61,18 @@ public class GameManager {
 
     public int calculateStars() {
         int stars = 0;
+        int finishTime = getFinishTime();
 
-        if (settings.gameTime < settings.secondsForZeroStars) stars = 0;
-        else if (settings.gameTime < settings.secondsForOneStar) stars = 1;
-        else if (settings.gameTime < settings.secondsForTwoStars) stars = 2;
-        else if (settings.gameTime < settings.secondsForThreeStars) stars = 3;
+        if (finishTime <= settings.secondsForZeroStars) stars = 0;
+        if (finishTime <= settings.secondsForOneStar) stars = 1;
+        if (finishTime <= settings.secondsForTwoStars) stars = 2;
+        if (finishTime <= settings.secondsForThreeStars) stars = 3;
 
         return stars;
+    }
+
+    public int getFinishTime() {
+        return settings.gameTime - _timeLeft;
     }
 
     public void setStars() {
@@ -75,7 +82,8 @@ public class GameManager {
                 AppDatabase db = Room.databaseBuilder(settings.context,
                         AppDatabase.class, GameSettings.DATABASE_NAME).build();
 
-                db.levelDao().updateStars(1, calculateStars());
+                db.levelDao().updateStars(settings.levelId, calculateStars());
+                db.levelDao().updateFinishTime(settings.levelId, getFinishTime());
                 return null;
             }
         }.execute();

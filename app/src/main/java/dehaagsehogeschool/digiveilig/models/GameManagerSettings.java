@@ -11,7 +11,7 @@ public class GameManagerSettings {
 
     public Context context;
     public int gameTime;
-    public int secondsForZeroStars, secondsForOneStar, secondsForTwoStars, secondsForThreeStars;
+    public int secondsForZeroStars, secondsForOneStar, secondsForTwoStars, secondsForThreeStars, levelId;
     public TextView gameTimer;
 
 }

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import dehaagsehogeschool.digiveilig.GameSettings;
 import dehaagsehogeschool.digiveilig.LevelFetcher;
 import dehaagsehogeschool.digiveilig.R;
 import dehaagsehogeschool.digiveilig.enums.Game;
@@ -82,13 +83,6 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
 
         Log.i(TAG, "I am here!");
 
-        /*
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, GameSettings.DATABASE_NAME).build();
-
-        db.levelDao().insertAll(new Level());
-        */
-
       initializeObjects();
     }
 
@@ -128,6 +122,8 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
                 // TODO
                 break;
         }
+
+        intent.putExtra(GameSettings.LEVEL_ID, selectedLevel.id);
 
         startActivity(intent);
     }
