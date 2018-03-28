@@ -37,7 +37,7 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
         _levels = output;
 
         starScore.setText(getStars().toString() + " Sterren");
-        setLevelsUnlocked();
+        setLevelsStatus();
     }
 
     private Integer getStars() {
@@ -50,11 +50,13 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
         return sum;
     }
 
-    private void setLevelsUnlocked() {
+    private void setLevelsStatus() {
+        Button levelButton;
         for (Level level : _levels) {
+            int id = getResources().getIdentifier("level_button_" + level.id, "id", getPackageName());
+            levelButton = findViewById(id);
+            levelButton.setEnabled(level.unlocked);
             if (level.unlocked) {
-                int id = getResources().getIdentifier("level_button_" + level.id, "id", getPackageName());
-                Button levelButton = findViewById(id);
                 levelButton.setText(level.id.toString());
 
                 switch (level.stars) {
