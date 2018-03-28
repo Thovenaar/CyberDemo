@@ -9,6 +9,7 @@ public class GameSettings {
     // General
     public final static String LOCATION_SHARED_PREFERENCES = "Game_Data";
     public final static String LEVEL_ID = "LevelId";
+    public final static String LEVEL_GAME = "LevelGame";
 
     // Database
     public final static String DATABASE_NAME = "digiveilig";
@@ -19,4 +20,10 @@ public class GameSettings {
 
     // Questions
     public final static String QUESTIONS_LOCATION = "questions.xml";
+
+    // Quiz game
+    public final static String QUESTIONS_LEVEL_1 = "questions_level_1.xml";
+    public final static String QUESTIONS_LEVEL_2 = "questions_level_2.xml";
+    public final static String QUESTIONS_LEVEL_3 = "questions_level_3.xml";
+    public final static String QUESTIONS_LEVEL_4 = "questions_level_4.xml";
 }

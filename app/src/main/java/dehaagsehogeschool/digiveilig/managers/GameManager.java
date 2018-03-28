@@ -8,6 +8,7 @@ import java.util.TimerTask;
 
 import dehaagsehogeschool.digiveilig.AppDatabase;
 import dehaagsehogeschool.digiveilig.GameSettings;
+import dehaagsehogeschool.digiveilig.enums.Game;
 import dehaagsehogeschool.digiveilig.models.GameManagerSettings;
 
 /**
@@ -19,6 +20,7 @@ public class GameManager {
     public boolean gameEnded = false;
     private Timer _timer = new Timer();
     private int _timeLeft;
+    public int score;
 
 
     public GameManager(GameManagerSettings settings) {
@@ -43,7 +45,7 @@ public class GameManager {
                                     } else {
                                         cancel();
                                         stopTimer();
-                                        setStars();
+                                        setData();
                                     }
                                 } else {
                                     gameEnded = true;
@@ -59,9 +61,22 @@ public class GameManager {
         _timer.scheduleAtFixedRate(task, 0, 1000);
     }
 
-    public int calculateStars() {
-        int stars = 0;
+    private int calculateStars() {
         int finishTime = getFinishTime();
+
+        switch(Game.valueOf(settings.game.toString())) {
+           case MEMORY:
+               return getStarsDefault(finishTime);
+
+           case QUIZ:
+               return getStarsQuiz(finishTime);
+          }
+
+      return 0;
+    }
+
+    private int getStarsDefault(int finishTime) {
+        int stars = 0;
 
         if (finishTime <= settings.secondsForZeroStars) stars = 0;
         if (finishTime <= settings.secondsForOneStar) stars = 1;
@@ -71,19 +86,35 @@ public class GameManager {
         return stars;
     }
 
-    public int getFinishTime() {
+    private int getStarsQuiz(int finishTime) {
+        int stars = getStarsDefault(finishTime);
+
+        if (stars > score) {
+            stars = score;
+        }
+
+        return stars;
+    }
+
+    private int getFinishTime() {
         return settings.gameTime - _timeLeft;
     }
 
-    public void setStars() {
+    public void setData() {
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
                 AppDatabase db = Room.databaseBuilder(settings.context,
                         AppDatabase.class, GameSettings.DATABASE_NAME).build();
 
-                db.levelDao().updateStars(settings.levelId, calculateStars());
+                int stars = calculateStars();
+                db.levelDao().updateStars(settings.levelId, stars);
                 db.levelDao().updateFinishTime(settings.levelId, getFinishTime());
+
+                if (stars > 0 && settings.levelId < 16) {
+                    db.levelDao().unlock(settings.levelId + 1);
+                }
+
                 return null;
             }
         }.execute();

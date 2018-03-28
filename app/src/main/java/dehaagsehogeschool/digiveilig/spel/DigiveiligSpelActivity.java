@@ -15,6 +15,7 @@ import dehaagsehogeschool.digiveilig.enums.Game;
 import dehaagsehogeschool.digiveilig.games.MemoryActivity;
 import java.util.List;
 
+import dehaagsehogeschool.digiveilig.games.QuizActivity;
 import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
 import dehaagsehogeschool.digiveilig.interfaces.LevelResponse;
 import dehaagsehogeschool.digiveilig.models.Level;
@@ -35,7 +36,7 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
     public void processFinish(List<Level> output) {
         _levels = output;
 
-        starScore.setText(getStars().toString() + " sterren");
+        starScore.setText(getStars().toString() + " Sterren");
         setLevelsUnlocked();
     }
 
@@ -74,6 +75,25 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
         }
     }
 
+    public void startLevel(View view) {
+        Intent intent = null;
+
+        Level selectedLevel = _levels.get(Integer.parseInt(view.getTag().toString()));
+        switch (Game.valueOf(selectedLevel.game)) {
+            case MEMORY:
+                intent = new Intent(this, MemoryActivity.class);
+                break;
+            case QUIZ:
+                intent = new Intent(this, QuizActivity.class);
+                break;
+        }
+
+        intent.putExtra(GameSettings.LEVEL_ID, selectedLevel.id);
+        intent.putExtra(GameSettings.LEVEL_GAME, selectedLevel.game);
+
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         new LevelFetcher(this, getApplicationContext()).execute();
@@ -108,23 +128,5 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
     protected void onDestroy() {
         super.onDestroy();
         Log.i(TAG, "I am destroyed!");
-    }
-
-    public void startLevel(View view) {
-        Intent intent = null;
-
-        Level selectedLevel = _levels.get(Integer.parseInt(view.getTag().toString()));
-        switch (Game.valueOf(selectedLevel.game)) {
-            case MEMORY:
-                intent = new Intent(this, MemoryActivity.class);
-                break;
-            case QUIZ:
-                // TODO
-                break;
-        }
-
-        intent.putExtra(GameSettings.LEVEL_ID, selectedLevel.id);
-
-        startActivity(intent);
     }
 }

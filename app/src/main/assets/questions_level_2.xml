@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<questions>
+    <question>
+        <quizquestion>Je hebt geen toegang meer tot je computer en bestanden. Je bent het slachtoffer van..</quizquestion>
+        <answers>
+            <answer>Freeware</answer>
+            <answer>Ransomware</answer>
+            <answer>Hardware</answer>
+            <answer>Software</answer>
+        </answers>
+        <rightanswer>Ransomware</rightanswer>
+    </question>
+    <question>
+        <quizquestion>Een sterk wachtwoord is bijvoorbeeld..</quizquestion>
+        <answers>
+            <answer>sterkWachtwoord</answer>
+            <answer>Sw%123</answer>
+            <answer>HoeLangerHoeBeter123%</answer>
+            <answer>*#$%#^@$</answer>
+        </answers>
+        <rightanswer>HoeLangerHoeBeter123%</rightanswer>
+    </question>
+    <question>
+        <quizquestion>De afkorting VPN staat voor..</quizquestion>
+        <answers>
+            <answer>Virtual Private Network</answer>
+            <answer>Virus Portal Network</answer>
+            <answer>Visual Private Network</answer>
+            <answer>Virus Proxy Network</answer>
+        </answers>
+        <rightanswer>Virtual Private Network</rightanswer>
+    </question>
+</questions>

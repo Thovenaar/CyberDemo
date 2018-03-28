@@ -14,6 +14,7 @@ import java.util.Collections;
 import java.util.Random;
 
 import dehaagsehogeschool.digiveilig.GameSettings;
+import dehaagsehogeschool.digiveilig.enums.Game;
 import dehaagsehogeschool.digiveilig.managers.GameManager;
 import dehaagsehogeschool.digiveilig.models.GameManagerSettings;
 import dehaagsehogeschool.digiveilig.spel.DigiveiligSpelActivity;
@@ -66,6 +67,7 @@ public class MemoryActivity extends AppCompatActivity implements ActivityInterfa
         settings.secondsForTwoStars = 50;
         settings.secondsForThreeStars = 30;
         settings.levelId = getIntent().getExtras().getInt(GameSettings.LEVEL_ID);
+        settings.game = Game.valueOf(getIntent().getExtras().getString(GameSettings.LEVEL_GAME));
 
         gameManager = new GameManager(settings);
     }

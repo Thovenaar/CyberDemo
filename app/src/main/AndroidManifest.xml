@@ -36,6 +36,7 @@
             android:name="dehaagsehogeschool.digiveilig.toets.DigiveiligToetsEndActivity"
             android:screenOrientation="portrait" />
         <activity android:name="dehaagsehogeschool.digiveilig.games.MemoryActivity"></activity>
+        <activity android:name="dehaagsehogeschool.digiveilig.games.QuizActivity"></activity>
     </application>
 
 </manifest>
