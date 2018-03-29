@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/digiveilig_toets_background"
+    tools:context="dehaagsehogeschool.digiveilig.spel.DigiveiligSpelResultActivity">
+
+    <TextView
+        android:id="@+id/digiveilig_spel_result_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="@string/digiveilig_spel_spel_afgerond_in"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/digiveilig_spel_result_stars" />
+
+    <TextView
+        android:id="@+id/digiveilig_spel_result_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="@string/digiveilig_spel_result_level"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/digiveilig_spel_result_stars"
+        android:layout_width="326dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/digiveilig_spel_star_result_3"
+        android:contentDescription="@string/digiveilig_spel_star"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/digiveilig_spel_result_level" />
+
+    <TextView
+        android:id="@+id/digiveilig_spel_result_seconden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bree_serif"
+        android:lineSpacingExtra="36sp"
+        android:text="@string/digiveilig_spel_result_seconds"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/digiveilig_spel_result_text" />
+
+    <TextView
+        android:id="@+id/digiveilig_spel_result_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="@string/digiveilig_spel_hint"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/digiveilig_spel_result_seconden" />
+
+</android.support.constraint.ConstraintLayout>

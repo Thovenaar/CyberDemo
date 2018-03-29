@@ -17,6 +17,11 @@ public class GameSettings {
     // Result calculation
     public final static String QUESTIONS_AMOUNT = "QUESTIONS";
     public final static String RESULT_SCORE= "SCORE";
+    public final static String RESULT_STARS="STARS";
+    public final static String FINISH_TIME ="FINISH_TIME";
+    public final static String SECONDS_FOR_ONE_STAR = "ONE_STAR";
+    public final static String SECONDS_FOR_TWO_STAR = "TWO_STARS";
+    public final static String SECONDS_FOR_THREE_STAR = "THREE_STARS";
 
     // Questions
     public final static String QUESTIONS_LOCATION = "questions.xml";

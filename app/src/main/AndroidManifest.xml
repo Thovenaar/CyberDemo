@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="dehaagsehogeschool.digiveilig.HomeActivity"
+            android:name=".HomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,25 +18,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="dehaagsehogeschool.digiveilig.spel.DigiveiligSpelActivity"
+            android:name=".spel.DigiveiligSpelActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="dehaagsehogeschool.digiveilig.toets.DigiveiligToetsActivity"
+            android:name=".toets.DigiveiligToetsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="dehaagsehogeschool.digiveilig.toets.DigiveiligToetsResultsActivity"
+            android:name=".toets.DigiveiligToetsResultsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="dehaagsehogeschool.digiveilig.HelpActivity"
+            android:name=".HelpActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="dehaagsehogeschool.digiveilig.toets.DigiveiligToetsAnnouncementActivity"
+            android:name=".toets.DigiveiligToetsAnnouncementActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="dehaagsehogeschool.digiveilig.toets.DigiveiligToetsEndActivity"
+            android:name=".toets.DigiveiligToetsEndActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="dehaagsehogeschool.digiveilig.games.MemoryActivity"></activity>
-        <activity android:name="dehaagsehogeschool.digiveilig.games.QuizActivity"></activity>
+        <activity android:name=".games.MemoryActivity" />
+        <activity android:name=".games.QuizActivity" />
+        <activity android:name=".spel.DigiveiligSpelResultActivity"></activity>
     </application>
 
 </manifest>

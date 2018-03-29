@@ -119,12 +119,10 @@ public class MemoryActivity extends AppCompatActivity implements ActivityInterfa
                 theCard = Integer.parseInt((String) view.getTag());
                 checkCards(card_1, theCard);
                 break;
-
             case R.id.button2:
                 theCard = Integer.parseInt((String) view.getTag());
                 checkCards(card_2, theCard);
                 break;
-
             case R.id.button3:
                 theCard = Integer.parseInt((String) view.getTag());
                 checkCards(card_3, theCard);

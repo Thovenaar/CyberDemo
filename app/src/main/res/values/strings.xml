@@ -58,4 +58,8 @@
     <string name="memory_stop_button">STOP</string>
     <string name="memory_text">Memory</string>
     <string name="memory_level_text">Level ?</string>
+    <string name="digiveilig_spel_result_level">Level 3</string>
+    <string name="digiveilig_spel_result_seconds">30 seconden</string>
+    <string name="digiveilig_spel_hint">....</string>
+    <string name="digiveilig_spel_spel_afgerond_in">Spel afgerond in</string>
 </resources>

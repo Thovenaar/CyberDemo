@@ -2,7 +2,9 @@ package dehaagsehogeschool.digiveilig.managers;
 
 import android.app.Activity;
 import android.arch.persistence.room.Room;
+import android.content.Intent;
 import android.os.AsyncTask;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -10,6 +12,7 @@ import dehaagsehogeschool.digiveilig.AppDatabase;
 import dehaagsehogeschool.digiveilig.GameSettings;
 import dehaagsehogeschool.digiveilig.enums.Game;
 import dehaagsehogeschool.digiveilig.models.GameManagerSettings;
+import dehaagsehogeschool.digiveilig.spel.DigiveiligSpelResultActivity;
 
 /**
  * Created by Tony on 3/26/2018.
@@ -21,7 +24,6 @@ public class GameManager {
     private Timer _timer = new Timer();
     private int _timeLeft;
     public int score;
-
 
     public GameManager(GameManagerSettings settings) {
         this.settings = settings;
@@ -46,11 +48,13 @@ public class GameManager {
                                         cancel();
                                         stopTimer();
                                         setData();
+                                        showResults();
                                     }
                                 } else {
                                     gameEnded = true;
                                     cancel();
                                     stopTimer();
+                                    showResults();
                                 }
                             }
                         });
@@ -121,7 +125,22 @@ public class GameManager {
     }
 
     public void stopTimer() {
-
         _timer.cancel();
+    }
+
+    private void showResults(){
+        Intent showResults = new Intent(settings.context, DigiveiligSpelResultActivity.class);
+        showResults.putExtra(GameSettings.RESULT_STARS, calculateStars());
+        showResults.putExtra(GameSettings.FINISH_TIME, getFinishTime());
+        showResults.putExtra(GameSettings.SECONDS_FOR_ONE_STAR, settings.secondsForOneStar);
+        showResults.putExtra(GameSettings.SECONDS_FOR_TWO_STAR, settings.secondsForTwoStars);
+        showResults.putExtra(GameSettings.SECONDS_FOR_THREE_STAR, settings.secondsForThreeStars);
+        showResults.putExtra(GameSettings.LEVEL_ID, settings.levelId);
+        showResults.putExtra(GameSettings.RESULT_SCORE, score);
+        showResults.putExtra(GameSettings.LEVEL_GAME, settings.game.toString());
+        settings.context.startActivity(showResults);
+
+        //Stop current game activity
+        ((Activity) settings.context).finish();;
     }
 }
