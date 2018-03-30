@@ -49,13 +49,13 @@ public class GameManager {
                                         cancel();
                                         stopTimer();
                                         setData();
-                                        showResults();
+                                        passResults();
                                     }
                                 } else {
                                     gameEnded = true;
                                     cancel();
                                     stopTimer();
-                                    showResults();
+                                    passResults();
                                 }
                             }
                         });
@@ -97,7 +97,6 @@ public class GameManager {
         if (stars > score) {
             stars = score;
         }
-
         return stars;
     }
 
@@ -128,7 +127,7 @@ public class GameManager {
         _timer.cancel();
     }
 
-    private void showResults(){
+    private void passResults(){
         Intent showResults = new Intent(settings.context, DigiveiligSpelResultActivity.class);
         showResults.putExtra(GameSettings.RESULT_STARS, calculateStars());
         showResults.putExtra(GameSettings.FINISH_TIME, getFinishTime());

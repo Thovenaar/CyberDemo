@@ -98,7 +98,6 @@ public class QuizActivity extends BaseActivity implements ActivityInterface {
 
         if (questionAnswerNumber >= questions.size()) {
             gameManager.gameEnded = true;
-            // TODO
             return;
         }
 

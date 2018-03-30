@@ -11,6 +11,7 @@
         android:name=".App"
         android:hardwareAccelerated="false"
         android:largeHeap="true">
+
         <activity
             android:name=".HomeActivity"
             android:screenOrientation="portrait">
@@ -20,27 +21,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".spel.DigiveiligSpelActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".toets.DigiveiligToetsActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".toets.DigiveiligToetsResultsActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".HelpActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".toets.DigiveiligToetsAnnouncementActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".toets.DigiveiligToetsEndActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".games.MemoryActivity" />
-        <activity android:name=".games.QuizActivity" />
-        <activity android:name=".spel.DigiveiligSpelResultActivity"></activity>
-    </application>
 
+        <!--Digiveilig spel-->
+        <activity
+        android:name=".spel.DigiveiligSpelActivity"
+        android:screenOrientation="portrait" />
+        <activity android:name=".spel.DigiveiligSpelResultActivity"
+        android:screenOrientation="portrait" />
+
+        <!--Games-->
+        <activity android:name=".games.MemoryActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".games.QuizActivity"
+            android:screenOrientation="portrait" />
+
+        <!--Digiveilig toets-->
+        <activity
+        android:name=".toets.DigiveiligToetsActivity"
+        android:screenOrientation="portrait" />
+        <activity
+        android:name=".toets.DigiveiligToetsResultsActivity"
+        android:screenOrientation="portrait" />
+        <activity
+        android:name=".toets.DigiveiligToetsAnnouncementActivity"
+        android:screenOrientation="portrait" />
+        <activity
+        android:name=".toets.DigiveiligToetsEndActivity"
+        android:screenOrientation="portrait" />
+
+        <!--Help-->
+        <activity
+        android:name=".HelpActivity"
+        android:screenOrientation="portrait" />
+    </application>
 </manifest>
