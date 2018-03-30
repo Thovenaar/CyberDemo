@@ -18,7 +18,7 @@ public class DigiveiligSpelResultActivity extends AppCompatActivity implements A
     private int secondsForOneStar, secondsForTwoStars, secondsForThreeStars;
     String gameType;
     private int correctAnswers;
-    private Integer[] starScoreImages = new Integer[3];
+    private Integer[] starScoreImages = new Integer[4];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
