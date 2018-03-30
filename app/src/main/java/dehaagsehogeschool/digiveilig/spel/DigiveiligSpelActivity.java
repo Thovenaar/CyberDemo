@@ -1,15 +1,16 @@
 package dehaagsehogeschool.digiveilig.spel;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import dehaagsehogeschool.digiveilig.BaseActivity;
 import dehaagsehogeschool.digiveilig.GameSettings;
-import dehaagsehogeschool.digiveilig.LevelFetcher;
+import dehaagsehogeschool.digiveilig.LevelsViewModel;
 import dehaagsehogeschool.digiveilig.R;
 import dehaagsehogeschool.digiveilig.enums.Game;
 import dehaagsehogeschool.digiveilig.games.MemoryActivity;
@@ -17,23 +18,18 @@ import java.util.List;
 
 import dehaagsehogeschool.digiveilig.games.QuizActivity;
 import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
-import dehaagsehogeschool.digiveilig.interfaces.LevelResponse;
 import dehaagsehogeschool.digiveilig.models.Level;
 
 /**
  * Created by Tony on 2/20/2018.
  */
 
-public class DigiveiligSpelActivity extends AppCompatActivity implements LevelResponse,ActivityInterface {
+public class DigiveiligSpelActivity extends BaseActivity implements ActivityInterface {
 
-    public final static String TAG = DigiveiligSpelActivity.class.getSimpleName();
-
-    TextView starScore;
-
+    private TextView starScore;
     private List<Level> _levels;
 
-    @Override
-    public void processFinish(List<Level> output) {
+    public void updateLevels(List<Level> output) {
         _levels = output;
 
         starScore.setText(getStars().toString() + " Sterren");
@@ -98,14 +94,13 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        new LevelFetcher(this, getApplicationContext()).execute();
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.digiveilig_spel_activity);
 
         Log.i(TAG, "I am here!");
 
-      initializeObjects();
+        initializeObjects();
+        initializeObserver();
     }
 
     @Override
@@ -113,22 +108,10 @@ public class DigiveiligSpelActivity extends AppCompatActivity implements LevelRe
         starScore = findViewById(R.id.digiveilig_spel_star_score);
     }
 
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(TAG, "I am paused!");
+    private void initializeObserver() {
+        LevelsViewModel usersViewModel = ViewModelProviders.of(this).get(LevelsViewModel.class);
+        usersViewModel.getLevelList().observe(this, this::updateLevels);
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i(TAG, "I am stopped!");
-    }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i(TAG, "I am destroyed!");
-    }
 }

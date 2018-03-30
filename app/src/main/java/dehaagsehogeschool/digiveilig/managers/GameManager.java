@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import dehaagsehogeschool.digiveilig.App;
 import dehaagsehogeschool.digiveilig.AppDatabase;
 import dehaagsehogeschool.digiveilig.GameSettings;
 import dehaagsehogeschool.digiveilig.enums.Game;
@@ -108,8 +109,7 @@ public class GameManager {
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
-                AppDatabase db = Room.databaseBuilder(settings.context,
-                        AppDatabase.class, GameSettings.DATABASE_NAME).build();
+                AppDatabase db = AppDatabase.getInstance(App.get().getApplicationContext());
 
                 int stars = calculateStars();
                 db.levelDao().updateStars(settings.levelId, stars);

@@ -10,15 +10,15 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
+import dehaagsehogeschool.digiveilig.BaseActivity;
 import dehaagsehogeschool.digiveilig.GameSettings;
 import dehaagsehogeschool.digiveilig.HomeActivity;
 import dehaagsehogeschool.digiveilig.R;
 import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
 import dehaagsehogeschool.digiveilig.managers.ResultManager;
 
-public class DigiveiligToetsEndActivity extends AppCompatActivity implements ActivityInterface {
+public class DigiveiligToetsEndActivity extends BaseActivity implements ActivityInterface {
 
-    public final static String TAG = DigiveiligToetsEndActivity.class.getSimpleName();
     private TextView newScoreLabel;
 
     SharedPreferences gameData;
@@ -43,8 +43,6 @@ public class DigiveiligToetsEndActivity extends AppCompatActivity implements Act
 
     @Override
     public void initializeObjects() {
-        Log.i(TAG, "I am created!");
-
         setContentView(R.layout.digiveilig_toets_result_activity);
         newScoreLabel = findViewById(R.id.score_result_current_score);
     }
@@ -63,24 +61,6 @@ public class DigiveiligToetsEndActivity extends AppCompatActivity implements Act
         Intent intent = new Intent(this, DigiveiligToetsResultsActivity.class);
         startActivity(intent);
         finish();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(TAG, "I am paused!");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i(TAG, "I am stopped!");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i(TAG, "I am destroyed!");
     }
 
     public void backToMainScreen(View view) {

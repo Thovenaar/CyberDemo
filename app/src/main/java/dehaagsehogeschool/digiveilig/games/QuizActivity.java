@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import dehaagsehogeschool.digiveilig.BaseActivity;
 import dehaagsehogeschool.digiveilig.GameSettings;
 import dehaagsehogeschool.digiveilig.R;
 import dehaagsehogeschool.digiveilig.enums.Game;
@@ -28,9 +29,7 @@ import dehaagsehogeschool.digiveilig.toets.DigiveiligToetsEndActivity;
  * Created by Thomas on 27-Mar-18.
  */
 
-public class QuizActivity extends AppCompatActivity implements ActivityInterface {
-
-    public final static String TAG = DigiveiligToetsActivity.class.getSimpleName();
+public class QuizActivity extends BaseActivity implements ActivityInterface {
 
     private TextView textViewQuestion;
     private TextView questionNumberView;
@@ -54,8 +53,6 @@ public class QuizActivity extends AppCompatActivity implements ActivityInterface
 
         initializeObjects();
         initializeQuestions();
-
-        Log.i(TAG, "I am created!");
 
         updateQuestion();
         initializeGameManager();
@@ -138,23 +135,5 @@ public class QuizActivity extends AppCompatActivity implements ActivityInterface
         super.onBackPressed();
         super.finish();
         gameManager.stopTimer();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(TAG, "I am paused!");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i(TAG, "I am stopped!");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i(TAG, "I am destroyed!");
     }
 }

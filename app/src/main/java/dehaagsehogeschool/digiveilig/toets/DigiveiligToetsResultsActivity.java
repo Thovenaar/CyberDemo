@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import dehaagsehogeschool.digiveilig.BaseActivity;
 import dehaagsehogeschool.digiveilig.GameSettings;
 import dehaagsehogeschool.digiveilig.R;
 import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
@@ -17,9 +18,7 @@ import dehaagsehogeschool.digiveilig.managers.ResultManager;
  * Created by Tony on 3/7/2018.
  */
 
-public class DigiveiligToetsResultsActivity extends AppCompatActivity implements ActivityInterface {
-
-    public final static String TAG = DigiveiligToetsResultsActivity.class.getSimpleName();
+public class DigiveiligToetsResultsActivity extends BaseActivity implements ActivityInterface {
 
     TextView highscore1, highscore2, highscore3, highscore4, highscore5;
 
@@ -43,30 +42,11 @@ public class DigiveiligToetsResultsActivity extends AppCompatActivity implements
     @Override
     public void initializeObjects() {
         setContentView(R.layout.highscores_activity);
-        Log.i(TAG, "I am created!");
 
         highscore1 = findViewById(R.id.highscore_name1);
         highscore2 = findViewById(R.id.highscore_name2);
         highscore3 = findViewById(R.id.highscore_name3);
         highscore4 = findViewById(R.id.highscore_name4);
         highscore5 = findViewById(R.id.highscore_name5);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(TAG, "I am paused!");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i(TAG, "I am stopped!");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i(TAG, "I am destroyed!");
     }
 }

@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 
+import dehaagsehogeschool.digiveilig.BaseActivity;
 import dehaagsehogeschool.digiveilig.GameSettings;
 import dehaagsehogeschool.digiveilig.enums.Game;
 import dehaagsehogeschool.digiveilig.managers.GameManager;
@@ -21,9 +22,7 @@ import dehaagsehogeschool.digiveilig.spel.DigiveiligSpelActivity;
 import dehaagsehogeschool.digiveilig.R;
 import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
 
-public class MemoryActivity extends AppCompatActivity implements ActivityInterface {
-
-    public final static String TAG = MemoryActivity.class.getSimpleName();
+public class MemoryActivity extends BaseActivity implements ActivityInterface {
 
     //Card buttons
     private ImageView card_1, card_2, card_3, card_4, card_5, card_6, card_7, card_8,
@@ -54,7 +53,6 @@ public class MemoryActivity extends AppCompatActivity implements ActivityInterfa
         initializeCardsImages(randomInt);
         shuffleCards(cardsArray);
         initializeGameManager();
-
     }
 
     private void initializeGameManager(){
@@ -470,23 +468,5 @@ public class MemoryActivity extends AppCompatActivity implements ActivityInterfa
     public void stopMemory(View view) {
 
         super.finish();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(TAG, "I am paused!");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i(TAG, "I am stopped!");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i(TAG, "I am destroyed!");
     }
 }

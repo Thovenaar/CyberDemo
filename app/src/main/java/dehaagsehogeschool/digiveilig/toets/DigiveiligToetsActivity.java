@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import dehaagsehogeschool.digiveilig.BaseActivity;
 import dehaagsehogeschool.digiveilig.GameSettings;
 import dehaagsehogeschool.digiveilig.R;
 import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
@@ -24,9 +25,7 @@ import dehaagsehogeschool.digiveilig.models.Question;
  * Created by Tony on 2/17/2018.
  */
 
-public class DigiveiligToetsActivity extends AppCompatActivity implements ActivityInterface {
-
-    public final static String TAG = DigiveiligToetsActivity.class.getSimpleName();
+public class DigiveiligToetsActivity extends BaseActivity implements ActivityInterface {
 
     private TextView textViewQuestion;
     private TextView questionNumberView;
@@ -53,8 +52,6 @@ public class DigiveiligToetsActivity extends AppCompatActivity implements Activi
 
         initializeObjects();
         initializeQuestions();
-
-        Log.i(TAG, "I am created!");
 
         updateQuestion();
         startTimer();
@@ -154,38 +151,8 @@ public class DigiveiligToetsActivity extends AppCompatActivity implements Activi
         timer.scheduleAtFixedRate(task, 0, 1000);
     }
 
-    public void choice1Click(View view) {
-        checkAnswer(buttonChoice1.getText().toString());
-    }
-
-    public void choice2Click(View view) {
-        checkAnswer(buttonChoice2.getText().toString());
-    }
-
-    public void choice3Click(View view) {
-        checkAnswer(buttonChoice3.getText().toString());
-    }
-
-    public void choice4Click(View view) {
-        checkAnswer(buttonChoice4.getText().toString());
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(TAG, "I am paused!");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i(TAG, "I am stopped!");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i(TAG, "I am destroyed!");
+    public void choiceButton(View view) {
+        checkAnswer(((Button) view).getText().toString());
     }
 }
 

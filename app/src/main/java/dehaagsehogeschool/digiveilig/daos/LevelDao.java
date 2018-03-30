@@ -1,7 +1,9 @@
 package dehaagsehogeschool.digiveilig.daos;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
 import java.util.List;
@@ -17,6 +19,9 @@ public interface LevelDao {
 
     @Query("SELECT * FROM level")
     List<Level> getAll();
+
+    @Query("SELECT * FROM level")
+    LiveData<List<Level>> getAllLive();
 
     @Query("SELECT * FROM level WHERE id = :id LIMIT 1")
     Level getById(int id);
@@ -36,10 +41,9 @@ public interface LevelDao {
     @Query("UPDATE level SET finish_time = :seconds WHERE id = :id")
     void updateFinishTimeForce(int id, int seconds);
 
-
     @Query("DELETE FROM level")
     void deleteAll();
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(Level... levels);
 }

@@ -27,13 +27,13 @@ class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.stars, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_activity, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.stars.setText(getItemCount() + " Sterren");
+        //holder.stars.setText(getItemCount() + " Sterren");
     }
 
     @Override
@@ -54,7 +54,7 @@ class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.ViewHolder> {
         public ViewHolder(View itemView) {
             super(itemView);
 
-            stars = (TextView) itemView.findViewById(R.id.stars);
+            stars = (TextView) itemView.findViewById(R.id.home_star_score);
         }
     }
 }

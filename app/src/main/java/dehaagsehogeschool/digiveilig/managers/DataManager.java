@@ -30,6 +30,7 @@ public class DataManager {
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
+                //AppDatabase.getInstance(_context).levelDao().deleteAll();
                 if (AppDatabase.getInstance(_context).levelDao().getAll().size() == 0) {
                     for (Level level : getLevels()) {
                         AppDatabase.getInstance(_context).levelDao().insertAll(level);
@@ -45,9 +46,9 @@ public class DataManager {
 
         levels.add(new Level(1, true, Game.MEMORY.toString(), 0));
         levels.add(new Level(2, false, Game.QUIZ.toString(), 0));
-        levels.add(new Level(3, false, Game.MEMORY.toString(), 0));
-        levels.add(new Level(4, false, Game.MEMORY.toString(), 0));
-        levels.add(new Level(5, false, Game.MEMORY.toString(), 0));
+        levels.add(new Level(3, false, Game.QUIZ.toString(), 0));
+        levels.add(new Level(4, false, Game.QUIZ.toString(), 0));
+        levels.add(new Level(5, false, Game.QUIZ.toString(), 0));
         levels.add(new Level(6, false, Game.QUIZ.toString(), 0));
         levels.add(new Level(7, false, Game.MEMORY.toString(), 0));
         levels.add(new Level(8, false, Game.MEMORY.toString(), 0));
