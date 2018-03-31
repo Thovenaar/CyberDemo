@@ -14,7 +14,7 @@
     <ImageView
         android:id="@+id/home_logo"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="175dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
@@ -28,31 +28,31 @@
     <Button
         android:id="@+id/home_digi_veilig_spel_button"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="66dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="128dp"
         android:background="@drawable/home_button_shape_red"
         android:fontFamily="@font/bree_serif"
+        android:gravity="center"
         android:onClick="startDigiveiligSpel"
         android:paddingBottom="15dp"
         android:text="@string/home_digiveilig_spel_button"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_toets_result_score" />
+        app:layout_constraintTop_toBottomOf="@+id/frame_3" />
 
     <Button
         android:id="@+id/home_quiz_spel_button"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="66dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/home_button_shape_yellow"
         android:fontFamily="@font/bree_serif"
         android:onClick="startDigiveiligToets"
@@ -60,68 +60,109 @@
         android:text="@string/home_digiveilig_toets_button"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_digi_veilig_spel_button" />
+
+    <ImageView
+        android:id="@+id/frame_2"
+        android:layout_width="160dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/digiveilig_spel_star"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_logo" />
+
+    <ImageView
+        android:id="@+id/frame_1"
+        android:layout_width="160dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/digiveilig_spel_star"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_logo" />
 
     <TextView
         android:id="@+id/home_star_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/bree_serif"
         android:text="@string/home_sterren"
         android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/frame_1"
+        app:layout_constraintStart_toStartOf="@+id/frame_1"
         app:layout_constraintTop_toBottomOf="@+id/home_star" />
 
     <TextView
         android:id="@+id/home_toets_result_score"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="140dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/bree_serif"
         android:text="@string/home_toets_resultaat"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@android:color/black"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/frame_2"
+        app:layout_constraintStart_toStartOf="@+id/frame_2"
         app:layout_constraintTop_toBottomOf="@+id/home_toets_resultaat" />
 
     <ImageView
         android:id="@+id/home_star"
-        android:layout_width="120dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:contentDescription="@string/digiveilig_spel_star"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/frame_1"
+        app:layout_constraintEnd_toEndOf="@+id/frame_1"
+        app:layout_constraintStart_toStartOf="@+id/frame_1"
+        app:layout_constraintTop_toTopOf="@+id/frame_1"
         app:srcCompat="@drawable/home_star" />
 
     <ImageView
+        android:id="@+id/frame_3"
+        android:layout_width="5dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/digiveilig_spel_star"
+        app:layout_constraintEnd_toStartOf="@+id/frame_2"
+        app:layout_constraintStart_toEndOf="@+id/frame_1"
+        app:layout_constraintTop_toBottomOf="@+id/home_logo" />
+
+    <ImageView
         android:id="@+id/home_toets_resultaat"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="70dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:contentDescription="@string/home_cijfer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/frame_2"
+        app:layout_constraintEnd_toEndOf="@+id/frame_2"
+        app:layout_constraintStart_toStartOf="@+id/frame_2"
+        app:layout_constraintTop_toTopOf="@+id/frame_2"
         app:srcCompat="@drawable/home_toets_resultaat" />
 
     <Button
         android:id="@+id/home_score_button"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:background="@drawable/highscores_icon"
         android:onClick="startHighscore"
@@ -130,8 +171,8 @@
 
     <Button
         android:id="@+id/home_help_button"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
@@ -139,16 +180,5 @@
         android:onClick="startHelp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

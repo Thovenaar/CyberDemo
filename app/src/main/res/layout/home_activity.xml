@@ -31,20 +31,20 @@
         android:layout_height="66dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/home_button_shape_red"
         android:fontFamily="@font/bree_serif"
+        android:gravity="center"
         android:onClick="startDigiveiligSpel"
         android:paddingBottom="15dp"
         android:text="@string/home_digiveilig_spel_button"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="30sp"
+        android:textSize="35sp"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_toets_result_score" />
+        app:layout_constraintTop_toBottomOf="@+id/frame_3" />
 
     <Button
         android:id="@+id/home_quiz_spel_button"
@@ -60,59 +60,101 @@
         android:text="@string/home_digiveilig_toets_button"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="30sp"
+        android:textSize="35sp"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_digi_veilig_spel_button" />
 
+    <ImageView
+        android:id="@+id/frame_2"
+        android:layout_width="114dp"
+        android:layout_height="113dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/digiveilig_spel_star"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_logo" />
+
+    <ImageView
+        android:id="@+id/frame_1"
+        android:layout_width="114dp"
+        android:layout_height="113dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/digiveilig_spel_star"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_logo" />
+
     <TextView
         android:id="@+id/home_star_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/bree_serif"
         android:text="@string/home_sterren"
         android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/frame_1"
+        app:layout_constraintStart_toStartOf="@+id/frame_1"
         app:layout_constraintTop_toBottomOf="@+id/home_star" />
 
     <TextView
         android:id="@+id/home_toets_result_score"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="66dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/bree_serif"
         android:text="@string/home_toets_resultaat"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/frame_2"
+        app:layout_constraintStart_toStartOf="@+id/frame_2"
         app:layout_constraintTop_toBottomOf="@+id/home_toets_resultaat" />
 
     <ImageView
         android:id="@+id/home_star"
         android:layout_width="65dp"
         android:layout_height="61dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:contentDescription="@string/digiveilig_spel_star"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/frame_1"
+        app:layout_constraintEnd_toEndOf="@+id/frame_1"
+        app:layout_constraintStart_toStartOf="@+id/frame_1"
+        app:layout_constraintTop_toTopOf="@+id/frame_1"
         app:srcCompat="@drawable/home_star" />
+
+    <ImageView
+        android:id="@+id/frame_3"
+        android:layout_width="5dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/digiveilig_spel_star"
+        app:layout_constraintEnd_toStartOf="@+id/frame_2"
+        app:layout_constraintStart_toEndOf="@+id/frame_1"
+        app:layout_constraintTop_toBottomOf="@+id/home_logo" />
 
     <ImageView
         android:id="@+id/home_toets_resultaat"
         android:layout_width="55dp"
         android:layout_height="64dp"
-        android:layout_marginEnd="78dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:contentDescription="@string/home_cijfer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/frame_2"
+        app:layout_constraintEnd_toEndOf="@+id/frame_2"
+        app:layout_constraintStart_toStartOf="@+id/frame_2"
+        app:layout_constraintTop_toTopOf="@+id/frame_2"
         app:srcCompat="@drawable/home_toets_resultaat" />
 
     <Button
