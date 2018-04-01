@@ -20,7 +20,7 @@ public class ResultManager {
     private SharedPreferences.Editor _sharedPreferencesEditor;
 
     private static final String SOURCE_KEY = "all_results";
-    private static final String NO_RESULT = "0";
+    private static final String NO_RESULT = "-";
     private static final int MAX_RESULTS = 10;
     private static final boolean ORDER_BY_DESC = true;
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/digiveilig_toets_background">
@@ -42,15 +43,27 @@
         app:layout_constraintTop_toBottomOf="@+id/quiz_spel_text"
         app:srcCompat="@drawable/digiveilig_toets_block" />
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/quiz_spel_block"
+        app:layout_constraintTop_toTopOf="@+id/quiz_spel_block"
+        app:srcCompat="@drawable/timer_icon" />
+
     <TextView
         android:id="@+id/quiz_spel_timer"
         android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="104dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
         android:text="@string/quiz_spel_timer"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
     <TextView
         android:id="@+id/quiz_spel_question_number"
@@ -58,12 +71,12 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/bree_serif"
         android:text="@string/quiz_spel_question_number"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="24sp"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/quiz_spel_block" />
@@ -73,8 +86,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/bree_serif"
         android:text="@string/quiz_spel_question"

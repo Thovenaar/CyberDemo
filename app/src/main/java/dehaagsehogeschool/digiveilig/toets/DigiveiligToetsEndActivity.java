@@ -2,9 +2,7 @@ package dehaagsehogeschool.digiveilig.toets;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -34,7 +32,7 @@ public class DigiveiligToetsEndActivity extends BaseActivity implements Activity
 
         // Set result in the view
         DecimalFormat decimalFormat = new DecimalFormat("##.0");
-        newScoreLabel.setText("Behaalde score: " + decimalFormat.format(result));
+        newScoreLabel.setText(decimalFormat.format(result).toString());
 
         // Add result to results
         ResultManager resultManager = new ResultManager(GameSettings.LOCATION_SHARED_PREFERENCES, getApplicationContext());
@@ -43,7 +41,7 @@ public class DigiveiligToetsEndActivity extends BaseActivity implements Activity
 
     @Override
     public void initializeObjects() {
-        setContentView(R.layout.digiveilig_toets_result_activity);
+        setContentView(R.layout.digiveilig_toets_end_activity);
         newScoreLabel = findViewById(R.id.score_result_current_score);
     }
 

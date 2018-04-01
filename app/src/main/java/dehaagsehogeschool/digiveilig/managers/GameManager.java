@@ -29,6 +29,8 @@ public class GameManager {
     public GameManager(GameManagerSettings settings) {
         this.settings = settings;
         this._timeLeft = settings.gameTime;
+
+        settings.gameTimer.setText(Integer.toString(_timeLeft));
         startGameTimer();
     }
 
@@ -41,22 +43,15 @@ public class GameManager {
                         .runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                settings.gameTimer.setText(Integer.toString(_timeLeft));
-                                if (_timeLeft > 0) {
-                                    if (!gameEnded) {
-                                        _timeLeft -= 1;
-                                    } else {
-                                        cancel();
-                                        stopTimer();
-                                        setData();
-                                        passResults();
-                                    }
-                                } else {
-                                    gameEnded = true;
+                                if (gameEnded || _timeLeft == 0) {
                                     cancel();
                                     stopTimer();
+                                    setData();
                                     passResults();
                                 }
+
+                                _timeLeft--;
+                                settings.gameTimer.setText(Integer.toString(_timeLeft));
                             }
                         });
             }

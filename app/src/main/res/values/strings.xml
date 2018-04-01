@@ -1,12 +1,14 @@
 <resources>
 
+    <string name="digiveilig_game_name">Digiveilig Spel</string>
+
     <!--Home string values-->
     <string name="home_highscore_button">Highscores</string>
     <string name="home_help_button">Help</string>
     <string name="home_digiveilig_toets_button">Digiveilig toets</string>
     <string name="home_digiveilig_spel_button">Digiveilig spel</string>
     <string name="home_slogan_text">Gebruik internet op een veilige manier</string>
-    <string name="home_logo">CyberDemo logo</string>
+    <string name="home_logo">Digiveilig logo</string>
     <string name="home_toets_resultaat">Cijfer: 7,8</string>
     <string name="home_sterren">0 Sterren</string>
     <string name="home_cijfer">Toetscijfer</string>
@@ -38,13 +40,15 @@
     <string name="highscores_text">Toetsresultaten</string>
     <string name="highscores_block">Toetsresultaten</string>
     <string name="highscores_score">Cijfer: 7,8</string>
+    <string name="highscores_information">Hieronder staan jouw 5 hoogst behaalde toetsresultaten.</string>
 
     <!--Help string values-->
     <string name="help_text">Help</string>
     <string name="help_block">Help block</string>
 
     <!--Score result string values-->
-    <string name="score_result_value">0</string>
+    <string name="score_result_value">Behaalde score:</string>
+    <string name="score_result_value_example">10.0</string>
     <string name="highscores_number_1">1</string>
     <string name="highscores_number_2">2</string>
     <string name="highscores_number_3">3</string>

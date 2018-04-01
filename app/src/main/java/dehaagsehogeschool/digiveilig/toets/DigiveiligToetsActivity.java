@@ -40,7 +40,7 @@ public class DigiveiligToetsActivity extends BaseActivity implements ActivityInt
 
     // SETTINGS
     private boolean randomize = true;
-    private int time = 100;
+    private Integer time = 100;
 
     Timer timer = new Timer();
     List<Question> questions;
@@ -132,7 +132,7 @@ public class DigiveiligToetsActivity extends BaseActivity implements ActivityInt
                             @Override
                             public void run() {
                                 TextView timer = (TextView) findViewById(R.id.quiz_spel_timer);
-                                timer.setText("Tijd over:" + time + "");
+                                timer.setText(time.toString());
                                 if (time > 0) {
                                     if (questions.size() > score) {
                                         time -= 1;

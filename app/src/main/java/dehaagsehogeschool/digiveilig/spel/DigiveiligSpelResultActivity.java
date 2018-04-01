@@ -1,22 +1,25 @@
 package dehaagsehogeschool.digiveilig.spel;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import dehaagsehogeschool.digiveilig.BaseActivity;
 import dehaagsehogeschool.digiveilig.GameSettings;
+import dehaagsehogeschool.digiveilig.HomeActivity;
 import dehaagsehogeschool.digiveilig.R;
 import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
 
-public class DigiveiligSpelResultActivity extends AppCompatActivity implements ActivityInterface {
+public class DigiveiligSpelResultActivity extends BaseActivity implements ActivityInterface {
 
     private TextView finishedGameInSeconds, currentLevelNumber, gameHints;
     private ImageView starsEarned;
     private int stars, finishTime, levelNumber;
     private int secondsForOneStar, secondsForTwoStars, secondsForThreeStars;
-    String gameType;
     private int correctAnswers;
     private Integer[] starScoreImages = new Integer[4];
 
@@ -59,7 +62,7 @@ public class DigiveiligSpelResultActivity extends AppCompatActivity implements A
             secondsForOneStar = results.getInt(GameSettings.SECONDS_FOR_ONE_STAR);
             secondsForTwoStars = results.getInt(GameSettings.SECONDS_FOR_TWO_STAR);
             secondsForThreeStars = results.getInt(GameSettings.SECONDS_FOR_THREE_STAR);
-            gameType = results.getString(GameSettings.LEVEL_GAME);
+            String gameType = results.getString(GameSettings.LEVEL_GAME);
         } catch (Exception e) {
             finish();
             Toast.makeText(this, "Oops, er ging iets fout. Resultaten kunnen niet worden getoond.", Toast.LENGTH_SHORT);
@@ -67,28 +70,27 @@ public class DigiveiligSpelResultActivity extends AppCompatActivity implements A
     }
 
     private void showResults() {
-        finishedGameInSeconds.setText(finishTime + " " + "seconden");
-        currentLevelNumber.setText("level" + " " + levelNumber);
+        finishedGameInSeconds.setText(finishTime + " seconden");
+        currentLevelNumber.setText("Level " + levelNumber);
         starsEarned.setBackground(getDrawable(starScoreImages[stars]));
 
-        if (gameType.equals("MEMORY")) {
-            switch (stars) {
-                case 0:
-                    gameHints.setText("Haal het spel in " + secondsForOneStar + " seconden om 1 ster te halen");
-                    break;
-                case 1:
-                    gameHints.setText("Haal het spel in " + secondsForTwoStars + " seconden om 1 ster meer te halen");
-                    break;
-                case 2:
-                    gameHints.setText("Haal het spel in " + secondsForThreeStars + " seconden om alle drie de sterren te halen!");
-                    break;
-                case 3:
-                    gameHints.setText("Je hebt dit level al uitgespeeld!");
-                    break;
-            }
-        } else if (gameType.equals("QUIZ")) {
-            if(correctAnswers > 1 || correctAnswers == 0)gameHints.setText("Je hebt in "+ finishTime + " seconden " +correctAnswers+" vragen goed kunnen beantwoorden");
-            else gameHints.setText("Je hebt in "+ finishTime + " seconden " +correctAnswers+" vraag goed kunnen beantwoorden");
+        switch (stars) {
+            case 0:
+                gameHints.setText("Voltooi het spel in " + secondsForOneStar + " seconden om 1 ster te behalen.");
+                break;
+            case 1:
+                gameHints.setText("Voltooi het spel in " + secondsForTwoStars + " seconden om 2 sterren te behalen.");
+                break;
+            case 2:
+                gameHints.setText("Voltooi het spel in " + secondsForThreeStars + " seconden om 3 sterren te behalen.");
+                break;
+            case 3:
+                gameHints.setText("Spel uitgespeeld!");
+                break;
         }
+    }
+
+    public void ToGamesScreen(View view) {
+        finish();
     }
 }

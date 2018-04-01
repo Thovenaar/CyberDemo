@@ -2,8 +2,6 @@ package dehaagsehogeschool.digiveilig.toets;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -32,18 +30,18 @@ public class DigiveiligToetsResultsActivity extends BaseActivity implements Acti
         ArrayList<Double> results = resultManager.getResults();
 
         //Vullen van de highscors in de labels
-        highscore1.setText(resultManager.getResultText(results, 0));
-        highscore2.setText(resultManager.getResultText(results, 1));
-        highscore3.setText(resultManager.getResultText(results, 2));
-        highscore4.setText(resultManager.getResultText(results, 3));
-        highscore5.setText(resultManager.getResultText(results, 4));
+        highscore1.setText("Cijfer: " + resultManager.getResultText(results, 0));
+        highscore2.setText("Cijfer: " + resultManager.getResultText(results, 1));
+        highscore3.setText("Cijfer: " + resultManager.getResultText(results, 2));
+        highscore4.setText("Cijfer: " + resultManager.getResultText(results, 3));
+        highscore5.setText("Cijfer: " + resultManager.getResultText(results, 4));
     }
 
     @Override
     public void initializeObjects() {
-        setContentView(R.layout.highscores_activity);
+        setContentView(R.layout.digiveilig_toets_results_activity);
 
-        highscore1 = findViewById(R.id.highscore_name1);
+        highscore1 = findViewById(R.id.highscore_name);
         highscore2 = findViewById(R.id.highscore_name2);
         highscore3 = findViewById(R.id.highscore_name3);
         highscore4 = findViewById(R.id.highscore_name4);

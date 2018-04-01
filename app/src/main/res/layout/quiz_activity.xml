@@ -24,12 +24,13 @@
         android:id="@+id/quiz_spel_text"
         android:layout_width="250dp"
         android:layout_height="80dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/quiz_spel_text_description"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/digiveilig_toets" />
+        app:srcCompat="@drawable/quizvraag" />
 
     <ImageView
         android:id="@+id/quiz_spel_block"
@@ -47,6 +48,7 @@
         android:id="@+id/memory_timer_logo"
         android:layout_width="34dp"
         android:layout_height="34dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/timer_description"
         app:layout_constraintStart_toStartOf="@+id/quiz_spel_question"
@@ -98,6 +100,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quiz_spel_question_number" />
+
+    <TextView
+        android:id="@+id/quiz_level_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="@string/memory_level_text"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/quiz_spel_block"
+        app:layout_constraintTop_toTopOf="@+id/quiz_spel_block" />
 
     <LinearLayout
         android:id="@+id/linearLayout"

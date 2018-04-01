@@ -28,7 +28,7 @@ public class MemoryActivity extends BaseActivity implements ActivityInterface {
     private ImageView card_1, card_2, card_3, card_4, card_5, card_6, card_7, card_8,
             card_9, card_10, card_11, card_12, card_13, card_14, card_15, card_16;
 
-    private TextView level, gameTimer;
+    private TextView gameTimer;
 
     //Memory card images
     private int cardImage101, cardImage102, cardImage103, cardImage104, cardImage105, cardImage106, cardImage107, cardImage108,
@@ -72,7 +72,10 @@ public class MemoryActivity extends BaseActivity implements ActivityInterface {
 
     @Override
     public void initializeObjects() {
-        level = findViewById(R.id.memory_level_text);
+        // Set level
+        ((TextView) findViewById(R.id.memory_level_text))
+                .setText("Level: " + Integer.toString(getIntent().getExtras().getInt(GameSettings.LEVEL_ID)));
+
         gameTimer = findViewById(R.id.inGameTimer);
         card_1 = findViewById(R.id.button1);
         card_1.setTag("0");
@@ -458,15 +461,18 @@ public class MemoryActivity extends BaseActivity implements ActivityInterface {
         }
     }
 
-    @Override
-    public void onBackPressed() {
+    private void stopGame() {
         super.onBackPressed();
         super.finish();
         gameManager.stopTimer();
     }
 
-    public void stopMemory(View view) {
+    @Override
+    public void onBackPressed() {
+        stopGame();
+    }
 
-        super.finish();
+    public void stopMemory(View view) {
+        stopGame();
     }
 }

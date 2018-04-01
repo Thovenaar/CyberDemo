@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/digiveilig_toets_background">
+
+    <Button
+        android:id="@+id/quiz_spel_stop_button"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_grey_round"
+        android:onClick="stopSpel"
+        android:text="@string/quiz_spel_stop_button"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/quiz_spel_block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/quiz_spel_text"
+        android:layout_width="466dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/quiz_spel_text_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/quizvraag" />
+
+    <ImageView
+        android:id="@+id/quiz_spel_block"
+        android:layout_width="wrap_content"
+        android:layout_height="255dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/quiz_spel_block_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quiz_spel_text"
+        app:srcCompat="@drawable/digiveilig_toets_block_v2" />
+
+    <ImageView
+        android:id="@+id/memory_timer_logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/timer_description"
+        app:layout_constraintStart_toStartOf="@+id/quiz_spel_question"
+        app:layout_constraintTop_toTopOf="@+id/quiz_spel_block"
+        app:srcCompat="@drawable/timer_icon" />
+
+    <TextView
+        android:id="@+id/quiz_spel_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/quiz_spel_timer"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/memory_timer_logo"
+        app:layout_constraintTop_toTopOf="@+id/quiz_spel_block" />
+
+    <TextView
+        android:id="@+id/quiz_spel_question_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="@string/quiz_spel_question_number"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/quiz_spel_block" />
+
+    <TextView
+        android:id="@+id/quiz_spel_question"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="@string/quiz_spel_question"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/quiz_spel_block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quiz_spel_question_number" />
+
+    <TextView
+        android:id="@+id/quiz_level_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="56dp"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="@string/memory_level_text"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/quiz_spel_block"
+        app:layout_constraintTop_toTopOf="@+id/quiz_spel_block" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical|center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quiz_spel_block">
+
+        <Button
+            android:id="@+id/quiz_spel_choice1"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/digiveilig_toets_button_shape_grey"
+            android:fontFamily="@font/bree_serif"
+            android:onClick="choiceButton"
+            android:paddingBottom="15dp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="35sp"
+            android:typeface="normal" />
+
+        <Button
+            android:id="@+id/quiz_spel_choice2"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/digiveilig_toets_button_shape_grey"
+            android:fontFamily="@font/bree_serif"
+            android:onClick="choiceButton"
+            android:paddingBottom="15dp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="35sp"
+            android:typeface="normal" />
+
+        <Button
+            android:id="@+id/quiz_spel_choice3"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/digiveilig_toets_button_shape_grey"
+            android:fontFamily="@font/bree_serif"
+            android:onClick="choiceButton"
+            android:paddingBottom="15dp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="35sp" />
+
+        <Button
+            android:id="@+id/quiz_spel_choice4"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/digiveilig_toets_button_shape_grey"
+            android:fontFamily="@font/bree_serif"
+            android:onClick="choiceButton"
+            android:paddingBottom="15dp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="35sp" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

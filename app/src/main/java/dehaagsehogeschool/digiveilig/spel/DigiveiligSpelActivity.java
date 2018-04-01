@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import dehaagsehogeschool.digiveilig.BaseActivity;
 import dehaagsehogeschool.digiveilig.GameSettings;
@@ -28,6 +29,15 @@ public class DigiveiligSpelActivity extends BaseActivity implements ActivityInte
 
     private TextView starScore;
     private List<Level> _levels;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.digiveilig_spel_activity);
+
+        initializeObjects();
+        initializeObserver();
+    }
 
     public void updateLevels(List<Level> output) {
         _levels = output;
@@ -51,7 +61,6 @@ public class DigiveiligSpelActivity extends BaseActivity implements ActivityInte
         for (Level level : _levels) {
             int id = getResources().getIdentifier("level_button_" + level.id, "id", getPackageName());
             levelButton = findViewById(id);
-            levelButton.setEnabled(level.unlocked);
             if (level.unlocked) {
                 levelButton.setText(level.id.toString());
 
@@ -77,6 +86,12 @@ public class DigiveiligSpelActivity extends BaseActivity implements ActivityInte
         Intent intent = null;
 
         Level selectedLevel = _levels.get(Integer.parseInt(view.getTag().toString()));
+
+        if (!selectedLevel.unlocked) {
+            Toast.makeText(this, "Dit level is nog niet vrijgespeeld.", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         switch (Game.valueOf(selectedLevel.game)) {
             case MEMORY:
                 intent = new Intent(this, MemoryActivity.class);
@@ -90,17 +105,6 @@ public class DigiveiligSpelActivity extends BaseActivity implements ActivityInte
         intent.putExtra(GameSettings.LEVEL_GAME, selectedLevel.game);
 
         startActivity(intent);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.digiveilig_spel_activity);
-
-        Log.i(TAG, "I am here!");
-
-        initializeObjects();
-        initializeObserver();
     }
 
     @Override

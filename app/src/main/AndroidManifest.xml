@@ -3,17 +3,17 @@
     package="dehaagsehogeschool.digiveilig">
 
     <application
+        android:label="@string/digiveilig_game_name"
+        android:isGame="true"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon_logo"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".App"
-        android:hardwareAccelerated="false"
-        android:largeHeap="true">
+        android:name="dehaagsehogeschool.digiveilig.App">
 
         <activity
-            android:name=".HomeActivity"
+            android:name="dehaagsehogeschool.digiveilig.HomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,34 +24,34 @@
 
         <!--Digiveilig spel-->
         <activity
-        android:name=".spel.DigiveiligSpelActivity"
+        android:name="dehaagsehogeschool.digiveilig.spel.DigiveiligSpelActivity"
         android:screenOrientation="portrait" />
-        <activity android:name=".spel.DigiveiligSpelResultActivity"
+        <activity android:name="dehaagsehogeschool.digiveilig.spel.DigiveiligSpelResultActivity"
         android:screenOrientation="portrait" />
 
         <!--Games-->
-        <activity android:name=".games.MemoryActivity"
+        <activity android:name="dehaagsehogeschool.digiveilig.games.MemoryActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".games.QuizActivity"
+        <activity android:name="dehaagsehogeschool.digiveilig.games.QuizActivity"
             android:screenOrientation="portrait" />
 
         <!--Digiveilig toets-->
         <activity
-        android:name=".toets.DigiveiligToetsActivity"
+        android:name="dehaagsehogeschool.digiveilig.toets.DigiveiligToetsActivity"
         android:screenOrientation="portrait" />
         <activity
-        android:name=".toets.DigiveiligToetsResultsActivity"
+        android:name="dehaagsehogeschool.digiveilig.toets.DigiveiligToetsResultsActivity"
         android:screenOrientation="portrait" />
         <activity
-        android:name=".toets.DigiveiligToetsAnnouncementActivity"
+        android:name="dehaagsehogeschool.digiveilig.toets.DigiveiligToetsAnnouncementActivity"
         android:screenOrientation="portrait" />
         <activity
-        android:name=".toets.DigiveiligToetsEndActivity"
+        android:name="dehaagsehogeschool.digiveilig.toets.DigiveiligToetsEndActivity"
         android:screenOrientation="portrait" />
 
         <!--Help-->
         <activity
-        android:name=".HelpActivity"
+        android:name="dehaagsehogeschool.digiveilig.HelpActivity"
         android:screenOrientation="portrait" />
     </application>
 </manifest>

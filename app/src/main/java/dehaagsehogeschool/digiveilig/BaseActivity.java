@@ -1,5 +1,6 @@
 package dehaagsehogeschool.digiveilig;
 
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -12,8 +13,9 @@ import dehaagsehogeschool.digiveilig.spel.DigiveiligSpelActivity;
 public abstract class BaseActivity extends AppCompatActivity {
     public final String TAG = this.getClass().getName();
 
-    protected void onCreate() {
-        super.onPause();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         Log.i(TAG, "I am created!");
     }
 

@@ -82,6 +82,10 @@ public class QuizActivity extends BaseActivity implements ActivityInterface {
         buttonChoice3 = findViewById(R.id.quiz_spel_choice3);
         buttonChoice4 = findViewById(R.id.quiz_spel_choice4);
         gameTimer = findViewById(R.id.quiz_spel_timer);
+
+        // Set level
+        ((TextView) findViewById(R.id.quiz_level_text))
+                .setText("Level: " + Integer.toString(getIntent().getExtras().getInt(GameSettings.LEVEL_ID)));
     }
 
     private void initializeQuestions() {
@@ -122,7 +126,13 @@ public class QuizActivity extends BaseActivity implements ActivityInterface {
     }
 
     public void stopSpel(View view) {
+        stopGame();
+    }
+
+    private void stopGame() {
+        super.onBackPressed();
         super.finish();
+        gameManager.stopTimer();
     }
 
     public void choiceButton(View view) {
@@ -131,8 +141,6 @@ public class QuizActivity extends BaseActivity implements ActivityInterface {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        super.finish();
-        gameManager.stopTimer();
+        stopGame();
     }
 }
