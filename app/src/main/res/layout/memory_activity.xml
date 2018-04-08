@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/help_background"
-    tools:context="dehaagsehogeschool.digiveilig.games.MemoryActivity">
+    tools:context=".spel.games.MemoryActivity">
 
     <ImageView
         android:id="@+id/memory_text"
@@ -89,13 +89,15 @@
             android:onClick="buttonClick"
             android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="36dp"
-            tools:layout_editor_absoluteY="123dp" />
+            tools:layout_editor_absoluteY="123dp"
+            android:contentDescription="@string/memory_card" />
 
         <ImageView
             android:id="@+id/button2"
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_weight="1"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
             android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="158dp"
@@ -106,6 +108,7 @@
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_weight="1"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
             android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="238dp"
@@ -116,6 +119,7 @@
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_weight="1"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
             android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="238dp"
@@ -139,8 +143,9 @@
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:src="@drawable/memory_card"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
+            android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="36dp"
             tools:layout_editor_absoluteY="123dp" />
 
@@ -149,8 +154,9 @@
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:src="@drawable/memory_card"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
+            android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="123dp" />
 
@@ -159,8 +165,9 @@
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:src="@drawable/memory_card"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
+            android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="238dp"
             tools:layout_editor_absoluteY="103dp" />
 
@@ -169,8 +176,9 @@
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:src="@drawable/memory_card"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
+            android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="238dp"
             tools:layout_editor_absoluteY="103dp" />
 
@@ -192,8 +200,9 @@
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:src="@drawable/memory_card"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
+            android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="36dp"
             tools:layout_editor_absoluteY="123dp" />
 
@@ -202,8 +211,9 @@
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:src="@drawable/memory_card"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
+            android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="123dp" />
 
@@ -212,8 +222,9 @@
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:src="@drawable/memory_card"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
+            android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="238dp"
             tools:layout_editor_absoluteY="103dp" />
 
@@ -222,8 +233,9 @@
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:src="@drawable/memory_card"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
+            android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="238dp"
             tools:layout_editor_absoluteY="103dp" />
 
@@ -245,8 +257,9 @@
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:src="@drawable/memory_card"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
+            android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="36dp"
             tools:layout_editor_absoluteY="123dp" />
 
@@ -255,8 +268,9 @@
             android:layout_width="77dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:src="@drawable/memory_card"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
+            android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="123dp" />
 
@@ -265,8 +279,9 @@
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:src="@drawable/memory_card"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
+            android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="238dp"
             tools:layout_editor_absoluteY="103dp" />
 
@@ -275,8 +290,9 @@
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:src="@drawable/memory_card"
+            android:contentDescription="@string/memory_card"
             android:onClick="buttonClick"
+            android:src="@drawable/memory_card"
             tools:layout_editor_absoluteX="238dp"
             tools:layout_editor_absoluteY="103dp" />
 

@@ -5,5 +5,5 @@ package dehaagsehogeschool.digiveilig.enums;
  */
 
 public enum Game {
-    MEMORY, QUIZ
+    MEMORY, QUIZ, SCENARIO
 }

@@ -66,4 +66,17 @@
     <string name="digiveilig_spel_result_seconds">30 seconden</string>
     <string name="digiveilig_spel_hint">....</string>
     <string name="digiveilig_spel_spel_afgerond_in">Spel afgerond in</string>
+
+
+    <!--Scenario game-->
+    <string name="scenario_question">Je krijgt bovenstaande mail van de ING Bank, wat doe je?</string>
+    <string name="scenario_button_one">Op de link in de mail klikken</string>
+    <string name="scenario_button_two">Mail verwijderen</string>
+    <string name="scenario_button_three">Mail verwijderen en de afzender blokkeren</string>
+    <string name="scenario_image">scenario image</string>
+    <string name="scenario_gametimer">100</string>
+    <string name="scenario_gametimer_image">timer</string>
+    <string name="scenario_stop_button">Stop</string>
+    <string name="scenario_text">Scenario spel</string>
+    <string name="memory_card">memory card</string>
 </resources>

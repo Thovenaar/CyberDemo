@@ -48,7 +48,7 @@
         android:id="@+id/memory_timer_logo"
         android:layout_width="34dp"
         android:layout_height="34dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/timer_description"
         app:layout_constraintStart_toStartOf="@+id/quiz_spel_question"
@@ -59,11 +59,11 @@
         android:id="@+id/quiz_spel_timer"
         android:layout_width="wrap_content"
         android:layout_height="24dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
         android:text="@string/quiz_spel_timer"
-        android:textStyle="bold"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/memory_timer_logo"
         app:layout_constraintTop_toTopOf="@+id/quiz_spel_block" />
 
@@ -131,8 +131,8 @@
 
         <Button
             android:id="@+id/quiz_spel_choice1"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/digiveilig_toets_button_shape_grey"
@@ -141,13 +141,13 @@
             android:paddingBottom="15dp"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="25sp"
+            android:textSize="17sp"
             android:typeface="normal" />
 
         <Button
             android:id="@+id/quiz_spel_choice2"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/digiveilig_toets_button_shape_grey"
@@ -156,13 +156,13 @@
             android:paddingBottom="15dp"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="25sp"
+            android:textSize="17sp"
             android:typeface="normal" />
 
         <Button
             android:id="@+id/quiz_spel_choice3"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/digiveilig_toets_button_shape_grey"
@@ -171,12 +171,12 @@
             android:paddingBottom="15dp"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="25sp" />
+            android:textSize="17sp" />
 
         <Button
             android:id="@+id/quiz_spel_choice4"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/digiveilig_toets_button_shape_grey"
@@ -185,6 +185,6 @@
             android:paddingBottom="15dp"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="25sp" />
+            android:textSize="17sp" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

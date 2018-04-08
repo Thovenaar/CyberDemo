@@ -18,7 +18,7 @@ import dehaagsehogeschool.digiveilig.managers.ResultManager;
 
 public class DigiveiligToetsResultsActivity extends BaseActivity implements ActivityInterface {
 
-    TextView highscore1, highscore2, highscore3, highscore4, highscore5;
+    private TextView highscore1, highscore2, highscore3, highscore4, highscore5;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

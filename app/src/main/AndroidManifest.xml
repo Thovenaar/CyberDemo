@@ -30,9 +30,12 @@
         android:screenOrientation="portrait" />
 
         <!--Games-->
-        <activity android:name="dehaagsehogeschool.digiveilig.games.MemoryActivity"
+        <activity android:name=".spel.games.MemoryActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="dehaagsehogeschool.digiveilig.games.QuizActivity"
+        <activity android:name=".spel.games.QuizActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".spel.games.ScenarioActivity"
             android:screenOrientation="portrait" />
 
         <!--Digiveilig toets-->

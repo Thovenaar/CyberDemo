@@ -49,6 +49,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/timer_description"
         app:layout_constraintStart_toStartOf="@+id/quiz_spel_block"
         app:layout_constraintTop_toTopOf="@+id/quiz_spel_block"
         app:srcCompat="@drawable/timer_icon" />

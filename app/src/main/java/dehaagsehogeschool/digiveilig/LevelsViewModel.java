@@ -3,10 +3,10 @@ package dehaagsehogeschool.digiveilig;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
-import android.content.Context;
 
 import java.util.List;
 
+import dehaagsehogeschool.digiveilig.database.AppDatabase;
 import dehaagsehogeschool.digiveilig.models.Level;
 
 /**

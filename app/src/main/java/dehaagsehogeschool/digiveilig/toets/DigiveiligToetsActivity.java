@@ -1,9 +1,7 @@
 package dehaagsehogeschool.digiveilig.toets;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,14 +34,14 @@ public class DigiveiligToetsActivity extends BaseActivity implements ActivityInt
 
     private Question selectedQuestion;
     private int questionAnswerNumber = 0;
-    public int score = 0;
+    private int score = 0;
 
     // SETTINGS
     private boolean randomize = true;
     private Integer time = 100;
 
-    Timer timer = new Timer();
-    List<Question> questions;
+    private Timer timer = new Timer();
+    private List<Question> questions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +79,7 @@ public class DigiveiligToetsActivity extends BaseActivity implements ActivityInt
         timer.cancel();
     }
 
-    public void showScore() {
+    private void showScore() {
         timer.cancel();
 
         Intent showScore = new Intent(getApplicationContext(), DigiveiligToetsEndActivity.class);
@@ -122,7 +120,7 @@ public class DigiveiligToetsActivity extends BaseActivity implements ActivityInt
         showScore();
     }
 
-    public void startTimer() {
+    private void startTimer() {
         TimerTask task =
                 new TimerTask() {
 
@@ -131,7 +129,7 @@ public class DigiveiligToetsActivity extends BaseActivity implements ActivityInt
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                TextView timer = (TextView) findViewById(R.id.quiz_spel_timer);
+                                TextView timer = findViewById(R.id.quiz_spel_timer);
                                 timer.setText(time.toString());
                                 if (time > 0) {
                                     if (questions.size() > score) {

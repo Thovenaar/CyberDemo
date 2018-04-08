@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<questions>
+    <question>
+        <quizquestion>Wat is een virus?</quizquestion>
+        <answers>
+            <answer>Een computerprogramma waar ik een spelletje op kan spelen</answer>
+            <answer>Een virus is een klein computerprogramma dat zichzelf vermenigvuldigt. Een virus kan belangrijke bestanden op je computer overschrijven of veranderen</answer>
+        </answers>
+        <rightanswer>Een virus is een klein computerprogramma dat zichzelf vermenigvuldigt. Een virus kan belangrijke bestanden op je computer overschrijven of veranderen</rightanswer>
+    </question>
+    <question>
+        <quizquestion>Ik maak gebruk van WI-FI waar ik geen wachtwoord hoef in te vullen. Wat moet je niet doen?</quizquestion>
+        <answers>
+            <answer>Inloggen op belangrijke websites</answer>
+            <answer>Een website openen</answer>
+            <answer>Bellen of sms'en</answer>
+        </answers>
+        <rightanswer>Inloggen op belangrijke websites</rightanswer>
+    </question>
+    <question>
+        <quizquestion>Waarom is het belangrijk om mijn computer of mobiele telefoon te blijven updaten?</quizquestion>
+        <answers>
+            <answer>beveiligingslekken worden met updates verholpen</answer>
+            <answer>zo wordt mijn mobiele telefoon veel sneller</answer>
+            <answer>anders kan ik mijn mobiele telefoon niet meer gebruiken</answer>
+        </answers>
+        <rightanswer>eveiligingslekken worden met updates verholpen</rightanswer>
+    </question>
+</questions>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<questions>
+    <question>
+        <quizquestion>Een medewerker van een bedrijf vraagt om een kopie te maken van je indenditeitsbewijs. Wat doe je?</quizquestion>
+        <answers>
+            <answer>Ik laat hem een kopietje maken</answer>
+            <answer>Ik kijk goed of hij maar echt één kopie maakt</answer>
+            <answer>Ik heb met behulp van de KopieID-app zelf veilige kopieën gemaakt en geef die</answer>
+        </answers>
+        <rightanswer>Ik heb met behulp van de KopieID-app zelf veilige kopieën gemaakt en geef die</rightanswer>
+    </question>
+    <question>
+        <quizquestion>Wat kun je doen om het gijzelen van je computer te voorkomen?</quizquestion>
+        <answers>
+            <answer>Minder klikken op onbekende links of advertenties</answer>
+            <answer>Regelmatig een back up maken</answer>
+            <answer>Virusscanner draaien en updates uitvoeren</answer>
+            <answer>Al het bovenstaande</answer>
+        </answers>
+        <rightanswer>Al het bovenstaande</rightanswer>
+    </question>
+    <question>
+        <quizquestion>Je krijgt een mailtje waarin staat dat je een reis gewonnen hebt. Wat doe je?</quizquestion>
+        <answers>
+            <answer>Ik verwijder de mail, het is spam. Ik heb nooit meegedaan aan een wedstrijd</answer>
+            <answer>Ik twijfel, maar klik toch en open de mail</answer>
+            <answer>Wauw, ik heb een reis gewonnen! Klikken maar</answer>
+        </answers>
+        <rightanswer>Ik verwijder de mail, het is spam. Ik heb nooit meegedaan aan een wedstrijd</rightanswer>
+    </question>
+</questions>

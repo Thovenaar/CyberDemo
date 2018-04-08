@@ -1,11 +1,12 @@
-package dehaagsehogeschool.digiveilig;
+package dehaagsehogeschool.digiveilig.database;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import dehaagsehogeschool.digiveilig.daos.LevelDao;
+import dehaagsehogeschool.digiveilig.GameSettings;
+import dehaagsehogeschool.digiveilig.database.daos.LevelDao;
 import dehaagsehogeschool.digiveilig.models.Level;
 
 /**

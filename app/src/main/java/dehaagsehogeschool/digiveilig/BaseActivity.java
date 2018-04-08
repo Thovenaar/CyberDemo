@@ -4,14 +4,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import dehaagsehogeschool.digiveilig.spel.DigiveiligSpelActivity;
-
 /**
  * Created by Thomas on 29-Mar-18.
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
-    public final String TAG = this.getClass().getName();
+    private final String TAG = this.getClass().getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

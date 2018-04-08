@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <questions>
     <question>
-        <quizquestion>Je hebt geen toegang meer tot je computer en bestanden. Je bent het slachtoffer van..</quizquestion>
+        <quizquestion>Hetzelfde wachtwoord gebruiken voor meerdere websites is</quizquestion>
         <answers>
-            <answer>Freeware</answer>
-            <answer>Ransomware</answer>
-            <answer>Hardware</answer>
-            <answer>Software</answer>
+            <answer>Veilig, want dat is makkelijk te onthouden</answer>
+            <answer>Onveilig, want iedereen die mijn wachtwoord weet kan inloggen op alle accounts waar ik het wachtwoord gebruik</answer>
         </answers>
-        <rightanswer>Ransomware</rightanswer>
+        <rightanswer>Onveilig, want iedereen die mijn wachtwoord weet kan inloggen op alle accounts waar ik het wachtwoord gebruik</rightanswer>
     </question>
     <question>
-        <quizquestion>Een sterk wachtwoord is bijvoorbeeld..</quizquestion>
+        <quizquestion>Welke van de onderstaande wachtwoorden is veilig?</quizquestion>
         <answers>
             <answer>sterkWachtwoord</answer>
             <answer>Sw%123</answer>
@@ -21,13 +19,12 @@
         <rightanswer>HoeLangerHoeBeter123%</rightanswer>
     </question>
     <question>
-        <quizquestion>De afkorting VPN staat voor..</quizquestion>
+        <quizquestion>Iemand vraagt om mijn wachtwoord, wat doe je?</quizquestion>
         <answers>
-            <answer>Virtual Private Network</answer>
-            <answer>Virus Portal Network</answer>
-            <answer>Visual Private Network</answer>
-            <answer>Virus Proxy Network</answer>
+            <answer>Ik geef het wachtwoord, op voorwaarde dat het een geheim blijft</answer>
+            <answer>Ik geef mijn wachtwoord aan niemand, zelfs niet mijn beste vriend</answer>
+            <answer>Ik geef mijn wachtwoord in ruil voor iets wat ik graag wil</answer>
         </answers>
-        <rightanswer>Virtual Private Network</rightanswer>
+        <rightanswer>Ik geef mijn wachtwoord aan niemand, zelfs niet mijn beste vriend</rightanswer>
     </question>
 </questions>

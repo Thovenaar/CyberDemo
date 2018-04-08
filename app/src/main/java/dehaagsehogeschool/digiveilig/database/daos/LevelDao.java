@@ -1,4 +1,4 @@
-package dehaagsehogeschool.digiveilig.daos;
+package dehaagsehogeschool.digiveilig.database.daos;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;

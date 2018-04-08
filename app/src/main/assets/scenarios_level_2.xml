@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scenarios>
+    <scenario>
+        <scenarioimage>scenario_phising_level_2</scenarioimage>
+        <scenarioquestion>Je krijgt deze mail binnen, wat doe je?</scenarioquestion>
+        <answers>
+            <answer>Openen en op "inloggen Mijn ING" klikken</answer>
+            <answer>Mail verwijderen en de afzender blokkeren</answer>
+        </answers>
+        <rightanswer>Openen en op "inloggen Mijn ING" klikken</rightanswer>
+    </scenario>
+    <scenario>
+        <scenarioimage>scenario_image_1</scenarioimage>
+        <scenarioquestion>test2</scenarioquestion>
+        <answers>
+            <answer>sterkWachtwoord</answer>
+            <answer>Sw%123</answer>
+            <answer>HoeLangerHoeBeter123%</answer>
+            <answer>*#$%#^@$</answer>
+        </answers>
+        <rightanswer>sterkWachtwoord</rightanswer>
+    </scenario>
+    <scenario>
+        <scenarioimage>scenario_image_1</scenarioimage>
+        <scenarioquestion>test3</scenarioquestion>
+        <answers>
+            <answer>Virtual Private Network</answer>
+            <answer>Virus Portal Network</answer>
+            <answer>Visual Private Network</answer>
+            <answer>Virus Proxy Network</answer>
+        </answers>
+        <rightanswer>Virtual Private Network</rightanswer>
+    </scenario>
+</scenarios>

@@ -1,7 +1,5 @@
 package dehaagsehogeschool.digiveilig.spel;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,7 +8,7 @@ import android.widget.Toast;
 
 import dehaagsehogeschool.digiveilig.BaseActivity;
 import dehaagsehogeschool.digiveilig.GameSettings;
-import dehaagsehogeschool.digiveilig.HomeActivity;
+
 import dehaagsehogeschool.digiveilig.R;
 import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
 
@@ -20,7 +18,6 @@ public class DigiveiligSpelResultActivity extends BaseActivity implements Activi
     private ImageView starsEarned;
     private int stars, finishTime, levelNumber;
     private int secondsForOneStar, secondsForTwoStars, secondsForThreeStars;
-    private int correctAnswers;
     private Integer[] starScoreImages = new Integer[4];
 
     @Override
@@ -56,13 +53,11 @@ public class DigiveiligSpelResultActivity extends BaseActivity implements Activi
 
         try {
             stars = results.getInt(GameSettings.RESULT_STARS);
-            correctAnswers = results.getInt(GameSettings.RESULT_SCORE);
             finishTime = results.getInt(GameSettings.FINISH_TIME);
             levelNumber = results.getInt(GameSettings.LEVEL_ID);
             secondsForOneStar = results.getInt(GameSettings.SECONDS_FOR_ONE_STAR);
             secondsForTwoStars = results.getInt(GameSettings.SECONDS_FOR_TWO_STAR);
             secondsForThreeStars = results.getInt(GameSettings.SECONDS_FOR_THREE_STAR);
-            String gameType = results.getString(GameSettings.LEVEL_GAME);
         } catch (Exception e) {
             finish();
             Toast.makeText(this, "Oops, er ging iets fout. Resultaten kunnen niet worden getoond.", Toast.LENGTH_SHORT);

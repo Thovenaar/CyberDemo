@@ -1,10 +1,7 @@
-package dehaagsehogeschool.digiveilig.games;
+package dehaagsehogeschool.digiveilig.spel.games;
 
-import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,7 +15,6 @@ import dehaagsehogeschool.digiveilig.GameSettings;
 import dehaagsehogeschool.digiveilig.enums.Game;
 import dehaagsehogeschool.digiveilig.managers.GameManager;
 import dehaagsehogeschool.digiveilig.models.GameManagerSettings;
-import dehaagsehogeschool.digiveilig.spel.DigiveiligSpelActivity;
 import dehaagsehogeschool.digiveilig.R;
 import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
 

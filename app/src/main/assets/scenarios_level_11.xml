@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scenarios>
+    <scenario>
+        <scenarioimage>scenario_image_1</scenarioimage>
+        <scenarioquestion>Je krijgt bovenstaande mail van de ING Bank, wat doe je?</scenarioquestion>
+        <answers>
+            <answer>Op de link in de mail klikken</answer>
+            <answer>mail verwijderen en de afzender blokkeren</answer>
+        </answers>
+        <rightanswer>mail verwijderen en de afzender blokkeren</rightanswer>
+    </scenario>
+    <scenario>
+        <scenarioimage>scenario_image_1</scenarioimage>
+        <scenarioquestion>Je krijgt bovenstaande mail van de IN Bank, wat doe je?</scenarioquestion>
+        <answers>
+            <answer>Op de link in de mail klikken</answer>
+            <answer>mail verwijderen</answer>
+            <answer>mail verwijderen en de afzender blokkeren</answer>
+        </answers>
+        <rightanswer>mail verwijderen en de afzender blokkeren</rightanswer>
+    </scenario>
+    <scenario>
+        <scenarioimage>scenario_image_1</scenarioimage>
+        <scenarioquestion>Je krijgt bovenstaande mail van de ING Bank, wat doe je?</scenarioquestion>
+        <answers>
+            <answer>Op de link in de mail klikken</answer>
+            <answer>mail verwijderen</answer>
+            <answer>mail verwijderen en de afzender blokkeren</answer>
+        </answers>
+        <rightanswer>mail verwijderen en de afzender blokkeren</rightanswer>
+    </scenario>
+</scenarios>

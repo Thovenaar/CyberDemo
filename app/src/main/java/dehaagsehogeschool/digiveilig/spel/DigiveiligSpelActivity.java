@@ -3,7 +3,6 @@ package dehaagsehogeschool.digiveilig.spel;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,10 +13,12 @@ import dehaagsehogeschool.digiveilig.GameSettings;
 import dehaagsehogeschool.digiveilig.LevelsViewModel;
 import dehaagsehogeschool.digiveilig.R;
 import dehaagsehogeschool.digiveilig.enums.Game;
-import dehaagsehogeschool.digiveilig.games.MemoryActivity;
+import dehaagsehogeschool.digiveilig.spel.games.MemoryActivity;
+
 import java.util.List;
 
-import dehaagsehogeschool.digiveilig.games.QuizActivity;
+import dehaagsehogeschool.digiveilig.spel.games.QuizActivity;
+import dehaagsehogeschool.digiveilig.spel.games.ScenarioActivity;
 import dehaagsehogeschool.digiveilig.interfaces.ActivityInterface;
 import dehaagsehogeschool.digiveilig.models.Level;
 
@@ -39,7 +40,7 @@ public class DigiveiligSpelActivity extends BaseActivity implements ActivityInte
         initializeObserver();
     }
 
-    public void updateLevels(List<Level> output) {
+    private void updateLevels(List<Level> output) {
         _levels = output;
 
         starScore.setText(getStars().toString() + " Sterren");
@@ -98,6 +99,9 @@ public class DigiveiligSpelActivity extends BaseActivity implements ActivityInte
                 break;
             case QUIZ:
                 intent = new Intent(this, QuizActivity.class);
+                break;
+            case SCENARIO:
+                intent = new Intent(this, ScenarioActivity.class);
                 break;
         }
 

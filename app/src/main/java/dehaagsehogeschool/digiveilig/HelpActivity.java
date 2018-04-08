@@ -1,8 +1,6 @@
 package dehaagsehogeschool.digiveilig;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 /**
  * Created by Tony on 2/18/2018.

@@ -18,7 +18,7 @@ import dehaagsehogeschool.digiveilig.models.Level;
 
 class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.ViewHolder> {
 
-    ArrayList<Level> levels = new ArrayList<>();
+    private ArrayList<Level> levels = new ArrayList<>();
 
     public void addLevels(List<Level> levels) {
         this.levels.addAll(levels);
@@ -54,7 +54,7 @@ class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.ViewHolder> {
         public ViewHolder(View itemView) {
             super(itemView);
 
-            stars = (TextView) itemView.findViewById(R.id.home_star_score);
+            stars = itemView.findViewById(R.id.home_star_score);
         }
     }
 }

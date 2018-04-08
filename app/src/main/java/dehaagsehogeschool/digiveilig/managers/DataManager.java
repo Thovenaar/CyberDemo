@@ -6,7 +6,7 @@ import android.os.AsyncTask;
 import java.util.ArrayList;
 import java.util.List;
 
-import dehaagsehogeschool.digiveilig.AppDatabase;
+import dehaagsehogeschool.digiveilig.database.AppDatabase;
 import dehaagsehogeschool.digiveilig.enums.Game;
 import dehaagsehogeschool.digiveilig.models.Level;
 
@@ -45,21 +45,21 @@ public class DataManager {
         List<Level> levels = new ArrayList<Level>();
 
         levels.add(new Level(1, true, Game.MEMORY.toString(), 0));
-        levels.add(new Level(2, false, Game.QUIZ.toString(), 0));
-        levels.add(new Level(3, false, Game.QUIZ.toString(), 0));
+        levels.add(new Level(2, false, Game.SCENARIO.toString(), 0));
+        levels.add(new Level(3, false, Game.MEMORY.toString(), 0));
         levels.add(new Level(4, false, Game.QUIZ.toString(), 0));
-        levels.add(new Level(5, false, Game.QUIZ.toString(), 0));
-        levels.add(new Level(6, false, Game.QUIZ.toString(), 0));
+        levels.add(new Level(5, false, Game.MEMORY.toString(), 0));
+        levels.add(new Level(6, false, Game.SCENARIO.toString(), 0));
         levels.add(new Level(7, false, Game.MEMORY.toString(), 0));
-        levels.add(new Level(8, false, Game.MEMORY.toString(), 0));
-        levels.add(new Level(9, false, Game.MEMORY.toString(), 0));
-        levels.add(new Level(10, false, Game.MEMORY.toString(), 0));
-        levels.add(new Level(11, false, Game.QUIZ.toString(), 0));
-        levels.add(new Level(12, false, Game.MEMORY.toString(), 0));
+        levels.add(new Level(8, false, Game.QUIZ.toString(), 0));
+        levels.add(new Level(9, false, Game.SCENARIO.toString(), 0));
+        levels.add(new Level(10, false, Game.QUIZ.toString(), 0));
+        levels.add(new Level(11, false, Game.SCENARIO.toString(), 0));
+        levels.add(new Level(12, false, Game.QUIZ.toString(), 0));
         levels.add(new Level(13, false, Game.MEMORY.toString(), 0));
-        levels.add(new Level(14, false, Game.MEMORY.toString(), 0));
-        levels.add(new Level(15, false, Game.QUIZ.toString(), 0));
-        levels.add(new Level(16, false, Game.MEMORY.toString(), 0));
+        levels.add(new Level(14, false, Game.SCENARIO.toString(), 0));
+        levels.add(new Level(15, false, Game.MEMORY.toString(), 0));
+        levels.add(new Level(16, false, Game.QUIZ.toString(), 0));
 
         return levels;
     }

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/scenario_background">
+
+
+    <ImageView
+        android:id="@+id/scenario_text"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/scenario_stop_button"
+        app:layout_constraintStart_toEndOf="@+id/scenario_gametimer"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/scenario_text" />
+
+    <ImageView
+        android:id="@+id/scenario_image"
+        android:layout_width="328dp"
+        android:layout_height="250dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/scenario_image"
+        android:onClick="clickedImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scenario_text"
+        app:srcCompat="@drawable/scenario_image_1" />
+
+    <TextView
+        android:id="@+id/scenario_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="@string/scenario_question"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scenario_image" />
+
+    <Button
+        android:id="@+id/scenario_stop_button"
+        android:layout_width="71dp"
+        android:layout_height="66dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/button_shape_grey_round"
+        android:fontFamily="@font/bree_serif"
+        android:onClick="stopGame"
+        android:text="Stop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/scenario_button_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/digiveilig_toets_button_shape_grey"
+        android:fontFamily="@font/bree_serif"
+        android:onClick="buttonClick"
+        android:text="@string/scenario_button_one"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scenario_question" />
+
+    <Button
+        android:id="@+id/scenario_button_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/digiveilig_toets_button_shape_grey"
+        android:fontFamily="@font/bree_serif"
+        android:onClick="buttonClick"
+        android:text="@string/scenario_button_two"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scenario_button_1" />
+
+    <Button
+        android:id="@+id/scenario_button_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/digiveilig_toets_button_shape_grey"
+        android:fontFamily="@font/bree_serif"
+        android:onClick="buttonClick"
+        android:text="@string/scenario_button_three"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scenario_button_2" />
+
+    <TextView
+        android:id="@+id/scenario_gametimer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/scenario_gametimer"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/scenario_gametimer_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/scenario_gametimer_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/scenario_gametimer_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/timer_icon" />
+
+</android.support.constraint.ConstraintLayout>

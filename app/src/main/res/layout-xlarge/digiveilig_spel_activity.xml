@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home_background"
+    android:background="@drawable/digiveilig_spel_background"
     tools:layout_editor_absoluteY="25dp">
 
     <ImageView
@@ -40,7 +40,7 @@
             android:layout_weight="1"
             android:background="@drawable/digiveilig_spel_0_star"
             android:fontFamily="@font/bree_serif"
-            android:onClick="startLevel1"
+            android:onClick="startLevel"
             android:text="@string/Digiveilig_spel_level_number"
             android:textColor="@color/white"
             android:textSize="40sp"
@@ -54,6 +54,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/digiveilig_spel_lock"
+            android:onClick="startLevel"
             app:layout_constraintEnd_toEndOf="parent"
             tools:layout_editor_absoluteY="217dp" />
 
@@ -63,6 +64,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/digiveilig_spel_lock"
+            android:onClick="startLevel"
             app:layout_constraintEnd_toStartOf="@+id/imageView19"
             tools:layout_editor_absoluteY="217dp" />
 
@@ -72,6 +74,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/digiveilig_spel_lock"
+            android:onClick="startLevel"
             app:layout_constraintEnd_toStartOf="@+id/imageView21"
             tools:layout_editor_absoluteY="217dp" />
     </LinearLayout>
@@ -94,6 +97,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/digiveilig_spel_lock"
+            android:onClick="startLevel"
             app:layout_constraintEnd_toStartOf="@+id/imageView18"
             tools:layout_editor_absoluteY="290dp" />
 
@@ -103,6 +107,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/digiveilig_spel_lock"
+            android:onClick="startLevel"
             app:layout_constraintEnd_toEndOf="parent"
             tools:layout_editor_absoluteY="217dp" />
 
@@ -112,6 +117,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/digiveilig_spel_lock"
+            android:onClick="startLevel"
             app:layout_constraintEnd_toStartOf="@+id/imageView19"
             tools:layout_editor_absoluteY="217dp" />
 
@@ -121,6 +127,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/digiveilig_spel_lock"
+            android:onClick="startLevel"
             app:layout_constraintEnd_toStartOf="@+id/imageView21"
             tools:layout_editor_absoluteY="217dp" />
     </LinearLayout>
@@ -143,6 +150,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/digiveilig_spel_lock"
+            android:onClick="startLevel"
             app:layout_constraintEnd_toStartOf="@+id/imageView18"
             tools:layout_editor_absoluteY="290dp" />
 
@@ -152,6 +160,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/digiveilig_spel_lock"
+            android:onClick="startLevel"
             app:layout_constraintEnd_toEndOf="parent"
             tools:layout_editor_absoluteY="217dp" />
 
@@ -161,6 +170,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/digiveilig_spel_lock"
+            android:onClick="startLevel"
             app:layout_constraintEnd_toStartOf="@+id/imageView19"
             tools:layout_editor_absoluteY="217dp" />
 
@@ -170,6 +180,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/digiveilig_spel_lock"
+            android:onClick="startLevel"
             app:layout_constraintEnd_toStartOf="@+id/imageView21"
             tools:layout_editor_absoluteY="217dp" />
     </LinearLayout>
@@ -193,6 +204,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/digiveilig_spel_lock"
+            android:onClick="startLevel"
             app:layout_constraintEnd_toStartOf="@+id/imageView18"
             tools:layout_editor_absoluteY="290dp" />
 
@@ -220,6 +232,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/digiveilig_spel_lock"
+            android:onClick="startLevel"
             app:layout_constraintEnd_toStartOf="@+id/imageView21"
             tools:layout_editor_absoluteY="217dp" />
     </LinearLayout>
@@ -234,6 +247,7 @@
         android:textColor="@color/white"
         android:textSize="60sp"
         android:textStyle="bold"
+        android:onClick="startLevel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />

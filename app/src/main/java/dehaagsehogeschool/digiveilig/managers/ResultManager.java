@@ -55,7 +55,7 @@ public class ResultManager {
         return value;
     }
 
-    public void setResults(List<Double> results) {
+    private void setResults(List<Double> results) {
         String value;
 
         if (results.size() > MAX_RESULTS) {

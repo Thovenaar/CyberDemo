@@ -4,9 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -22,7 +20,7 @@ import dehaagsehogeschool.digiveilig.toets.DigiveiligToetsAnnouncementActivity;
 
 public class HomeActivity extends BaseActivity implements ActivityInterface {
 
-    TextView starScore, toetsResultaat;
+    private TextView starScore, toetsResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +53,7 @@ public class HomeActivity extends BaseActivity implements ActivityInterface {
         SharedPreferences gameData = getSharedPreferences(GameSettings.LOCATION_SHARED_PREFERENCES, Context.MODE_PRIVATE);
         ResultManager resultManager = new ResultManager(GameSettings.LOCATION_SHARED_PREFERENCES, getApplicationContext());
 
-        toetsResultaat.setText("Cijfer: " + resultManager.getHighestResult());
+        toetsResult.setText("Cijfer: " + resultManager.getHighestResult());
     }
 
     private int getStars(List<Level> levels) {
@@ -70,8 +68,8 @@ public class HomeActivity extends BaseActivity implements ActivityInterface {
 
     @Override
     public void initializeObjects() {
-        starScore = (TextView) findViewById(R.id.home_star_score);
-        toetsResultaat = (TextView) findViewById(R.id.home_toets_result_score);
+        starScore = findViewById(R.id.home_star_score);
+        toetsResult = findViewById(R.id.home_toets_result_score);
     }
 
     public void startDigiveiligToets(View view) {

@@ -1,17 +1,12 @@
-package dehaagsehogeschool.digiveilig.games;
+package dehaagsehogeschool.digiveilig.spel.games;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import dehaagsehogeschool.digiveilig.BaseActivity;
 import dehaagsehogeschool.digiveilig.GameSettings;
@@ -22,8 +17,6 @@ import dehaagsehogeschool.digiveilig.managers.GameManager;
 import dehaagsehogeschool.digiveilig.managers.QuestionManager;
 import dehaagsehogeschool.digiveilig.models.GameManagerSettings;
 import dehaagsehogeschool.digiveilig.models.Question;
-import dehaagsehogeschool.digiveilig.toets.DigiveiligToetsActivity;
-import dehaagsehogeschool.digiveilig.toets.DigiveiligToetsEndActivity;
 
 /**
  * Created by Thomas on 27-Mar-18.
@@ -40,9 +33,9 @@ public class QuizActivity extends BaseActivity implements ActivityInterface {
 
     private Question selectedQuestion;
     private int questionAnswerNumber = 0;
-    public int score = 0;
+    private int score = 0;
 
-    List<Question> questions;
+    private List<Question> questions;
     private GameManager gameManager;
     private TextView gameTimer;
 
@@ -52,13 +45,13 @@ public class QuizActivity extends BaseActivity implements ActivityInterface {
         setContentView(R.layout.quiz_activity);
 
         initializeObjects();
+        initializeGameManager();
         initializeQuestions();
 
         updateQuestion();
-        initializeGameManager();
     }
 
-    private void initializeGameManager(){
+    private void initializeGameManager() {
         GameManagerSettings settings = new GameManagerSettings();
         settings.gameTime = 30;
         settings.context = this;
@@ -89,7 +82,7 @@ public class QuizActivity extends BaseActivity implements ActivityInterface {
     }
 
     private void initializeQuestions() {
-        QuestionManager questionManager = new QuestionManager(GameSettings.QUESTIONS_LOCATION, getApplicationContext());
+        QuestionManager questionManager = new QuestionManager(GameSettings.getCurrentGameSetting(gameManager.settings.levelId), getApplicationContext());
         questions = questionManager.getQuestions();
 
         Collections.shuffle(questions);
@@ -106,15 +99,11 @@ public class QuizActivity extends BaseActivity implements ActivityInterface {
         }
 
         selectedQuestion = questions.get(questionAnswerNumber);
+
         textViewQuestion.setText(selectedQuestion.question);
-
-       Collections.shuffle(selectedQuestion.answers);
-
-        buttonChoice1.setText(selectedQuestion.answers.get(0));
-        buttonChoice2.setText(selectedQuestion.answers.get(1));
-        buttonChoice3.setText(selectedQuestion.answers.get(2));
-        buttonChoice4.setText(selectedQuestion.answers.get(3));
-
+        Collections.shuffle(selectedQuestion.answers);
+        resetButtonsView();
+        setButtons();
         questionNumberView.setText("Vraag " + "(" + (questionAnswerNumber + 1) + "/" + questions.size() + ")");
         questionAnswerNumber++;
     }
@@ -123,6 +112,33 @@ public class QuizActivity extends BaseActivity implements ActivityInterface {
         if (answer.equals(selectedQuestion.rightAnswer)) score++;
 
         updateQuestion();
+    }
+
+    private void setButtons() {
+        int totalAnswers = selectedQuestion.answers.size();
+        if (totalAnswers == 4) {
+            buttonChoice1.setText(selectedQuestion.answers.get(0));
+            buttonChoice2.setText(selectedQuestion.answers.get(1));
+            buttonChoice3.setText(selectedQuestion.answers.get(2));
+            buttonChoice4.setText(selectedQuestion.answers.get(3));
+        } else if (totalAnswers == 3) {
+            buttonChoice1.setText(selectedQuestion.answers.get(0));
+            buttonChoice2.setText(selectedQuestion.answers.get(1));
+            buttonChoice3.setText(selectedQuestion.answers.get(2));
+            buttonChoice4.setVisibility(View.INVISIBLE);
+        } else if (totalAnswers == 2) {
+            buttonChoice1.setText(selectedQuestion.answers.get(0));
+            buttonChoice2.setText(selectedQuestion.answers.get(1));
+            buttonChoice3.setVisibility(View.INVISIBLE);
+            buttonChoice4.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    private void resetButtonsView(){
+        buttonChoice1.setVisibility(View.VISIBLE);
+        buttonChoice2.setVisibility(View.VISIBLE);
+        buttonChoice3.setVisibility(View.VISIBLE);
+        buttonChoice4.setVisibility(View.VISIBLE);
     }
 
     public void stopSpel(View view) {

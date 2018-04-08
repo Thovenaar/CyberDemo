@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<questions>
+    <question>
+        <quizquestion>Je hebt geen toegang meer tot je computer en bestanden. Je bent het slachtoffer van..</quizquestion>
+        <answers>
+            <answer>Freeware</answer>
+            <answer>Ransomware</answer>
+            <answer>Hardware</answer>
+            <answer>Software</answer>
+        </answers>
+        <rightanswer>Ransomware</rightanswer>
+    </question>
+    <question>
+        <quizquestion>Wat is een tweestapsverificatie?</quizquestion>
+        <answers>
+            <answer>Dit betekent dat je na het inloggen met je e-mailadres en wachtwoord nog een extra code moet invoeren</answer>
+            <answer>Dit betekent dat je heel sneller kan inloggen</answer>
+        </answers>
+        <rightanswer>Dit betekent dat je na het inloggen met je e-mailadres en wachtwoord nog een extra code moet invoeren</rightanswer>
+    </question>
+    <question>
+        <quizquestion>Je bank vraagt in een e-mail om persoonlijke gegevens, zoals je rekeningnummer, bankpasnummer en inloggegevens van internetbankieren.
+            Geef je deze gegevens door?</quizquestion>
+        <answers>
+            <answer>Nee, ik verwijder de e-mail direct en meld de mail bij mijn bank</answer>
+            <answer>Ja, ik beantwoord de e-mail en stuur de gegevens door</answer>
+            <answer>Nee, ik google de e-mail eerst, kijk op Politie.nl, doe een virusscan en verwijder dan de e-mail</answer>
+        </answers>
+        <rightanswer>Nee, ik verwijder de e-mail direct en meld de mail bij mijn bank</rightanswer>
+    </question>
+</questions>

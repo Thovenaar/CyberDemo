@@ -16,7 +16,7 @@ public class Level {
     public Level(int id, boolean unlocked, String game, Integer stars) {
         this.id = id;
         this.unlocked = unlocked;
-        this.game = game.toString();
+        this.game = game;
         this.stars = stars;
     }
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<questions>
+    <question>
+        <quizquestion>Waar moet ik altijd op letten als ik naar een website ga waar ik moet inloggen</quizquestion>
+        <answers>
+            <answer>Dat de website met HTTPS is beveiligd. bijvoorbeeld: https://www.diplomaveiliginternet.nl</answer>
+            <answer>Dat de website er mooi uit ziet</answer>
+            <answer>Dat de website zegt goed beveiligd te zijn</answer>
+        </answers>
+        <rightanswer>Dat de website met HTTPS is beveiligd. bijvoorbeeld: https://www.diplomaveiliginternet.nl</rightanswer>
+    </question>
+    <question>
+        <quizquestion>Je computer is geblokkeerd en je moet een boete betalen. Wat doe je?</quizquestion>
+        <answers>
+            <answer>Ik betaal niet en bel iemand die het komt oplossen</answer>
+            <answer>Ik volg het stappenplan op Veiliginternetten.nl om ransom- en cryptoware te verwijderen</answer>
+            <answer>Ik raak vreselijk in paniek en betaal zo snel mogelijk%</answer>
+            <answer>Ik betaal niet en bel met mijn computerfabrikant, softwareleverancier, de politie en de Fraudehelpdesk en bel ook iemand die het komt oplossen</answer>
+        </answers>
+        <rightanswer>Ik volg het stappenplan op Veiliginternetten.nl om ransom- en cryptoware te verwijderen</rightanswer>
+    </question>
+    <question>
+        <quizquestion>Wat is social engineering?</quizquestion>
+        <answers>
+            <answer>Het gebruik van sociale media door cybercriminelen om achter mijn gegevens te komen</answer>
+            <answer>Via sociale media netwerken opbouwen</answer>
+            <answer>Proberen via persoonlijk contact achter mijn gegevens te komen</answer>
+            <answer>Het zelf starten van een social medium</answer>
+        </answers>
+        <rightanswer>Het gebruik van sociale media door cybercriminelen om achter mijn gegevens te komen</rightanswer>
+    </question>
+</questions>

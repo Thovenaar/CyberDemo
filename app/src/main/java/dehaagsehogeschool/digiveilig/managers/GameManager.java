@@ -1,7 +1,6 @@
 package dehaagsehogeschool.digiveilig.managers;
 
 import android.app.Activity;
-import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.AsyncTask;
 
@@ -9,7 +8,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import dehaagsehogeschool.digiveilig.App;
-import dehaagsehogeschool.digiveilig.AppDatabase;
+import dehaagsehogeschool.digiveilig.database.AppDatabase;
 import dehaagsehogeschool.digiveilig.GameSettings;
 import dehaagsehogeschool.digiveilig.enums.Game;
 import dehaagsehogeschool.digiveilig.models.GameManagerSettings;
@@ -20,7 +19,7 @@ import dehaagsehogeschool.digiveilig.spel.DigiveiligSpelResultActivity;
  */
 
 public class GameManager {
-    private GameManagerSettings settings;
+    public GameManagerSettings settings;
     public boolean gameEnded = false;
     private Timer _timer = new Timer();
     private int _timeLeft;
@@ -34,7 +33,7 @@ public class GameManager {
         startGameTimer();
     }
 
-    public void startGameTimer() {
+    private void startGameTimer() {
         TimerTask task = new TimerTask() {
 
             @Override
@@ -64,15 +63,18 @@ public class GameManager {
     private int calculateStars() {
         int finishTime = getFinishTime();
 
-        switch(Game.valueOf(settings.game.toString())) {
-           case MEMORY:
-               return getStarsDefault(finishTime);
+        switch (Game.valueOf(settings.game.toString())) {
+            case MEMORY:
+                return getStarsDefault(finishTime);
 
-           case QUIZ:
-               return getStarsQuiz(finishTime);
-          }
+            case QUIZ:
+                return getStarsQuiz(finishTime);
 
-      return 0;
+            case SCENARIO:
+                return getStarsQuiz(finishTime);
+        }
+
+        return 0;
     }
 
     private int getStarsDefault(int finishTime) {
@@ -99,7 +101,7 @@ public class GameManager {
         return settings.gameTime - _timeLeft;
     }
 
-    public void setData() {
+    private void setData() {
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
@@ -122,7 +124,7 @@ public class GameManager {
         _timer.cancel();
     }
 
-    private void passResults(){
+    private void passResults() {
         Intent showResults = new Intent(settings.context, DigiveiligSpelResultActivity.class);
         showResults.putExtra(GameSettings.RESULT_STARS, calculateStars());
         showResults.putExtra(GameSettings.FINISH_TIME, getFinishTime());
@@ -135,6 +137,6 @@ public class GameManager {
         settings.context.startActivity(showResults);
 
         //Stop current game activity
-        ((Activity) settings.context).finish();;
+        ((Activity) settings.context).finish();
     }
 }
