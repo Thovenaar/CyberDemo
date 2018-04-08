@@ -116,8 +116,8 @@
 
         <Button
             android:id="@+id/quiz_spel_choice1"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/digiveilig_toets_button_shape_grey"
@@ -126,13 +126,13 @@
             android:paddingBottom="15dp"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="25sp"
+            android:textSize="17sp"
             android:typeface="normal" />
 
         <Button
             android:id="@+id/quiz_spel_choice2"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/digiveilig_toets_button_shape_grey"
@@ -141,13 +141,13 @@
             android:paddingBottom="15dp"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="25sp"
+            android:textSize="17sp"
             android:typeface="normal" />
 
         <Button
             android:id="@+id/quiz_spel_choice3"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/digiveilig_toets_button_shape_grey"
@@ -156,12 +156,12 @@
             android:paddingBottom="15dp"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="25sp" />
+            android:textSize="17sp" />
 
         <Button
             android:id="@+id/quiz_spel_choice4"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/digiveilig_toets_button_shape_grey"
@@ -170,6 +170,6 @@
             android:paddingBottom="15dp"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="25sp" />
+            android:textSize="17sp" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

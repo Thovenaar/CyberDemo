@@ -187,88 +187,83 @@ public class MemoryActivity extends BaseActivity implements ActivityInterface {
 
     private void initializeCardsImages() {
         int levelId = getIntent().getExtras().getInt(GameSettings.LEVEL_ID);
-        switch (levelId) {
-            case 1:
-                cardImage101 = R.drawable.creditcard;
-                cardImage102 = R.drawable.death;
-                cardImage103 = R.drawable.finding_document;
-                cardImage104 = R.drawable.finding_password;
-                cardImage105 = R.drawable.internet_trouble;
-                cardImage106 = R.drawable.secret_identity;
-                cardImage107 = R.drawable.target;
-                cardImage108 = R.drawable.worm;
 
-                cardImage201 = R.drawable.creditcard;
-                cardImage202 = R.drawable.death;
-                cardImage203 = R.drawable.finding_document;
-                cardImage204 = R.drawable.finding_password;
-                cardImage205 = R.drawable.internet_trouble;
-                cardImage206 = R.drawable.secret_identity;
-                cardImage207 = R.drawable.target;
-                cardImage208 = R.drawable.worm;
-                break;
+        if (levelId == 1 || levelId == 5) {
+            cardImage101 = R.drawable.creditcard;
+            cardImage102 = R.drawable.death;
+            cardImage103 = R.drawable.finding_document;
+            cardImage104 = R.drawable.finding_password;
+            cardImage105 = R.drawable.internet_trouble;
+            cardImage106 = R.drawable.secret_identity;
+            cardImage107 = R.drawable.target;
+            cardImage108 = R.drawable.worm;
 
-            case 2:
-                cardImage101 = R.drawable.hacker;
-                cardImage102 = R.drawable.identity_theft;
-                cardImage103 = R.drawable.killer_usb;
-                cardImage104 = R.drawable.mail_phishing;
-                cardImage105 = R.drawable.password;
-                cardImage106 = R.drawable.spam;
-                cardImage107 = R.drawable.trojan_horse;
-                cardImage108 = R.drawable.web_phishing;
+            cardImage201 = R.drawable.creditcard;
+            cardImage202 = R.drawable.death;
+            cardImage203 = R.drawable.finding_document;
+            cardImage204 = R.drawable.finding_password;
+            cardImage205 = R.drawable.internet_trouble;
+            cardImage206 = R.drawable.secret_identity;
+            cardImage207 = R.drawable.target;
+            cardImage208 = R.drawable.worm;
 
-                cardImage201 = R.drawable.hacker;
-                cardImage202 = R.drawable.identity_theft;
-                cardImage203 = R.drawable.killer_usb;
-                cardImage204 = R.drawable.mail_phishing;
-                cardImage205 = R.drawable.password;
-                cardImage206 = R.drawable.spam;
-                cardImage207 = R.drawable.trojan_horse;
-                cardImage208 = R.drawable.web_phishing;
-                break;
+        } else if (levelId == 3 || levelId == 7) {
+            cardImage101 = R.drawable.hacker;
+            cardImage102 = R.drawable.identity_theft;
+            cardImage103 = R.drawable.killer_usb;
+            cardImage104 = R.drawable.mail_phishing;
+            cardImage105 = R.drawable.password;
+            cardImage106 = R.drawable.spam;
+            cardImage107 = R.drawable.trojan_horse;
+            cardImage108 = R.drawable.web_phishing;
 
-            case 3:
-                cardImage101 = R.drawable.creditcard;
-                cardImage102 = R.drawable.death;
-                cardImage103 = R.drawable.finding_document;
-                cardImage104 = R.drawable.finding_password;
-                cardImage105 = R.drawable.internet_trouble;
-                cardImage106 = R.drawable.secret_identity;
-                cardImage107 = R.drawable.target;
-                cardImage108 = R.drawable.worm;
+            cardImage201 = R.drawable.hacker;
+            cardImage202 = R.drawable.identity_theft;
+            cardImage203 = R.drawable.killer_usb;
+            cardImage204 = R.drawable.mail_phishing;
+            cardImage205 = R.drawable.password;
+            cardImage206 = R.drawable.spam;
+            cardImage207 = R.drawable.trojan_horse;
+            cardImage208 = R.drawable.web_phishing;
 
-                cardImage201 = R.drawable.creditcard_text;
-                cardImage202 = R.drawable.death_text;
-                cardImage203 = R.drawable.finding_document_text;
-                cardImage204 = R.drawable.finding_password_text;
-                cardImage205 = R.drawable.internet_trouble_text;
-                cardImage206 = R.drawable.secret_identity_text;
-                cardImage207 = R.drawable.target_text;
-                cardImage208 = R.drawable.worm_text;
-                break;
+        } else if (levelId == 13) {
+            cardImage101 = R.drawable.creditcard;
+            cardImage102 = R.drawable.death;
+            cardImage103 = R.drawable.finding_document;
+            cardImage104 = R.drawable.finding_password;
+            cardImage105 = R.drawable.internet_trouble;
+            cardImage106 = R.drawable.secret_identity;
+            cardImage107 = R.drawable.target;
+            cardImage108 = R.drawable.worm;
 
-            case 4:
-                cardImage101 = R.drawable.hacker;
-                cardImage102 = R.drawable.identity_theft;
-                cardImage103 = R.drawable.killer_usb;
-                cardImage104 = R.drawable.mail_phishing;
-                cardImage105 = R.drawable.password;
-                cardImage106 = R.drawable.spam;
-                cardImage107 = R.drawable.trojan_horse;
-                cardImage108 = R.drawable.web_phishing;
+            cardImage201 = R.drawable.creditcard_text;
+            cardImage202 = R.drawable.death_text;
+            cardImage203 = R.drawable.finding_document_text;
+            cardImage204 = R.drawable.finding_password_text;
+            cardImage205 = R.drawable.internet_trouble_text;
+            cardImage206 = R.drawable.secret_identity_text;
+            cardImage207 = R.drawable.target_text;
+            cardImage208 = R.drawable.worm_text;
 
-                cardImage201 = R.drawable.hacker_text;
-                cardImage202 = R.drawable.identity_theft_text;
-                cardImage203 = R.drawable.killer_usb_text;
-                cardImage204 = R.drawable.mail_phishing_text;
-                cardImage205 = R.drawable.password_text;
-                cardImage206 = R.drawable.spam_text;
-                cardImage207 = R.drawable.trojan_horse_text;
-                cardImage208 = R.drawable.web_phishing_text;
-                break;
+        } else if (levelId == 15) {
+            cardImage101 = R.drawable.hacker;
+            cardImage102 = R.drawable.identity_theft;
+            cardImage103 = R.drawable.killer_usb;
+            cardImage104 = R.drawable.mail_phishing;
+            cardImage105 = R.drawable.password;
+            cardImage106 = R.drawable.spam;
+            cardImage107 = R.drawable.trojan_horse;
+            cardImage108 = R.drawable.web_phishing;
+
+            cardImage201 = R.drawable.hacker_text;
+            cardImage202 = R.drawable.identity_theft_text;
+            cardImage203 = R.drawable.killer_usb_text;
+            cardImage204 = R.drawable.mail_phishing_text;
+            cardImage205 = R.drawable.password_text;
+            cardImage206 = R.drawable.spam_text;
+            cardImage207 = R.drawable.trojan_horse_text;
+            cardImage208 = R.drawable.web_phishing_text;
         }
-
     }
 
     private void checkCards(ImageView cards, int card) {
