@@ -30,6 +30,15 @@ public class HomeActivity extends BaseActivity implements ActivityInterface {
         initializeData();
         initializeObjects();
         initializeObserver();
+
+        SharedPreferences gameData = getSharedPreferences(GameSettings.LOCATION_SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        int instruction = gameData.getInt("instruction_screen", 0);
+
+        if (instruction == 0) {
+            Intent intent = new Intent(this, InstructionsActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     private void initializeObserver() {
@@ -90,6 +99,14 @@ public class HomeActivity extends BaseActivity implements ActivityInterface {
     public void startHelp(View view) {
         Intent intent = new Intent(this, HelpActivity.class);
         startActivity(intent);
+
+    }
+
+    public void resetGame(View view) {
+        SharedPreferences gameData = getSharedPreferences(GameSettings.LOCATION_SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor _sharedPreferencesEditor = gameData.edit();
+        _sharedPreferencesEditor.putInt("instruction_screen", 0);
+        _sharedPreferencesEditor.commit();
 
     }
 }
