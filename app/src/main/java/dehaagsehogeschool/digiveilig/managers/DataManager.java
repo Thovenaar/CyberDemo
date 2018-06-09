@@ -41,6 +41,21 @@ public class DataManager {
         }.execute();
     }
 
+    public void resetLevels() {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                AppDatabase.getInstance(_context).levelDao().deleteAll();
+                if (AppDatabase.getInstance(_context).levelDao().getAll().size() == 0) {
+                    for (Level level : getLevels()) {
+                        AppDatabase.getInstance(_context).levelDao().insertAll(level);
+                    }
+                }
+                return null;
+            }
+        }.execute();
+    }
+
     private List<Level> getLevels() {
         List<Level> levels = new ArrayList<Level>();
 

@@ -73,6 +73,10 @@ public class ResultManager {
         _sharedPreferencesEditor.commit();
     }
 
+    public void resetResults() {
+        setResults(new ArrayList<Double>());
+    }
+
     public void addResult(Double result) {
         List<Double> results = this.getResults();
         results.add(result);
